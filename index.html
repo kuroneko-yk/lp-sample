@@ -1,0 +1,710 @@
+
+Google Chrome
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pilates Studio BLOOM｜横浜のプライベートマシンピラティス</title>
+  <meta name="description" content="神奈川県横浜市の完全予約制プライベートマシンピラティス。清潔感のある空間で、一人ひとりに寄り添ったサポートを提供します。" />
+
+  <!-- OGP -->
+  <meta property="og:title" content="Pilates Studio BLOOM｜横浜のプライベートマシンピラティス" />
+  <meta property="og:description" content="完全予約制のプライベートマシンピラティス。理想の自分を見つける場所。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://pilates-bloom.example.com/" />
+   <meta property="og:image" content="https://pilates-bloom.example.com/img/hero.jpg" />
+  <meta property="og:site_name" content="Pilates Studio BLOOM" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Pilates Studio BLOOM｜横浜のプライベートマシンピラティス" />
+  <meta name="twitter:description" content="完全予約制のプライベートマシンピラティス。理想の自分を見つける場所。" />
+  <meta name="twitter:image" content="https://pilates-bloom.example.com/img/hero.jpg" />
+<!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bloom: {
+              bg:     '#f8f9fa',   /* ヒーロー背景 */
+              primary:'#023e8a',   /* 見出し・キャッチコピー */
+              accent: '#48cae4',   /* CTAボタン */
+              accentLight: '#90e0ef', /* CTA hover */
+              text:   '#1b1b1b',
+            }
+          },
+          fontFamily: {
+  sans: ['"Noto Sans JP"', '"Yu Gothic"', '"游ゴシック"', 'YuGothic', '"Hiragino Kaku Gothic ProN"', 'sans-serif'],
+},
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background-color: #ffffff; color: #1b1b1b; font-family: 'Noto Sans JP', sans-serif;}
+
+    /* ナビゲーション */
+    .nav-link { transition: color 0.2s; }
+    .nav-link:hover { color: #023e8a; }
+
+    /* CTAボタン */
+    .btn-primary {
+      display: inline-block;
+      background-color: #48cae4;
+      color: #fff;
+      padding: 0.85rem 2.4rem;
+      border-radius: 9999px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      transition: background-color 0.25s, transform 0.2s, box-shadow 0.25s;
+      box-shadow: 0 4px 16px rgba(72,202,228,0.25);
+    }
+    .btn-primary:hover {
+      background-color: #90e0ef;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(72,202,228,0.35);
+    }
+
+    /* 見出しカラー */
+    .heading-blue { color: #023e8a; }
+
+    /* カード */
+    .card {
+      background: #fff;
+      border-radius: 1rem;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+      overflow: hidden;
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+    .card:hover {
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+      transform: translateY(-4px);
+    }
+  </style>
+</head>
+ 
+<body class="antialiased">
+ 
+<!-- ========== ナビゲーション ========== -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-[#90e0ef]/40 shadow-sm">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+
+    <!-- ロゴ -->
+    <a href="#" class="font-bold text-lg tracking-widest flex items-baseline gap-2">
+      <span class="text-[#023e8a]">BLOOM</span>
+      <span class="text-xs font-normal tracking-wider text-[#48cae4]">Pilates Studio</span>
+    </a>
+
+    <!-- ナビゲーション -->
+    <nav class="hidden md:flex items-center gap-7 text-sm">
+      <a href="#concept"    class="nav-link text-[#023e8a] hover:text-[#48cae4]">コンセプト</a>
+      <a href="#reasons"    class="nav-link text-[#023e8a] hover:text-[#48cae4]">選ばれる理由</a>
+      <a href="#price"      class="nav-link text-[#023e8a] hover:text-[#48cae4]">料金</a>
+      <a href="#voice"      class="nav-link text-[#023e8a] hover:text-[#48cae4]">お客様の声</a>
+      <a href="#instructor" class="nav-link text-[#023e8a] hover:text-[#48cae4]">インストラクター</a>
+      <a href="#access"     class="nav-link text-[#023e8a] hover:text-[#48cae4]">アクセス</a>
+      <!-- [追加] 予約ページへのナビリンク -->
+      <a href="#reservation"  class="nav-link text-[#023e8a] hover:text-[#48cae4]">予約</a>
+    </nav>
+
+    <!-- [変更] tel: → #reservation へのスクロールに変更 -->
+    <a href="#reservation"
+       class="btn-primary text-sm py-2 px-5 bg-[#48cae4] hover:bg-[#90e0ef] shadow-md">
+      📅 ご予約
+    </a>
+
+  </div>
+</header>
+ 
+ 
+<!-- ========== 1. ヒーロー ========== -->
+<section id="hero" class="relative h-[80vh] flex items-center justify-center text-center text-white">
+  <!-- 背景画像 -->
+  <div class="absolute inset-0">
+    <img src="img/hero.jpg"
+         class="w-full h-full object-cover"
+         alt="Pilates Studio BLOOM">
+    <!-- ブラウン系オーバーレイ（薄め） -->
+    <div class="absolute inset-0 bg-[#5c4a32]/25"></div>
+  </div>
+
+  <!-- コンテンツ -->
+  <div class="relative z-10 text-center px-4 max-w-3xl mx-auto">
+    <p class="text-bloom-accent tracking-[0.3em] text-sm md:text-base font-medium mb-4 uppercase">
+      Pilates Studio BLOOM<br>プライベートスタジオ
+    </p>
+    <h1 class="text-3xl md:text-5xl font-bold leading-relaxed md:leading-tight drop-shadow-lg">
+      理想の自分を見つける場所
+    </h1>
+    <p class="text-bloom-accent tracking-[0.3em] text-sm md:text-base font-medium mb-4 uppercase">
+     </p>
+    <p class="mt-4 text-sm md:text-base text-white/90 drop-shadow">
+      神奈川県横浜市｜20〜60代女性のための専用スタジオ
+    </p>
+  <!-- ボタンを flex の影響外にするためのラッパー -->
+<div class="w-full flex justify-center">
+  <div class="space-y-4 text-center mt-6 w-full max-w-xs">
+  <!-- メインCTA：#reservation へスムーズスクロール -->
+  <a href="#reservation"
+ class="inline-block w-full px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition">
+      📅 体験レッスンを予約する
+    </a>
+<!-- サブCTA：料金セクションへスクロール -->
+   <a href="#price"
+   class="inline-block w-full px-6 py-3 bg-blue-700 text-white rounded-lg shadow hover:bg-blue-800 transition">
+      料金・メニューを見る
+    </a>
+  </div>
+</div>
+
+    <!-- スクロール誘導 -->
+    <div class="mt-16 flex flex-col items-center gap-2 text-[#023e8a]/60 text-xs tracking-widest animate-bounce">
+      <span>SCROLL</span>
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+      </svg>
+    </div>
+  </div>
+</section>
+ 
+ <!-- ========== 2. コンセプト ========== -->
+<section id="concept" class="py-20 md:py-28 bg-[#f8f9fa]">
+  <div class="max-w-4xl mx-auto px-4 text-center">
+
+    <div class="section-divider">
+      <span class="text-[#48cae4] tracking-[0.3em] text-sm font-medium uppercase">Concept</span>
+    </div>
+
+    <h2 class="text-3xl md:text-4xl font-bold heading-blue mb-8 tracking-wide">
+      BLOOMのコンセプト
+    </h2>
+
+    <div class="w-16 h-0.5 bg-[#90e0ef] mx-auto mb-10"></div>
+
+    <p class="text-[#1b1b1b]/80 text-base md:text-lg leading-loose mb-8">
+      本来のあなたを最大限引き出し、一人ひとりに寄り添ったサポートを心がけています。
+    </p>
+
+    <p class="text-[#1b1b1b]/70 text-sm md:text-base leading-loose max-w-2xl mx-auto">
+      Pilates Studio BLOOMは、完全予約制のプライベートスタジオです。<br />
+      インストラクターがマンツーマンで丁寧に指導するため、<br class="hidden md:block" />
+      初めての方から上級者の方まで、安心してご参加いただけます。<br />
+      あなたの身体と目標に合わせた、オーダーメイドのレッスンをご提供します。
+    </p>
+
+    <!-- 特徴3点 -->
+    <div class="mt-14 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="flex flex-col items-center gap-3">
+        <div class="w-16 h-16 rounded-full bg-[#48cae4]/10 flex items-center justify-center text-2xl">🌿</div>
+        <p class="font-bold heading-blue tracking-wide">完全プライベート</p>
+        <p class="text-[#1b1b1b]/70 text-sm leading-relaxed">他の方と被らない、<br />あなただけの空間と時間。</p>
+      </div>
+
+      <div class="flex flex-col items-center gap-3">
+        <div class="w-16 h-16 rounded-full bg-[#48cae4]/10 flex items-center justify-center text-2xl">✨</div>
+        <p class="font-bold heading-blue tracking-wide">オーダーメイド指導</p>
+        <p class="text-[#1b1b1b]/70 text-sm leading-relaxed">身体の状態・目標に合わせた<br />完全個別プログラム。</p>
+      </div>
+
+      <div class="flex flex-col items-center gap-3">
+        <div class="w-16 h-16 rounded-full bg-[#48cae4]/10 flex items-center justify-center text-2xl">🤝</div>
+        <p class="font-bold heading-blue tracking-wide">寄り添うサポート</p>
+        <p class="text-[#1b1b1b]/70 text-sm leading-relaxed">身体だけでなく、<br />心にも寄り添い続けます。</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+ 
+ <!-- ========== 3. 選ばれる3つの理由 ========== -->
+<section id="reasons" class="py-20 md:py-28 bg-[#f8f9fa]">
+  <div class="max-w-5xl mx-auto px-4">
+
+    <div class="text-center mb-14">
+      <div class="section-divider">
+        <span class="text-[#48cae4] tracking-[0.3em] text-sm font-medium uppercase">Why BLOOM</span>
+      </div>
+      <h2 class="text-3xl md:text-4xl font-bold heading-blue mb-3 tracking-wide">
+        当サロンが選ばれる3つの理由
+      </h2>
+      <div class="w-16 h-0.5 bg-[#90e0ef] mx-auto"></div>
+    </div>
+
+   <!-- 理由1（画像右） -->
+<div class="flex flex-col md:flex-row md:items-start gap-10 mb-20">
+  <!-- 画像（PCでは右） -->
+  <div class="w-full md:w-1/2 order-1 md:order-2">
+    <div class="rounded-2xl overflow-hidden shadow-lg">
+      <img src="img/reason1.jpg" alt="プライベートな空間"
+        class="w-full aspect-[4/3] object-cover object-center"
+        loading="lazy" />
+
+    </div>
+  </div>
+
+  <!-- テキスト（PCでは左） -->
+  <div class="w-full md:w-1/2 order-2 md:order-1 flex flex-col gap-4">
+    <span class="bg-[#48cae4] text-white text-xs font-bold px-3 py-1 rounded-full tracking-wider">
+      REASON 01
+    </span>
+
+    <h3 class="text-2xl md:text-3xl font-bold heading-blue leading-snug">
+      完全予約制で<br class="hidden md:block">プライベートな空間
+    </h3>
+
+    <div class="w-10 h-0.5 bg-[#90e0ef] mx-auto md:mx-0"></div>
+
+    <p class="text-[#1b1b1b]/70 leading-relaxed text-sm md:text-base">
+      完全予約制・完全プライベートのため、他のお客様と時間が重なることはありません。
+      周囲を気にせず集中できる特別な時間をご提供します。
+    </p>
+  </div>
+</div>
+  <!-- 理由2（画像左） -->
+<div class="flex flex-col md:flex-row md:items-start gap-10 mb-20">
+  <!-- 画像（PCでは左） -->
+  <div class="w-full md:w-1/2 order-1">
+    <div class="rounded-2xl overflow-hidden shadow-lg">
+      <img src="img/reason2.jpg" alt="経験豊富なインストラクター"
+        class="w-full aspect-[4/3] object-cover object-center"
+        loading="lazy" />
+    </div>
+  </div>
+  <!-- テキスト（PCでは右） -->
+  <div class="w-full md:w-1/2 order-2 flex flex-col gap-4">
+    <span class="bg-[#48cae4] text-white text-xs font-bold px-3 py-1 rounded-full tracking-wider">
+      REASON 02
+    </span>
+
+    <h3 class="text-2xl md:text-3xl font-bold heading-blue leading-snug">
+      経験豊富なインストラクターが<br class="hidden md:block">マンツーマン指導
+    </h3>
+
+    <div class="w-10 h-0.5 bg-[#90e0ef] mx-auto md:mx-0"></div>
+
+    <p class="text-[#1b1b1b]/70 leading-relaxed text-sm md:text-base">
+      国際資格を持つインストラクターが、姿勢や身体のクセを丁寧に分析。
+      あなたの目標に合わせたプログラムを設計します。
+    </p>
+  </div>
+</div>
+<!-- 理由3（画像右） -->
+<div class="flex flex-col md:flex-row md:items-start gap-10 mb-20">
+  <!-- 画像（PCでは右） -->
+  <div class="w-full md:w-1/2 order-1 md:order-2">
+    <div class="rounded-2xl overflow-hidden shadow-lg">
+      <img src="img/reason3.jpg" alt="上質な空間"
+        class="w-full aspect-[4/3] object-cover object-center"
+        loading="lazy" />
+
+    </div>
+  </div>
+
+  <!-- テキスト（PCでは左） -->
+  <div class="w-full md:w-1/2 order-2 md:order-1 flex flex-col gap-4">
+    <span class="bg-[#48cae4] text-white text-xs font-bold px-3 py-1 rounded-full tracking-wider">
+      REASON 03
+    </span>
+
+    <h3 class="text-2xl md:text-3xl font-bold heading-blue leading-snug">
+      落ち着いた上質な空間で<br class="hidden md:block">自分だけの時間を
+    </h3>
+
+   <div class="w-10 h-0.5 bg-[#90e0ef] mx-auto md:mx-0"></div>
+
+    <p class="text-[#1b1b1b]/70 leading-relaxed text-sm md:text-base">
+      清潔感のあるスタジオで、心も身体もリセットできる特別な時間を。
+      日常から少し離れ、自分と向き合うひとときをお過ごしください。
+    </p>
+  </div>
+</div>
+</section>
+<!-- ========== 4. Lesson & Price ========== -->
+<section id="price" class="py-20 md:py-28 bg-white">
+  <div class="max-w-4xl mx-auto px-4">
+
+    <div class="text-center mb-14">
+      <div class="section-divider">
+        <span class="text-[#48cae4] tracking-[0.3em] text-sm font-medium uppercase">Lesson & Price</span>
+      </div>
+      <h2 class="text-3xl md:text-4xl font-bold heading-blue mb-3 tracking-wide">
+        レッスン・料金
+      </h2>
+      <div class="w-16 h-0.5 bg-[#90e0ef] mx-auto mb-6"></div>
+      <p class="text-[#1b1b1b]/65 text-sm md:text-base">まずはお気軽に体験レッスンへお越しください。</p>
+    </div>
+    <!-- 体験レッスンバナー -->
+    <div class="bg-[#48cae4]/10 border border-[#48cae4]/30 rounded-2xl p-6 md:p-8 text-center mb-10">
+      <p class="text-[#48cae4] font-bold tracking-widest text-sm mb-2 uppercase">First Lesson</p>
+      <h3 class="text-2xl md:text-3xl font-bold heading-blue mb-2">まずは体験レッスンへ</h3>
+      <p class="text-[#1b1b1b]/65 text-sm mb-4 leading-relaxed">
+        初めての方も安心。<br>カウンセリング＋体験レッスンで、ピラティスの効果を体感してください。
+      </p>
+      <div class="inline-flex items-baseline gap-2">
+        <span class="text-4xl font-bold text-[#48cae4]">¥8,000</span>
+        <span class="text-[#1b1b1b]/60 text-sm">（税込）/ 50分</span>
+      </div>
+    </div>
+
+    <!-- 価格テーブル -->
+    <div class="overflow-x-auto rounded-2xl shadow-md mb-8">
+      <table class="price-table w-full text-sm md:text-base">
+        <thead>
+          <tr>
+            <th class="px-5 py-4 text-left tracking-wide font-bold bg-[#48cae4] text-white">メニュー</th>
+            <th class="px-5 py-4 text-center tracking-wide font-bold bg-[#48cae4] text-white">時間</th>
+            <th class="px-5 py-4 text-right tracking-wide font-bold bg-[#48cae4] text-white">料金（税込）</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white">
+          <tr class="border-b border-[#f8f9fa]">
+            <td class="px-5 py-5 font-medium text-[#023e8a]">
+              体験レッスン
+              <span class="ml-2 text-xs bg-[#48cae4] text-white px-2 py-0.5 rounded-full">おすすめ</span>
+            </td>
+            <td class="px-5 py-5 text-center text-[#1b1b1b]/70">50分</td>
+            <td class="px-5 py-5 text-right font-bold text-[#48cae4] text-lg">¥8,000</td>
+          </tr>
+
+          <tr class="border-b border-[#f8f9fa]">
+            <td class="px-5 py-5 font-medium text-[#023e8a]">プライベートレッスン</td>
+            <td class="px-5 py-5 text-center text-[#1b1b1b]/70">60分</td>
+            <td class="px-5 py-5 text-right font-bold text-[#48cae4] text-lg">¥13,000</td>
+          </tr>
+
+          <tr>
+            <td class="px-5 py-5 font-medium text-[#023e8a]">プライベートレッスン</td>
+            <td class="px-5 py-5 text-center text-[#1b1b1b]/70">90分</td>
+            <td class="px-5 py-5 text-right font-bold text-[#48cae4] text-lg">¥16,500</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="text-[#1b1b1b]/50 text-xs text-center leading-relaxed">
+      ※ 表示価格はすべて税込みです。<br />
+      ※ 回数券・月謝制プランについてはお問い合わせください。
+    </p>
+
+    <div class="text-center mt-10">
+      <a href="tel:0120-000-000" class="btn-primary text-base bg-[#48cae4] hover:bg-[#90e0ef]">
+        📞 体験レッスンを予約する
+      </a>
+    </div>
+
+  </div>
+</section>
+ 
+ <!-- ========== 5. お客様の声 ========== -->
+<section id="voice" class="py-20 md:py-28 bg-[#f8f9fa]">
+  <div class="max-w-5xl mx-auto px-4">
+
+    <div class="text-center mb-14">
+      <div class="section-divider">
+        <span class="text-[#48cae4] tracking-[0.3em] text-sm font-medium uppercase">Voice</span>
+      </div>
+      <h2 class="text-3xl md:text-4xl font-bold heading-blue mb-3 tracking-wide">お客様の声</h2>
+      <div class="w-16 h-0.5 bg-[#90e0ef] mx-auto"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <!-- 声1 -->
+      <div class="card p-7 flex flex-col gap-4">
+        <div class="text-[#48cae4] text-xl tracking-widest">★★★★★</div>
+        <p class="text-[#1b1b1b]/75 text-sm leading-relaxed flex-grow">
+          産後の腰の不調が改善し、毎回のレッスンが楽しみです。丁寧に寄り添ってくれるので安心して通えます。
+        </p>
+        <div class="flex items-center gap-3 pt-3 border-t border-[#e0e7ef]">
+          <div class="w-10 h-10 rounded-full bg-[#48cae4]/20 flex items-center justify-center text-[#48cae4] font-bold text-sm">M</div>
+          <div>
+            <p class="font-bold heading-blue text-sm">M.S. さん</p>
+            <p class="text-[#1b1b1b]/50 text-xs">30代・2児のママ</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 声2 -->
+      <div class="card p-7 flex flex-col gap-4">
+        <div class="text-[#48cae4] text-xl tracking-widest">★★★★★</div>
+        <p class="text-[#1b1b1b]/75 text-sm leading-relaxed flex-grow">
+          猫背が改善し、周りから姿勢を褒められるように。50代からでも始めて良かったと実感しています。
+        </p>
+        <div class="flex items-center gap-3 pt-3 border-t border-[#e0e7ef]">
+          <div class="w-10 h-10 rounded-full bg-[#48cae4]/20 flex items-center justify-center text-[#48cae4] font-bold text-sm">K</div>
+          <div>
+            <p class="font-bold heading-blue text-sm">K.T. さん</p>
+            <p class="text-[#1b1b1b]/50 text-xs">50代・会社員</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 声3 -->
+      <div class="card p-7 flex flex-col gap-4">
+        <div class="text-[#48cae4] text-xl tracking-widest">★★★★★</div>
+        <p class="text-[#1b1b1b]/75 text-sm leading-relaxed flex-grow">
+          完全プライベートなので自分のペースで進められます。説明もわかりやすく、身体の変化を実感しています。
+        </p>
+        <div class="flex items-center gap-3 pt-3 border-t border-[#e0e7ef]">
+          <div class="w-10 h-10 rounded-full bg-[#48cae4]/20 flex items-center justify-center text-[#48cae4] font-bold text-sm">Y</div>
+          <div>
+            <p class="font-bold heading-blue text-sm">Y.N. さん</p>
+            <p class="text-[#1b1b1b]/50 text-xs">20代・OL</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+ 
+<!-- ========== 6. インストラクター紹介 ========== -->
+<section id="instructor" class="py-20 md:py-28 bg-white">
+  <div class="max-w-4xl mx-auto px-4">
+
+    <div class="text-center mb-14">
+      <div class="section-divider">
+        <span class="text-[#48cae4] tracking-[0.3em] text-sm font-medium uppercase">Instructor</span>
+      </div>
+      <h2 class="text-3xl md:text-4xl font-bold heading-blue mb-3 tracking-wide">インストラクター紹介</h2>
+      <div class="w-16 h-0.5 bg-[#90e0ef] mx-auto"></div>
+    </div>
+
+    <div class="flex flex-col md:flex-row items-center gap-12 bg-white rounded-3xl p-8 md:p-12 shadow-md">
+
+      <!-- 写真 -->
+      <div class="w-48 h-48 md:w-56 md:h-56 flex-shrink-0 rounded-full overflow-hidden shadow-lg border-4 border-[#48cae4]/20">
+        <img src="img/instructor.jpg" alt="インストラクター" class="w-full h-full object-cover" />
+      </div>
+
+      <!-- テキスト -->
+      <div class="flex flex-col gap-4 text-center md:text-left">
+        <div>
+          <p class="text-[#48cae4] tracking-[0.2em] text-xs font-medium mb-1">Head Instructor</p>
+          <p class="heading-blue font-bold text-2xl md:text-3xl tracking-wide">花田 美樹</p>
+          <p class="text-[#1b1b1b]/50 text-sm tracking-wide">HANADA Miki</p>
+        </div>
+
+        <div class="w-10 h-0.5 bg-[#90e0ef] mx-auto md:mx-0"></div>
+
+        <ul class="text-[#1b1b1b]/70 text-sm leading-loose space-y-1 list-none">
+          <li>🎓 STOTT PILATES® 国際認定インストラクター</li>
+          <li>🏥 理学療法士免許取得</li>
+          <li>✨ 指導歴12年・延べ5,000名以上指導</li>
+          <li>🌿 産前産後・シニアピラティス認定資格</li>
+        </ul>
+
+        <p class="text-[#1b1b1b]/65 text-sm leading-relaxed">
+          「身体を動かすことは、自分を知ること」。一人ひとりの身体と目標に寄り添い、継続を楽しくサポートします。
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+ 
+<!-- ========== 7. 店舗情報・アクセス ========== -->
+<section id="access" class="py-20 md:py-28 bg-[#f8f9fa]">
+  <div class="max-w-5xl mx-auto px-4">
+
+    <div class="text-center mb-14">
+      <div class="section-divider">
+        <span class="text-[#48cae4] tracking-[0.3em] text-sm font-medium uppercase">Access</span>
+      </div>
+      <h2 class="text-3xl md:text-4xl font-bold heading-blue mb-3 tracking-wide">店舗情報・アクセス</h2>
+      <div class="w-16 h-0.5 bg-[#90e0ef] mx-auto"></div>
+    </div>
+
+    <div class="flex flex-col md:flex-row gap-8">
+
+      <!-- 情報 -->
+      <div class="w-full md:w-1/2 bg-white rounded-2xl shadow-md p-8 flex flex-col gap-6">
+        <h3 class="text-xl font-bold heading-blue tracking-wide border-b border-[#e0e7ef] pb-3">
+          Pilates Studio BLOOM
+        </h3>
+
+        <div class="flex flex-col gap-5 text-sm">
+
+          <div class="flex gap-4">
+            <span class="text-[#48cae4] text-base mt-0.5">📍</span>
+            <div>
+              <p class="font-bold heading-blue mb-1">住所</p>
+              <p class="text-[#1b1b1b]/70 leading-relaxed">
+                〒220-0011<br />神奈川県横浜市西区高島 2-XX-XX<br />BLOOMビル 3F
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <span class="text-[#48cae4] text-base mt-0.5">🚉</span>
+            <div>
+              <p class="font-bold heading-blue mb-1">アクセス</p>
+              <p class="text-[#1b1b1b]/70 leading-relaxed">
+                JR・横浜市営地下鉄「横浜駅」東口より徒歩5分
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <span class="text-[#48cae4] text-base mt-0.5">🕐</span>
+            <div>
+              <p class="font-bold heading-blue mb-1">営業時間</p>
+              <p class="text-[#1b1b1b]/70 leading-relaxed">
+                平日 10:00〜21:00<br />土曜 9:00〜18:00<br />日曜 10:00〜16:00
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <span class="text-[#48cae4] text-base mt-0.5">📅</span>
+            <div>
+              <p class="font-bold heading-blue mb-1">定休日</p>
+              <p class="text-[#1b1b1b]/70">祝日・不定休（SNSにてご確認ください）</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <span class="text-[#48cae4] text-base mt-0.5">📞</span>
+            <div>
+              <p class="font-bold heading-blue mb-1">電話番号</p>
+              <a href="tel:0120-000-000" class="text-[#48cae4] font-bold hover:underline">0120-000-000</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 地図エリア -->
+      <!-- [変更] iframeのsrc URLを仕様に合わせて更新。住所確定後は q= パラメータを差し替えてください -->
+      <div class="w-full md:w-1/2">
+        <div class="rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+          <div class="w-full overflow-hidden bg-[#e0f7ff]" style="height:360px;">
+            <iframe
+              src="https://www.google.com/maps?q=横浜市西区高島2丁目&output=embed"
+              width="100%"
+              height="360"
+              style="border:0; display:block;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Pilates Studio BLOOM へのアクセス地図"
+            ></iframe>
+          </div>
+        </div>
+        <p class="text-[#1b1b1b]/50 text-xs text-center mt-2">
+          ※ 地図をクリックしてGoogleマップで開く
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+ 
+ <!-- ========== 予約セクション（ブラウン系に統一）========== -->
+<section id="reservation" class="py-20 md:py-28 bg-[#f5f0eb]">
+  <div class="max-w-5xl mx-auto px-4">
+
+    <!-- セクション見出し -->
+    <div class="text-center mb-12">
+      <span class="text-[#8b7355] tracking-[0.3em] text-sm font-medium uppercase">Reservation</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-[#5c4a32] mt-3 mb-3 tracking-wide">
+        24時間いつでもオンライン予約できます
+      </h2>
+      <div class="w-16 h-0.5 bg-[#8b7355] mx-auto mb-6"></div>
+      <p class="text-[#1b1b1b]/70 text-sm md:text-base leading-relaxed">
+        初回カウンセリングは無料。気になることは何でもお気軽にご相談ください。
+      </p>
+    </div>
+
+    <!-- Calendly インラインウィジェット -->
+    <div class="rounded-2xl overflow-hidden shadow-md mb-10 bg-white">
+      <div
+        class="calendly-inline-widget"
+        data-url="https://calendly.com/example/30min"
+        style="min-width:320px; height:450px; width:100%;">
+      </div>
+      <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    </div>
+
+    <!-- 代替CTA：電話・LINE -->
+    <div class="border-t border-[#d8cfc7] pt-10">
+      <p class="text-center text-[#1b1b1b]/60 text-sm mb-6 tracking-wide">
+        お電話・LINEからもご予約いただけます
+      </p>
+
+      <div class="flex flex-col sm:flex-row justify-center gap-4 max-w-md mx-auto">
+
+        <!-- 電話予約ボタン（ブラウン） -->
+        <a href="tel:0120-000-000"
+           class="flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-3.5
+                  bg-[#8b7355] text-white font-bold rounded-full shadow-md
+                  hover:bg-[#5c4a32] hover:-translate-y-0.5 transition-all duration-200 tracking-wider text-sm">
+          📞 お電話でのご予約
+        </a>
+
+        <!-- LINEボタン（LINEカラーはそのまま） -->
+        <a href="https://lin.ee/XXXXXXX"
+           target="_blank" rel="noopener noreferrer"
+           class="flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-3.5
+                  bg-[#06c755] text-white font-bold rounded-full shadow-md
+                  hover:bg-[#05a847] hover:-translate-y-0.5 transition-all duration-200 tracking-wider text-sm">
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.05 2 11.07c0 3.53 2.16 6.62 5.4 8.4l-.68 2.53 2.9-1.52C10.47 20.8 11.22 20.93 12 20.93c5.52 0 10-4.05 10-9.06C22 6.05 17.52 2 12 2z"/>
+          </svg>
+          LINEで予約
+        </a>
+
+      </div>
+
+      <!-- 営業時間補足 -->
+      <p class="text-center text-[#1b1b1b]/50 text-xs mt-5 leading-relaxed">
+        📞 電話受付：平日 10:00〜20:00 ／ 土日 9:00〜17:00<br />
+        💬 LINEは24時間受付（返信は営業時間内）
+      </p>
+    </div>
+
+  </div>
+</section>
+<!-- ========== 予約セクションここまで ========== -->
+
+ 
+ 
+  <!-- ========== フッター ========== -->
+  <footer class="bg-[#023e8a] text-white py-10">
+  <div class="max-w-5xl mx-auto px-4">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+
+      <div>
+        <p class="text-white font-bold tracking-widest text-lg mb-1">Pilates Studio BLOOM</p>
+        <p class="text-white/80 text-xs leading-relaxed">
+          神奈川県横浜市西区高島 2-XX-XX BLOOMビル 3F<br />TEL: 0120-000-000
+        </p>
+      </div>
+
+      <nav class="flex flex-wrap gap-5 text-xs justify-center text-white/80">
+        <a href="#concept" class="hover:text-white transition-colors">コンセプト</a>
+        <a href="#reasons" class="hover:text-white transition-colors">選ばれる理由</a>
+        <a href="#price" class="hover:text-white transition-colors">料金</a>
+        <a href="#voice" class="hover:text-white transition-colors">お客様の声</a>
+        <a href="#instructor" class="hover:text-white transition-colors">インストラクター</a>
+        <a href="#access" class="hover:text-white transition-colors">アクセス</a>
+      </nav>
+
+    </div>
+
+    <div class="border-t border-white/10 mt-8 pt-6 text-center text-xs text-white/60">
+      <p>&copy; 2024 Pilates Studio BLOOM. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+ 
+</body>
+</html>
