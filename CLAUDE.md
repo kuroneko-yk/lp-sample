@@ -1,17 +1,43 @@
-# CLAUDE.md
+# プロジェクトガイドライン（LP-SAMPLE）
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+このプロジェクトでは、Claude Code が LP 制作を行う際のルールを以下に定める。
 
-## Commands
+## 1. 言語と記述ルール
 
-<!-- Add build, lint, test, and dev commands here. Example:
-- Build: `npm run build`
-- Dev: `npm run dev`
-- Test: `npm test`
-- Test (single): `npm test -- path/to/test`
-- Lint: `npm run lint`
--->
+- HTML はすべて日本語で記述する。
+- CSS のコメントも日本語で統一する。
+- テキストは読みやすさを優先し、適切に改行を入れる。
+- alt 属性は必ず日本語で意味のある説明を書く。
 
-## Architecture
+## 2. HTML / CSS の構造と整合性
 
-<!-- Describe the high-level architecture here once the project is set up. -->
+- 現在の index.html は内部スタイルシート（<style>）を使用している。
+- Claude Code は、内部スタイルシートの内容を正確に読み取り、必要に応じて style.css を生成してよい。
+- index.html を修正した場合、style.css も必ず整合性を取る。
+- 内部スタイルシートを外部CSSへ移行する際は、以下を徹底する：
+  - 既存のスタイル（nav-link, btn-primary, heading-blue, card など）を正確に移植する。
+  - ホバーアニメーション、影、色、余白などの視覚効果を保持する。
+  - index.html 内の <style> は削除し、style.css に統合する。
+- セクション構造（header / main / footer）は崩さない。
+- クラス名は英語で統一し、意味のある名前にする。
+
+## 3. デザイン方針
+
+- 余白は広めに取り、読みやすさを優先する。
+- 画像は横幅 100% でレスポンシブ対応する。
+- フォントはシンプルで視認性の高いものを想定する（Noto Sans JP を使用）。
+- 色は白・黒・アクセントカラー1色（#023e8a または #48cae4）を基本とする。
+- カードやボタンの影・ホバーアニメーションは現在のデザインを維持する。
+
+## 4. コードスタイル
+
+- インデントはスペース2つ。
+- 不要なタグやコメントは残さない。
+- セマンティック HTML を優先する（section, article, nav など）。
+
+## 5. 作業ルール
+
+- `/edit index.html` や `/edit style.css` の指示があった場合、
+  上記ルールに従って修正を行う。
+- 新しいセクションを追加する場合は、HTML と CSS の両方を更新する。
+- 画像を追加する場合は、img フォルダを使用する。
