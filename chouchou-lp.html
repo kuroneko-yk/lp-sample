@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hair Salon ChouChou｜幡ヶ谷の髪質改善プライベートサロン</title>
+  <meta name="description" content="東京都渋谷区幡ヶ谷の完全予約制プライベートサロン Hair Salon ChouChou。髪質改善トリートメント専門で、20〜50代女性の“似合う”を一緒に見つけます。" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- OGP -->
+  <meta property="og:title" content="Hair Salon ChouChou｜幡ヶ谷の髪質改善プライベートサロン" />
+  <meta property="og:description" content="完全予約制のプライベートサロン。髪質改善トリートメント専門で、あなたの“似合う”を一緒に見つけます。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://example.com/chouchou" />
+  <meta property="og:image" content="https://placehold.co/1200x630/png?text=Hair+Salon+ChouChou" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Custom stylesheet -->
+  <link rel="stylesheet" href="stylesheet2.css" />
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Noto Sans JP', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+  .access-map-box {
+  width: 100%;
+  max-width: 600px; /* PCで広がりすぎない */
+  margin: 0 auto 24px; /* 中央寄せ＋下に余白 */
+}
+
+.access-map-box img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px; /* 世界観に合わせて柔らかく */
+}
+
+    .access-text {
+  margin-bottom: 16px;
+  line-height: 1.7;
+}
+
+  </style>
+</head>
+<body class="bg-[#f7f4f1] text-gray-800">
+  <!-- Header -->
+  <header class="sticky top-0 z-30 bg-[#f7f4f1]/90 backdrop-blur border-b border-[#e0d7d0]">
+    <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
+      <div class="flex items-center gap-2">
+        <span class="text-sm tracking-[0.25em] uppercase text-[#8b7355]">Hair Salon</span>
+        <span class="text-lg font-semibold text-[#8b7355]">ChouChou</span>
+      </div>
+      <nav class="hidden md:flex gap-6 text-sm">
+        <a href="#about" class="hover:text-[#8b7355] transition">初めての方へ</a>
+        <a href="#menu" class="hover:text-[#8b7355] transition">メニュー</a>
+        <a href="#voice" class="hover:text-[#8b7355] transition">お客様の声</a>
+        <a href="#stylist" class="hover:text-[#8b7355] transition">スタイリスト</a>
+        <a href="#access" class="hover:text-[#8b7355] transition">アクセス</a>
+      </nav>
+      <a href="#reserve" class="hidden md:inline-flex items-center px-4 py-2 rounded-full bg-[#8b7355] text-white text-sm font-medium shadow-sm hover:bg-[#755f45] transition">
+        ご予約はこちら
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+<section
+  id="hero"
+  class="relative bg-cover bg-center bg-no-repeat"
+  style="background-image: url('img/hero-1.jpg');"
+>
+  <!-- ベージュのオーバーレイ -->
+  <div class="absolute inset-0 bg-[#BDB3AC]/20"></div>
+
+  <!-- コンテンツ -->
+  <div class="relative max-w-6xl mx-auto px-4 py-16 md:py-28 text-white">
+    <p class="text-xs tracking-[0.3em] uppercase text-white/80 mb-4">
+      Private Hair Salon
+    </p>
+
+    <!-- キャッチコピー -->
+    <h1 class="text-[#FAFAFA] drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]
+text-3xl md:text-5xl font-bold leading-relaxed md:leading-loose tracking-wide">
+      あなたの
+      <span class="border-b-2 border-[#8b7355] whitespace-nowrap">
+        「似合う」
+      </span>
+      を、<br class="hidden md:block">
+      見つける場所
+    </h1>
+
+    <!-- サブコピー -->
+    <p class="mt-6 text-sm md:text-lg text-white/90 leading-relaxed">
+      京王新線幡ヶ谷駅 徒歩3分・完全予約制のプライベートサロン。<br class="hidden md:block">
+      髪質改善トリートメント専門で、あなたの髪に寄り添います。
+    </p>
+
+    <!-- ボタン -->
+    <div class="mt-8 flex flex-col sm:flex-row gap-4">
+      <a
+        href="tel:0312345678"
+        class="inline-flex items-center justify-center px-8 py-3 rounded-full bg-white text-[#8b7355] font-medium text-sm shadow hover:bg-[#e2d6cc] transition">
+        予約する（TEL：03-1234-5678）
+      </a>
+
+      <a
+        href="#reserve"
+        class="inline-flex items-center justify-center px-8 py-3 rounded-full border border-white text-white text-sm hover:bg-white/10 transition"
+      >
+        LINEで予約する
+      </a>
+    </div>
+  </div>
+</section>
+
+
+  <!-- こんなお悩みありませんか？ -->
+  <section id="about" class="py-12 md:py-16 bg-[#f7f4f1]">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-semibold text-center text-[#8b7355] mb-8">
+        こんなお悩み、ありませんか？
+      </h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-2xl shadow-sm p-6 flex flex-col items-center text-center">
+          <div class="w-12 h-12 rounded-full bg-[#BDB3AC]/30 flex items-center justify-center mb-3">
+            <span class="text-2xl">💧</span>
+          </div>
+          <p class="font-medium mb-2">髪のパサつき・広がり</p>
+          <p class="text-xs text-gray-600">
+            乾燥やダメージで、<br />まとまりにくくなった髪をどうにかしたい。
+          </p>
+        </div>
+        <div class="bg-white rounded-2xl shadow-sm p-6 flex flex-col items-center text-center">
+          <div class="w-12 h-12 rounded-full bg-[#BDB3AC]/30 flex items-center justify-center mb-3">
+            <span class="text-2xl">🌙</span>
+          </div>
+          <p class="font-medium mb-2">白髪が目立つ</p>
+          <p class="text-xs text-gray-600">
+            白髪染めを繰り返してダメージが気になる。<br />自然にカバーしたい。
+          </p>
+        </div>
+        <div class="bg-white rounded-2xl shadow-sm p-6 flex flex-col items-center text-center">
+          <div class="w-12 h-12 rounded-full bg-[#BDB3AC]/30 flex items-center justify-center mb-3">
+            <span class="text-2xl">✨</span>
+          </div>
+          <p class="font-medium mb-2">スタイリングが決まらない</p>
+          <p class="text-xs text-gray-600">
+            朝のスタイリングに時間がかかる。<br />簡単に決まるスタイルにしたい。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 当サロンが選ばれる3つの理由 -->
+  <section id="reason" class="py-12 md:py-16 bg-white">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-semibold text-center text-[#8b7355] mb-10">
+        当サロンが選ばれる3つの理由
+      </h2>
+
+      <!-- 理由1 -->
+      <div class="grid md:grid-cols-2 gap-8 items-center mb-10">
+        <div>
+          <img
+            src="img/reason_c1.jpg"
+            alt="プライベートサロンの落ち着いた店内の様子"
+            class="rounded-2xl shadow-md w-full h-full object-cover"
+          />
+        </div>
+        <div class="space-y-3">
+          <p class="text-xs tracking-[0.25em] uppercase text-[#8b7355]">Reason 01</p>
+          <h3 class="text-xl font-semibold text-[#8b7355]">完全予約制のプライベート空間</h3>
+          <p class="text-sm text-gray-700">
+            お一人ずつのご案内で、周りを気にせずゆったりとお過ごしいただけます。カウンセリングから仕上げまで、担当スタイリストが責任を持って対応いたします。
+          </p>
+        </div>
+      </div>
+
+      <!-- 理由2 -->
+      <div class="grid md:grid-cols-2 gap-8 items-center mb-10 md:flex-row-reverse">
+        <div class="md:order-2">
+          <img
+            src="img/reason_c2.jpg"
+            alt="髪質改善トリートメントを受ける女性の様子"
+            class="rounded-2xl shadow-md w-full h-full object-cover"
+          />
+        </div>
+        <div class="space-y-3 md:order-1">
+          <p class="text-xs tracking-[0.25em] uppercase text-[#8b7355]">Reason 02</p>
+          <h3 class="text-xl font-semibold text-[#8b7355]">髪質改善トリートメント専門</h3>
+          <p class="text-sm text-gray-700">
+            髪の状態を丁寧に診断し、ダメージレベルやライフスタイルに合わせたトリートメントをご提案。続けるほどに、指通りの良い素直な髪へ導きます。
+          </p>
+        </div>
+      </div>
+
+      <!-- 理由3 -->
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <img
+            src="img/reason_c3.jpg"
+            alt="カウンセリングを行うスタイリストとお客様"
+            class="rounded-2xl shadow-md w-full h-full object-cover"
+          />
+        </div>
+        <div class="space-y-3">
+          <p class="text-xs tracking-[0.25em] uppercase text-[#8b7355]">Reason 03</p>
+          <h3 class="text-xl font-semibold text-[#8b7355]">「似合う」と「扱いやすさ」の両立</h3>
+          <p class="text-sm text-gray-700">
+            顔立ち・骨格・雰囲気・ライフスタイルを踏まえたご提案で、「似合う」と「毎日続けられるスタイル」を両立。ご自宅でのケア方法も丁寧にお伝えします。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- メニュー・料金表 -->
+  <section id="menu" class="py-12 md:py-16 bg-[#f7f4f1]">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-semibold text-center text-[#8b7355] mb-8">
+        メニュー・料金表
+      </h2>
+
+      <div class="overflow-x-auto bg-white rounded-2xl shadow-sm">
+        <table class="min-w-full text-sm">
+          <thead class="bg-[#BDB3AC]/20">
+            <tr>
+              <th class="px-4 py-3 text-left text-xs font-semibold text-gray-700">メニュー</th>
+              <th class="px-4 py-3 text-left text-xs font-semibold text-gray-700">内容</th>
+              <th class="px-4 py-3 text-right text-xs font-semibold text-gray-700">料金（税込）</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t border-[#e5ddd6]">
+              <td class="px-4 py-3 font-medium text-gray-800">
+                カット
+              </td>
+              <td class="px-4 py-3 text-gray-700">
+                カウンセリング込み。ライフスタイルに合わせた再現性の高いカット。
+              </td>
+              <td class="px-4 py-3 text-right font-semibold">
+                ¥6,600
+              </td>
+            </tr>
+            <tr class="border-t border-[#e5ddd6] bg-[#fffaf6]">
+              <td class="px-4 py-3 font-medium text-gray-800 flex items-center gap-2">
+                カット＋カラー
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-[#8b7355] text-white">
+                  人気No.1
+                </span>
+              </td>
+              <td class="px-4 py-3 text-gray-700">
+                肌色や雰囲気に合わせたカラー提案。白髪ぼかしにも対応。
+              </td>
+              <td class="px-4 py-3 text-right font-semibold">
+                ¥13,200
+              </td>
+            </tr>
+            <tr class="border-t border-[#e5ddd6]">
+              <td class="px-4 py-3 font-medium text-gray-800">
+                髪質改善トリートメント
+              </td>
+              <td class="px-4 py-3 text-gray-700">
+                ダメージやうねりが気になる方に。内部補修と表面コーティングで、艶とまとまりを実感。
+              </td>
+              <td class="px-4 py-3 text-right font-semibold">
+                ¥16,500
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="mt-4 text-xs text-gray-600">
+        ※初回カウンセリングは無料です。髪のお悩みやご希望のスタイルをじっくりお伺いします。
+      </p>
+    </div>
+  </section>
+
+  <!-- お客様の声 -->
+  <section id="voice" class="py-12 md:py-16 bg-white">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-semibold text-center text-[#8b7355] mb-8">
+        お客様の声
+      </h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <article class="bg-[#f7f4f1] rounded-2xl p-5 shadow-sm">
+          <p class="text-xs text-[#8b7355] mb-1">40代・会社員</p>
+          <p class="text-sm font-semibold mb-1">毎朝のスタイリングが本当に楽に</p>
+          <p class="text-xs text-yellow-500 mb-2">★★★★★</p>
+          <p class="text-xs text-gray-700">
+            髪質改善トリートメントを続けて3回目ですが、うねりと広がりが落ち着きました。朝のスタイリング時間が短くなって、とても助かっています。
+          </p>
+        </article>
+        <article class="bg-[#f7f4f1] rounded-2xl p-5 shadow-sm">
+          <p class="text-xs text-[#8b7355] mb-1">30代・フリーランス</p>
+          <p class="text-sm font-semibold mb-1">白髪ぼかしが自然で周りにも好評</p>
+          <p class="text-xs text-yellow-500 mb-2">★★★★★</p>
+          <p class="text-xs text-gray-700">
+            白髪染め感が強く出るのが嫌だったのですが、自然に馴染むカラーを提案していただきました。職場でも好評で、とても気に入っています。
+          </p>
+        </article>
+        <article class="bg-[#f7f4f1] rounded-2xl p-5 shadow-sm">
+          <p class="text-xs text-[#8b7355] mb-1">50代・主婦</p>
+          <p class="text-sm font-semibold mb-1">落ち着いた空間でリラックスできる</p>
+          <p class="text-xs text-yellow-500 mb-2">★★★★★</p>
+          <p class="text-xs text-gray-700">
+            他のお客様と重ならないので、とても落ち着いて過ごせます。髪の悩みも話しやすく、毎回リフレッシュできる時間になっています。
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- スタイリスト紹介 -->
+  <section id="stylist" class="py-12 md:py-16 bg-[#f7f4f1]">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-semibold text-center text-[#8b7355] mb-8">
+        スタイリスト紹介
+      </h2>
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div class="flex justify-center">
+          <img
+            src="img/hairstylist.jpg"
+            alt="Hair Salon ChouChou スタイリストのプロフィール写真"
+            class="rounded-full w-48 h-48 object-cover shadow-md"
+          />
+        </div>
+        <div class="space-y-3">
+          <p class="text-xs tracking-[0.25em] uppercase text-[#8b7355]">Owner Stylist</p>
+          <h3 class="text-xl font-semibold text-[#8b7355]">山本 さくら</h3>
+          <p class="text-xs text-gray-600">
+            美容師歴15年以上／髪質改善・大人世代のデザインカラーが得意
+          </p>
+          <p class="text-sm text-gray-700">
+            「毎日鏡を見るのが少し楽しみになるようなヘアスタイル」をテーマに、お一人おひとりの“似合う”を一緒に探していきます。髪のお悩みや、なりたいイメージを、ぜひ遠慮なくお聞かせください。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 店舗情報・アクセス -->
+  <section id="access" class="py-12 md:py-16 bg-white">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-semibold text-center text-[#8b7355] mb-8">
+        店舗情報・アクセス
+      </h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="space-y-3 text-sm">
+          <p><span class="font-semibold text-[#8b7355]">店名：</span>Hair Salon ChouChou</p>
+          <p><span class="font-semibold text-[#8b7355]">住所：</span>東京都渋谷区幡ヶ谷〇丁目〇-〇</p>
+          <p><span class="font-semibold text-[#8b7355]">アクセス：</span>京王新線「幡ヶ谷駅」徒歩3分</p>
+          <p><span class="font-semibold text-[#8b7355]">営業時間：</span>10:00〜20:00（最終受付 19:00）</p>
+          <p><span class="font-semibold text-[#8b7355]">定休日：</span>火曜日・不定休</p>
+          <p><span class="font-semibold text-[#8b7355]">電話番号：</span>03-1234-5678</p>
+        </div>
+        <div class="space-y-3">
+          <div class="access-map-box w-full bg-[#f7f4f1] rounded-2xl overflow-hidden border border-[#e5ddd6]">
+  <img src="img/salon_map.jpg" alt="サロンアクセスマップ" class="w-full h-auto block">
+</div>
+<div class="access-text text-xs text-gray-600">
+ 幡ヶ谷駅北口から商店街をまっすぐ進み、〇〇交差点を左折してすぐのビル2Fです。エレベーターでお上がりください。
+          </div>
+</div>
+ 
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 予約CTA -->
+  <section id="reserve" class="py-12 md:py-16 bg-[#BDB3AC]">
+    <div class="max-w-5xl mx-auto px-4 text-center text-white">
+      <h2 class="text-2xl md:text-3xl font-semibold mb-4">
+        あなたの「似合う」を、一緒に見つけませんか？
+      </h2>
+      <p class="text-sm md:text-base mb-6">
+        完全予約制のプライベートサロンのため、事前のご予約をお願いしております。<br class="hidden md:block" />
+        髪のお悩みやご希望のスタイルなど、まずはお気軽にご相談ください。
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a href="tel:0312345678" class="inline-flex items-center justify-center px-8 py-3 rounded-full bg-white text-[#8b7355] font-medium text-sm shadow hover:bg-[#e2d6cc] transition">
+          電話で予約する（03-1234-5678）
+        </a>
+        <a href="https://line.me" target="_blank" class="inline-flex items-center justify-center px-8 py-3 rounded-full border border-white text-white text-sm hover:bg-white/10 transition">
+          LINEで予約・相談する
+        </a>
+      </div>
+      <p class="mt-4 text-[11px] text-white/80">
+        ※施術中はお電話に出られない場合がございます。その際は折り返しご連絡いたします。
+      </p>
+    </div>
+  </section>
+
+  <footer class="py-6 bg-[#f7f4f1] text-center text-[11px] text-gray-500">
+    <p>© Hair Salon ChouChou / 東京都渋谷区幡ヶ谷</p>
+  </footer>
+</body>
+</html>
