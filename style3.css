@@ -1,0 +1,728 @@
+/* =====================================================
+   style3.css — のぞみ整体LP プレーンCSS版
+   ===================================================== */
+
+/* === リセット・基本設定 === */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: #fff;
+  color: #1f2937;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* === レイアウト共通 === */
+.container {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.section {
+  padding: 3rem 0;
+}
+
+.section--white {
+  background-color: #fff;
+}
+
+.section--light {
+  background-color: #f3faf7;
+}
+
+.section--green {
+  background-color: #2d8a6e;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  color: #2d8a6e;
+  margin: 0 0 2rem;
+}
+
+/* === ヘッダー === */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.header-inner {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-logo-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #2d8a6e;
+  margin: 0;
+}
+
+.header-logo-name {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #2d8a6e;
+  margin: 0;
+}
+
+.header-nav {
+  display: none;
+  gap: 1.5rem;
+  font-size: 0.875rem;
+}
+
+.header-nav-link {
+  color: #1f2937;
+  transition: color 0.2s;
+}
+
+.header-nav-link:hover {
+  color: #2d8a6e;
+}
+
+.header-cta {
+  display: none;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  background: #2d8a6e;
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 500;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: background 0.2s;
+}
+
+.header-cta:hover {
+  background: #246b55;
+}
+
+/* === ヒーローセクション === */
+.hero {
+  position: relative;
+  height: 80vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(111, 174, 154, 0.2);
+}
+
+.hero-content {
+  position: relative;
+  max-width: 72rem;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.hero-eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 1.5rem;
+}
+
+.hero-title {
+  font-size: 1.875rem;
+  font-weight: 600;
+  line-height: 1.625;
+  letter-spacing: 0.08em;
+  color: #fff;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
+  margin: 0;
+}
+
+.hero-description {
+  margin-top: 2rem;
+  font-size: 0.875rem;
+  color: #fff;
+  line-height: 1.85;
+  letter-spacing: 0.02em;
+  background: rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(4px);
+  padding: 1rem 1.25rem;
+  border-radius: 0.375rem;
+}
+
+.hero-actions {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.hero-btn-primary,
+.hero-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  transition: background 0.2s;
+}
+
+.hero-btn-primary {
+  background: #6fae9a;
+  color: #fff;
+  font-weight: 500;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.hero-btn-primary:hover {
+  background: #4fae8c;
+}
+
+.hero-btn-secondary {
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.hero-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* === 症状チェックリスト === */
+.symptom-lead {
+  font-size: 0.875rem;
+  text-align: center;
+  color: #374151;
+  margin-bottom: 1.5rem;
+}
+
+.symptom-grid {
+  display: grid;
+  gap: 1rem;
+  font-size: 0.875rem;
+}
+
+.symptom-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  background: #f3faf7;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  cursor: default;
+}
+
+.symptom-item input[type="checkbox"] {
+  margin-top: 0.2rem;
+  accent-color: #2d8a6e;
+  flex-shrink: 0;
+}
+
+.symptom-note {
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  text-align: center;
+  color: #4b5563;
+}
+
+/* === 選ばれる理由 === */
+.reason-grid {
+  display: grid;
+  gap: 1.5rem;
+  font-size: 0.875rem;
+}
+
+.reason-card {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  padding: 1.25rem;
+}
+
+.reason-card-img {
+  width: 100%;
+  border-radius: 0.75rem;
+}
+
+.reason-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.reason-card-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: #e0f2ec;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.reason-card-icon-number {
+  font-size: 1.25rem;
+  color: #2d8a6e;
+}
+
+.reason-card-title {
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.reason-card-body {
+  font-size: 0.75rem;
+  color: #374151;
+  line-height: 1.625;
+  margin: 0;
+}
+
+/* === 料金テーブル === */
+.price-table-wrapper {
+  overflow-x: auto;
+  background: #f3faf7;
+  border-radius: 1rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.price-table {
+  width: 100%;
+  min-width: 480px;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.price-table thead {
+  background: #e0f2ec;
+}
+
+.price-table th {
+  padding: 0.75rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #374151;
+  text-align: left;
+}
+
+.price-table th:last-child {
+  text-align: right;
+}
+
+.price-table td {
+  padding: 0.75rem 1rem;
+  color: #374151;
+  border-top: 1px solid #d4e7df;
+  text-align: left;
+}
+
+.price-table td:first-child {
+  font-weight: 500;
+  color: #1f2937;
+}
+
+.price-table td:last-child {
+  text-align: right;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.price-note {
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  color: #4b5563;
+}
+
+/* === 患者様の声 === */
+.voice-grid {
+  display: grid;
+  gap: 1.5rem;
+  font-size: 0.875rem;
+}
+
+.voice-card {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 1.25rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.voice-card-meta {
+  font-size: 0.75rem;
+  color: #2d8a6e;
+  margin: 0 0 0.25rem;
+}
+
+.voice-card-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem;
+}
+
+.voice-card-stars {
+  font-size: 0.75rem;
+  color: #eab308;
+  margin: 0 0 0.5rem;
+}
+
+.voice-card-body {
+  font-size: 0.75rem;
+  color: #374151;
+  line-height: 1.625;
+  margin: 0;
+}
+
+/* === 院長挨拶 === */
+.director-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.director-photo-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.director-photo {
+  width: 11rem;
+  height: 11rem;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.director-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+}
+
+.director-label {
+  font-size: 0.75rem;
+  color: #2d8a6e;
+  margin: 0;
+}
+
+.director-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+}
+
+.director-cert,
+.director-career {
+  font-size: 0.75rem;
+  color: #4b5563;
+  margin: 0;
+}
+
+.director-message {
+  font-size: 0.875rem;
+  color: #374151;
+  margin: 0;
+}
+
+/* === よくある質問 === */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 0.875rem;
+}
+
+.faq-item {
+  background: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+}
+
+.faq-item summary {
+  font-weight: 600;
+  cursor: pointer;
+  color: #1f2937;
+  list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item p {
+  margin: 0.5rem 0 0;
+  font-size: 0.75rem;
+  color: #374151;
+}
+
+/* === アクセス・診療時間 === */
+.access-grid {
+  display: grid;
+  gap: 2rem;
+  font-size: 0.875rem;
+}
+
+.access-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.access-info p {
+  margin: 0;
+}
+
+.access-label {
+  font-weight: 600;
+  color: #2d8a6e;
+}
+
+.access-hours-wrapper {
+  overflow-x: auto;
+  margin-top: 0.25rem;
+}
+
+.access-hours-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.75rem;
+  border: 1px solid #e5e7eb;
+}
+
+.access-hours-table thead {
+  background: #f3faf7;
+}
+
+.access-hours-table th,
+.access-hours-table td {
+  padding: 0.5rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.access-hours-table tr:last-child td {
+  border-bottom: none;
+}
+
+.access-note {
+  font-size: 0.75rem;
+  color: #4b5563;
+  margin: 0;
+}
+
+.access-map-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.access-map {
+  width: 100%;
+  height: 16rem;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.access-map iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.access-map-note {
+  font-size: 0.75rem;
+  color: #4b5563;
+  margin: 0;
+}
+
+/* === 予約CTAセクション === */
+.reserve-inner {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-align: center;
+  color: #fff;
+}
+
+.reserve-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 1rem;
+}
+
+.reserve-desc {
+  font-size: 0.875rem;
+  color: #fff;
+  margin: 0 0 1.5rem;
+}
+
+.reserve-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.reserve-btn-tel,
+.reserve-btn-web {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  transition: background 0.2s;
+}
+
+.reserve-btn-tel {
+  background: #fff;
+  color: #2d8a6e;
+  font-weight: 500;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.reserve-btn-tel:hover {
+  background: #e6f4f0;
+}
+
+.reserve-btn-web {
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.reserve-btn-web:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.reserve-note {
+  margin-top: 1rem;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* === フッター === */
+.site-footer {
+  padding: 1.5rem 0;
+  background: #f3faf7;
+  text-align: center;
+  font-size: 11px;
+  color: #6b7280;
+}
+
+/* =====================================================
+   レスポンシブ（タブレット・PC）
+   ===================================================== */
+@media (min-width: 640px) {
+  .hero-actions {
+    flex-direction: row;
+  }
+
+  .reserve-actions {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 4rem 0;
+  }
+
+  .section-title {
+    font-size: 1.875rem;
+  }
+
+  /* ヘッダー */
+  .header-nav {
+    display: flex;
+  }
+
+  .header-cta {
+    display: inline-flex;
+  }
+
+  /* ヒーロー */
+  .hero-title {
+    font-size: 3rem;
+    line-height: 1.375;
+  }
+
+  .hero-description {
+    font-size: 1.125rem;
+    max-width: 490px;
+  }
+
+  /* 症状・理由・声グリッド */
+  .symptom-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .reason-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .voice-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* 院長 */
+  .director-grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
+  /* アクセス */
+  .access-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .access-map {
+    height: 24rem;
+  }
+
+  /* CTA */
+  .reserve-title {
+    font-size: 1.875rem;
+  }
+
+  .reserve-desc {
+    font-size: 1rem;
+  }
+}

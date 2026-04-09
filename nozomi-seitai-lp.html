@@ -13,122 +13,96 @@
   <meta property="og:url" content="https://example.com/nozomi-seitai" />
   <meta property="og:image" content="https://placehold.co/1200x630/png?text=Nozomi+Seitai" />
 
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    }
-  </style>
+  <link rel="stylesheet" href="style3.css" />
 </head>
-<body class="bg-white text-gray-800">
-  <!-- Header -->
-  <header class="sticky top-0 z-30 bg-white/90 backdrop-blur border-b border-gray-100">
-    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+<body>
+  <!-- ヘッダー -->
+  <header class="site-header">
+    <div class="header-inner">
       <div>
-        <p class="text-xs tracking-[0.25em] uppercase text-[#2d8a6e]">Seitai Salon</p>
-        <p class="text-lg font-semibold text-[#2d8a6e]">のぞみ整体</p>
+        <p class="header-logo-label">Seitai Salon</p>
+        <p class="header-logo-name">のぞみ整体</p>
       </div>
-      <nav class="hidden md:flex gap-6 text-sm">
-        <a href="#symptoms" class="hover:text-[#2d8a6e] transition">こんな症状の方へ</a>
-        <a href="#reason" class="hover:text-[#2d8a6e] transition">選ばれる理由</a>
-        <a href="#price" class="hover:text-[#2d8a6e] transition">料金案内</a>
-        <a href="#voice" class="hover:text-[#2d8a6e] transition">患者様の声</a>
-        <a href="#access" class="hover:text-[#2d8a6e] transition">アクセス</a>
+      <nav class="header-nav">
+        <a href="#symptoms" class="header-nav-link">こんな症状の方へ</a>
+        <a href="#reason" class="header-nav-link">選ばれる理由</a>
+        <a href="#price" class="header-nav-link">料金案内</a>
+        <a href="#voice" class="header-nav-link">患者様の声</a>
+        <a href="#access" class="header-nav-link">アクセス</a>
       </nav>
-      <a href="#reserve" class="hidden md:inline-flex items-center px-4 py-2 rounded-full bg-[#2d8a6e] text-white text-sm font-medium shadow hover:bg-[#246b55] transition">
+      <a href="#reserve" class="header-cta">
         無料相談・ご予約
       </a>
     </div>
   </header>
 
-  <!-- Hero Section -->
-<section
-  id="hero"
-  class="relative h-[80vh] bg-cover bg-center bg-no-repeat"
-  style="background-image: url('img/hero-2.jpg');"
->
-  <div class="absolute inset-0 bg-[#6fae9a]/20"></div>
-
-  <!-- コンテンツを縦方向中央に -->
-  <div class="relative max-w-6xl mx-auto h-full flex items-center px-4">
-    <div>
-      <p class="text-xs tracking-[0.3em] uppercase text-black-30 mb-6">
-        Autonomic Nervous System Care
-      </p>
-
-      <h1 class="text-3xl md:text-5xl font-semibold leading-relaxed md:leading-snug
-                 tracking-[0.08em] text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">
-        自律神経に特化した<br class="hidden md:block">
-        整体サロンです
-      </h1>
-
-      <p class="mt-8 text-sm md:text-lg text-white 
-                 leading-[1.85] tracking-[0.02em]
-                 bg-black/15 backdrop-blur-sm px-5 py-4 rounded-md
-                 md:max-w-[490px]">
-        肩こり・腰痛・めまい・更年期障害・交通事故後の不調など、
-        「なんとなくつらい」を根本から整える整体です。
-      </p>
-
-      <div class="mt-10 flex flex-col sm:flex-row gap-4">
-        <a
-          href="#reserve"
-          class="inline-flex items-center justify-center px-8 py-3 rounded-full bg-[#6fae9a] text-[#2d8a6e] font-medium text-sm shadow hover:bg-[#4fae8c] text-white transition">
-          無料相談・ご予約はこちら
-        </a>
-
-        <a
-          href="tel:0781234567"
-          class="inline-flex items-center justify-center px-8 py-3 rounded-full border border-white text-white text-sm hover:bg-white/10 transition">
-          電話で相談する（078-123-4567）
-        </a>
+  <!-- ヒーローセクション -->
+  <section
+    id="hero"
+    class="hero"
+    style="background-image: url('img/hero-2.jpg');"
+  >
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div>
+        <p class="hero-eyebrow">
+          Autonomic Nervous System Care
+        </p>
+        <h1 class="hero-title">
+          自律神経に特化した<br>
+          整体サロンです
+        </h1>
+        <p class="hero-description">
+          肩こり・腰痛・めまい・更年期障害・交通事故後の不調など、
+          「なんとなくつらい」を根本から整える整体です。
+        </p>
+        <div class="hero-actions">
+          <a href="#reserve" class="hero-btn-primary">
+            無料相談・ご予約はこちら
+          </a>
+          <a href="tel:0781234567" class="hero-btn-secondary">
+            電話で相談する（078-123-4567）
+          </a>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- こんな症状でお悩みの方へ -->
-  <section id="symptoms" class="py-12 md:py-16 bg-white">
-    <div class="max-w-5xl mx-auto px-4">
-      <h2 class="text-2xl md:text-3xl font-semibold text-center text-[#2d8a6e] mb-8">
-        こんな症状でお悩みの方へ
-      </h2>
-      <p class="text-sm text-center text-gray-700 mb-6">
-        「病院では異常なしと言われたけれど、なんとなくつらい…」<br class="hidden md:block" />
+  <section id="symptoms" class="section section--white">
+    <div class="container">
+      <h2 class="section-title">こんな症状でお悩みの方へ</h2>
+      <p class="symptom-lead">
+        「病院では異常なしと言われたけれど、なんとなくつらい…」<br>
         そんな自律神経の乱れからくる不調でお悩みではありませんか？
       </p>
-      <div class="grid md:grid-cols-3 gap-4 text-sm">
-        <label class="flex items-start gap-2 bg-[#f3faf7] rounded-xl p-4">
-          <input type="checkbox" class="mt-1 text-[#2d8a6e]" checked />
+      <div class="symptom-grid">
+        <label class="symptom-item">
+          <input type="checkbox" checked />
           <span>慢性的な肩こりが続いている</span>
         </label>
-        <label class="flex items-start gap-2 bg-[#f3faf7] rounded-xl p-4">
-          <input type="checkbox" class="mt-1 text-[#2d8a6e]" checked />
+        <label class="symptom-item">
+          <input type="checkbox" checked />
           <span>腰痛がなかなか良くならない</span>
         </label>
-        <label class="flex items-start gap-2 bg-[#f3faf7] rounded-xl p-4">
-          <input type="checkbox" class="mt-1 text-[#2d8a6e]" checked />
+        <label class="symptom-item">
+          <input type="checkbox" checked />
           <span>めまいやふらつきが気になる</span>
         </label>
-        <label class="flex items-start gap-2 bg-[#f3faf7] rounded-xl p-4">
-          <input type="checkbox" class="mt-1 text-[#2d8a6e]" checked />
+        <label class="symptom-item">
+          <input type="checkbox" checked />
           <span>更年期障害による不調がつらい</span>
         </label>
-        <label class="flex items-start gap-2 bg-[#f3faf7] rounded-xl p-4">
-          <input type="checkbox" class="mt-1 text-[#2d8a6e]" checked />
+        <label class="symptom-item">
+          <input type="checkbox" checked />
           <span>交通事故（むち打ち）後から自律神経症状が続いている</span>
         </label>
-        <label class="flex items-start gap-2 bg-[#f3faf7] rounded-xl p-4">
-          <input type="checkbox" class="mt-1 text-[#2d8a6e]" checked />
+        <label class="symptom-item">
+          <input type="checkbox" checked />
           <span>季節の変わり目になると体調を崩しやすい</span>
         </label>
       </div>
-      <p class="mt-4 text-xs text-center text-gray-600">
+      <p class="symptom-note">
         これらの症状は、自律神経の乱れが関係している場合があります。<br />
         のぞみ整体では、丁寧なカウンセリングと検査で原因を一緒に探っていきます。
       </p>
@@ -136,120 +110,90 @@
   </section>
 
   <!-- 当院が選ばれる3つの理由 -->
-  <section id="reason" class="py-12 md:py-16 bg-[#f3faf7]">
-  <div class="max-w-5xl mx-auto px-4">
-    <h2 class="text-2xl md:text-3xl font-semibold text-center text-[#2d8a6e] mb-8">
-      当院が選ばれる3つの理由
-    </h2>
+  <section id="reason" class="section section--light">
+    <div class="container">
+      <h2 class="section-title">当院が選ばれる3つの理由</h2>
+      <div class="reason-grid">
 
-    <div class="grid md:grid-cols-3 gap-6 text-sm">
-
-      <!-- ① -->
-      <div class="bg-white rounded-2xl shadow-sm p-5">
-        <img src="img/reason_m1.jpg" class="rounded-xl">
-
-        <div class="flex items-center gap-3 mt-6 mb-2">
-          <div class="w-10 h-10 rounded-full bg-[#e0f2ec] flex items-center justify-center">
-            <span class="text-xl text-[#2d8a6e]">1</span>
+        <!-- ① -->
+        <div class="reason-card">
+          <img src="img/reason_m1.jpg" alt="やさしい整体施術のイメージ" class="reason-card-img">
+          <div class="reason-card-header">
+            <div class="reason-card-icon">
+              <span class="reason-card-icon-number">1</span>
+            </div>
+            <h3 class="reason-card-title">痛くないソフトな整体</h3>
           </div>
-          <h3 class="font-semibold text-base">痛くないソフトな整体</h3>
+          <p class="reason-card-body">
+            ボキボキしない、やさしい刺激の整体です。お子さまからご高齢の方まで、安心して受けていただけます。
+          </p>
         </div>
 
-        <p class="text-xs text-gray-700 leading-relaxed">
-          ボキボキしない、やさしい刺激の整体です。お子さまからご高齢の方まで、安心して受けていただけます。
-        </p>
-      </div>
-
-      <!-- ② -->
-      <div class="bg-white rounded-2xl shadow-sm p-5">
-        <img src="img/reason_m2.jpg" class="rounded-xl">
-
-        <div class="flex items-center gap-3 mt-6 mb-2">
-          <div class="w-10 h-10 rounded-full bg-[#e0f2ec] flex items-center justify-center">
-            <span class="text-xl text-[#2d8a6e]">2</span>
+        <!-- ② -->
+        <div class="reason-card">
+          <img src="img/reason_m2.jpg" alt="女性施術者による施術のイメージ" class="reason-card-img">
+          <div class="reason-card-header">
+            <div class="reason-card-icon">
+              <span class="reason-card-icon-number">2</span>
+            </div>
+            <h3 class="reason-card-title">女性施術者対応可能</h3>
           </div>
-          <h3 class="font-semibold text-base">女性施術者対応可能</h3>
+          <p class="reason-card-body">
+            女性特有のお悩みや、更年期による不調なども、女性施術者が丁寧にお伺いします。男性施術者が苦手な方もご安心ください。
+          </p>
         </div>
 
-        <p class="text-xs text-gray-700 leading-relaxed">
-          女性特有のお悩みや、更年期による不調なども、女性施術者が丁寧にお伺いします。男性施術者が苦手な方もご安心ください。
-        </p>
-      </div>
-
-      <!-- ③ -->
-      <div class="bg-white rounded-2xl shadow-sm p-5">
-        <img src="img/reason_m3.jpg" class="rounded-xl">
-
-        <div class="flex items-center gap-3 mt-6 mb-2">
-          <div class="w-10 h-10 rounded-full bg-[#e0f2ec] flex items-center justify-center">
-            <span class="text-xl text-[#2d8a6e]">3</span>
+        <!-- ③ -->
+        <div class="reason-card">
+          <img src="img/reason_m3.jpg" alt="理学療法士による専門的なケアのイメージ" class="reason-card-img">
+          <div class="reason-card-header">
+            <div class="reason-card-icon">
+              <span class="reason-card-icon-number">3</span>
+            </div>
+            <h3 class="reason-card-title">理学療法士の資格保持者</h3>
           </div>
-          <h3 class="font-semibold text-base">理学療法士の資格保持者</h3>
+          <p class="reason-card-body">
+            院長・スタッフともに理学療法士の国家資格を保有。医療現場での経験を活かし、根拠に基づいたアプローチを行います。
+          </p>
         </div>
 
-        <p class="text-xs text-gray-700 leading-relaxed">
-          院長・スタッフともに理学療法士の国家資格を保有。医療現場での経験を活かし、根拠に基づいたアプローチを行います。
-        </p>
       </div>
-
     </div>
-  </div>
-</section>
-
+  </section>
 
   <!-- 料金案内 -->
-  <section id="price" class="py-12 md:py-16 bg-white">
-    <div class="max-w-5xl mx-auto px-4">
-      <h2 class="text-2xl md:text-3xl font-semibold text-center text-[#2d8a6e] mb-8">
-        料金案内
-      </h2>
-      <div class="overflow-x-auto bg-[#f3faf7] rounded-2xl shadow-sm">
-        <table class="min-w-full text-sm">
-          <thead class="bg-[#e0f2ec]">
+  <section id="price" class="section section--white">
+    <div class="container">
+      <h2 class="section-title">料金案内</h2>
+      <div class="price-table-wrapper">
+        <table class="price-table">
+          <thead>
             <tr>
-              <th class="px-4 py-3 text-left text-xs font-semibold text-gray-700">コース</th>
-              <th class="px-4 py-3 text-left text-xs font-semibold text-gray-700">内容</th>
-              <th class="px-4 py-3 text-right text-xs font-semibold text-gray-700">料金（税込）</th>
+              <th>コース</th>
+              <th>内容</th>
+              <th>料金（税込）</th>
             </tr>
           </thead>
           <tbody>
-            <tr class="border-t border-[#d4e7df]">
-              <td class="px-4 py-3 font-medium text-gray-800">
-                初回カウンセリング＋施術（60分）
-              </td>
-              <td class="px-4 py-3 text-gray-700">
-                カウンセリング・検査・自律神経バランスチェック・整体施術。
-              </td>
-              <td class="px-4 py-3 text-right font-semibold">
-                ¥9,000 / 60分
-              </td>
+            <tr>
+              <td>初回カウンセリング＋施術（60分）</td>
+              <td>カウンセリング・検査・自律神経バランスチェック・整体施術。</td>
+              <td>¥9,000 / 60分</td>
             </tr>
-            <tr class="border-t border-[#d4e7df]">
-              <td class="px-4 py-3 font-medium text-gray-800">
-                2回目以降（40分）
-              </td>
-              <td class="px-4 py-3 text-gray-700">
-                状態に合わせた整体施術とセルフケアのアドバイス。
-              </td>
-              <td class="px-4 py-3 text-right font-semibold">
-                ¥7,000 / 40分
-              </td>
+            <tr>
+              <td>2回目以降（40分）</td>
+              <td>状態に合わせた整体施術とセルフケアのアドバイス。</td>
+              <td>¥7,000 / 40分</td>
             </tr>
-            <tr class="border-t border-[#d4e7df]">
-              <td class="px-4 py-3 font-medium text-gray-800">
-                2回目以降（60分）
-              </td>
-              <td class="px-4 py-3 text-gray-700">
-                じっくりと全身を整えたい方向けのロングコース。
-              </td>
-              <td class="px-4 py-3 text-right font-semibold">
-                ¥9,000 / 60分
-              </td>
+            <tr>
+              <td>2回目以降（60分）</td>
+              <td>じっくりと全身を整えたい方向けのロングコース。</td>
+              <td>¥9,000 / 60分</td>
             </tr>
           </tbody>
         </table>
       </div>
-      <p class="mt-4 text-xs text-gray-600">
+      <p class="price-note">
         ※初回はカウンセリング・検査にお時間をいただきます。<br />
         ※症状やご希望に応じて、最適なコースをご提案いたします。
       </p>
@@ -257,33 +201,31 @@
   </section>
 
   <!-- 患者様の声 -->
-  <section id="voice" class="py-12 md:py-16 bg-[#f3faf7]">
-    <div class="max-w-5xl mx-auto px-4">
-      <h2 class="text-2xl md:text-3xl font-semibold text-center text-[#2d8a6e] mb-8">
-        患者様の声
-      </h2>
-      <div class="grid md:grid-cols-3 gap-6 text-sm">
-        <article class="bg-white rounded-2xl p-5 shadow-sm">
-          <p class="text-xs text-[#2d8a6e] mb-1">40代・女性・会社員</p>
-          <p class="text-sm font-semibold mb-1">長年の肩こりが軽くなりました</p>
-          <p class="text-xs text-yellow-500 mb-2">★★★★★</p>
-          <p class="text-xs text-gray-700">
+  <section id="voice" class="section section--light">
+    <div class="container">
+      <h2 class="section-title">患者様の声</h2>
+      <div class="voice-grid">
+        <article class="voice-card">
+          <p class="voice-card-meta">40代・女性・会社員</p>
+          <p class="voice-card-title">長年の肩こりが軽くなりました</p>
+          <p class="voice-card-stars">★★★★★</p>
+          <p class="voice-card-body">
             デスクワークで肩こりがひどく、頭痛もありましたが、通ううちに肩が軽くなり、頭痛の回数も減りました。自律神経の話も分かりやすく、安心して通えています。
           </p>
         </article>
-        <article class="bg-white rounded-2xl p-5 shadow-sm">
-          <p class="text-xs text-[#2d8a6e] mb-1">50代・女性・主婦</p>
-          <p class="text-sm font-semibold mb-1">更年期の不調が楽に</p>
-          <p class="text-xs text-yellow-500 mb-2">★★★★★</p>
-          <p class="text-xs text-gray-700">
+        <article class="voice-card">
+          <p class="voice-card-meta">50代・女性・主婦</p>
+          <p class="voice-card-title">更年期の不調が楽に</p>
+          <p class="voice-card-stars">★★★★★</p>
+          <p class="voice-card-body">
             更年期に入ってから、めまいや動悸がつらかったのですが、施術を受けると体も心も落ち着きます。女性の先生がいるのも心強いです。
           </p>
         </article>
-        <article class="bg-white rounded-2xl p-5 shadow-sm">
-          <p class="text-xs text-[#2d8a6e] mb-1">30代・男性・会社員</p>
-          <p class="text-sm font-semibold mb-1">事故後の不調が改善しました</p>
-          <p class="text-xs text-yellow-500 mb-2">★★★★★</p>
-          <p class="text-xs text-gray-700">
+        <article class="voice-card">
+          <p class="voice-card-meta">30代・男性・会社員</p>
+          <p class="voice-card-title">事故後の不調が改善しました</p>
+          <p class="voice-card-stars">★★★★★</p>
+          <p class="voice-card-body">
             交通事故のむち打ち後から、天気が悪いと体調が崩れていましたが、自律神経を整える施術を受けてから、かなり楽になりました。
           </p>
         </article>
@@ -292,28 +234,26 @@
   </section>
 
   <!-- 院長挨拶 -->
-  <section id="director" class="py-12 md:py-16 bg-white">
-    <div class="max-w-5xl mx-auto px-4">
-      <h2 class="text-2xl md:text-3xl font-semibold text-center text-[#2d8a6e] mb-8">
-        院長挨拶
-      </h2>
-      <div class="grid md:grid-cols-2 gap-8 items-center">
-        <div class="flex justify-center">
+  <section id="director" class="section section--white">
+    <div class="container">
+      <h2 class="section-title">院長挨拶</h2>
+      <div class="director-grid">
+        <div class="director-photo-wrap">
           <img
             src="img/therapist.jpg"
             alt="のぞみ整体 院長のプロフィール写真"
-            class="rounded-full w-44 h-44 object-cover shadow-md"/>
+            class="director-photo" />
         </div>
-        <div class="space-y-3 text-sm">
-          <p class="text-xs text-[#2d8a6e]">院長</p>
-          <h3 class="text-xl font-semibold text-gray-900">山田 のぞみ</h3>
-          <p class="text-xs text-gray-600">
+        <div class="director-info">
+          <p class="director-label">院長</p>
+          <h3 class="director-name">山田 のぞみ</h3>
+          <p class="director-cert">
             理学療法士／整体師／自律神経ケアアドバイザー
           </p>
-          <p class="text-xs text-gray-600">
+          <p class="director-career">
             経歴：病院・クリニックでのリハビリテーション業務を10年以上経験。
           </p>
-          <p class="text-sm text-gray-700">
+          <p class="director-message">
             「つらいけれど、どこに相談したらいいか分からない」そんな自律神経の不調で悩む方の力になりたいと思い、のぞみ整体を開院しました。症状だけでなく、その背景にある生活やお気持ちにも寄り添いながら、少しずつでも「楽になってきた」と感じていただけるよう、丁寧にサポートいたします。
           </p>
         </div>
@@ -322,49 +262,37 @@
   </section>
 
   <!-- よくある質問 -->
-  <section id="faq" class="py-12 md:py-16 bg-[#f3faf7]">
-    <div class="max-w-5xl mx-auto px-4">
-      <h2 class="text-2xl md:text-3xl font-semibold text-center text-[#2d8a6e] mb-8">
-        よくある質問
-      </h2>
-      <div class="space-y-4 text-sm">
-        <details class="bg-white rounded-xl shadow-sm p-4">
-          <summary class="font-semibold cursor-pointer text-gray-800">
-            Q. 施術は痛くありませんか？
-          </summary>
-          <p class="mt-2 text-xs text-gray-700">
+  <section id="faq" class="section section--light">
+    <div class="container">
+      <h2 class="section-title">よくある質問</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Q. 施術は痛くありませんか？</summary>
+          <p>
             A. ボキボキと音を鳴らすような施術は行いません。やさしい刺激で、自律神経にアプローチしていきますので、ご安心ください。
           </p>
         </details>
-        <details class="bg-white rounded-xl shadow-sm p-4">
-          <summary class="font-semibold cursor-pointer text-gray-800">
-            Q. どのくらいの頻度で通えば良いですか？
-          </summary>
-          <p class="mt-2 text-xs text-gray-700">
+        <details class="faq-item">
+          <summary>Q. どのくらいの頻度で通えば良いですか？</summary>
+          <p>
             A. 症状や生活スタイルによって異なりますが、初めの1〜2ヶ月は週1回、その後は2〜4週間に1回のペースを目安にご提案することが多いです。
           </p>
         </details>
-        <details class="bg-white rounded-xl shadow-sm p-4">
-          <summary class="font-semibold cursor-pointer text-gray-800">
-            Q. 保険は使えますか？
-          </summary>
-          <p class="mt-2 text-xs text-gray-700">
+        <details class="faq-item">
+          <summary>Q. 保険は使えますか？</summary>
+          <p>
             A. 自費診療のみとなっております。保険診療ではカバーしきれない、自律神経の不調に対するケアを行っています。
           </p>
         </details>
-        <details class="bg-white rounded-xl shadow-sm p-4">
-          <summary class="font-semibold cursor-pointer text-gray-800">
-            Q. どんな服装で行けば良いですか？
-          </summary>
-          <p class="mt-2 text-xs text-gray-700">
+        <details class="faq-item">
+          <summary>Q. どんな服装で行けば良いですか？</summary>
+          <p>
             A. 動きやすい服装でお越しください。スカートや締め付けの強い服装はお避けください。お着替えをお持ちいただいても構いません。
           </p>
         </details>
-        <details class="bg-white rounded-xl shadow-sm p-4">
-          <summary class="font-semibold cursor-pointer text-gray-800">
-            Q. 子ども連れでも大丈夫ですか？
-          </summary>
-          <p class="mt-2 text-xs text-gray-700">
+        <details class="faq-item">
+          <summary>Q. 子ども連れでも大丈夫ですか？</summary>
+          <p>
             A. 事前にご相談いただければ、お子さま連れでのご来院も可能です。予約状況により個別に調整いたします。
           </p>
         </details>
@@ -373,94 +301,87 @@
   </section>
 
   <!-- アクセス・診療時間 -->
-  <section id="access" class="py-12 md:py-16 bg-white">
-    <div class="max-w-5xl mx-auto px-4">
-      <h2 class="text-2xl md:text-3xl font-semibold text-center text-[#2d8a6e] mb-8">
-        アクセス・診療時間
-      </h2>
-      <div class="grid md:grid-cols-2 gap-8 text-sm">
-        <div class="space-y-3">
-          <p><span class="font-semibold text-[#2d8a6e]">院名：</span>のぞみ整体</p>
-          <p><span class="font-semibold text-[#2d8a6e]">住所：</span>兵庫県神戸市〇〇区〇〇町〇-〇</p>
-          <p><span class="font-semibold text-[#2d8a6e]">アクセス：</span>JR〇〇駅から徒歩〇分／バス停「〇〇」から徒歩〇分</p>
-          <div class="overflow-x-auto mt-3">
-            <table class="min-w-full text-xs border border-gray-200">
-              <thead class="bg-[#f3faf7]">
+  <section id="access" class="section section--white">
+    <div class="container">
+      <h2 class="section-title">アクセス・診療時間</h2>
+      <div class="access-grid">
+        <div class="access-info">
+          <p><span class="access-label">院名：</span>のぞみ整体</p>
+          <p><span class="access-label">住所：</span>兵庫県神戸市〇〇区〇〇町〇-〇</p>
+          <p><span class="access-label">アクセス：</span>JR〇〇駅から徒歩〇分／バス停「〇〇」から徒歩〇分</p>
+          <div class="access-hours-wrapper">
+            <table class="access-hours-table">
+              <thead>
                 <tr>
-                  <th class="px-2 py-2 border-b border-gray-200 text-left">曜日</th>
-                  <th class="px-2 py-2 border-b border-gray-200 text-left">診療時間</th>
+                  <th>曜日</th>
+                  <th>診療時間</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td class="px-2 py-2 border-b border-gray-200">月〜金</td>
-                  <td class="px-2 py-2 border-b border-gray-200">9:00〜13:00／15:00〜19:00</td>
+                  <td>月〜金</td>
+                  <td>9:00〜13:00／15:00〜19:00</td>
                 </tr>
                 <tr>
-                  <td class="px-2 py-2 border-b border-gray-200">土</td>
-                  <td class="px-2 py-2 border-b border-gray-200">9:00〜14:00</td>
+                  <td>土</td>
+                  <td>9:00〜14:00</td>
                 </tr>
                 <tr>
-                  <td class="px-2 py-2">休診日</td>
-                  <td class="px-2 py-2">日曜・祝日</td>
+                  <td>休診日</td>
+                  <td>日曜・祝日</td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <p class="text-xs text-gray-600">
+          <p class="access-note">
             ※完全予約制のため、事前のご予約をお願いいたします。
           </p>
         </div>
-        <div class="space-y-3">
-
-  <!-- Map枠（これだけでOK） -->
-  <div class="w-full h-64 md:h-96 rounded-xl overflow-hidden shadow">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d13122.018432584367!2d135.19334249081!3d34.692450446071!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzTCsDQxJzMyLjgiTiAxMzXCsDExJzM2LjAiRQ!5e0!3m2!1sja!2sjp!4v1775732419025!5m2!1sja!2sjp"
-      width="100%"
-      height="100%"
-      style="border:0;"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-  </div>
-
-  <p class="text-xs text-gray-600">
-    お車でお越しの方は、近隣のコインパーキングをご利用ください。<br />
-    詳しい道順は、ご予約時にご案内いたします。
-  </p>
-</div>
+        <div class="access-map-col">
+          <div class="access-map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d13122.018432584367!2d135.19334249081!3d34.692450446071!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzTCsDQxJzMyLjgiTiAxMzXCsDExJzM2LjAiRQ!5e0!3m2!1sja!2sjp!4v1775732419025!5m2!1sja!2sjp"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="のぞみ整体の地図">
+            </iframe>
+          </div>
+          <p class="access-map-note">
+            お車でお越しの方は、近隣のコインパーキングをご利用ください。<br />
+            詳しい道順は、ご予約時にご案内いたします。
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- 予約CTA -->
-  <section id="reserve" class="py-12 md:py-16 bg-[#2d8a6e]">
-    <div class="max-w-5xl mx-auto px-4 text-center text-white">
-      <h2 class="text-2xl md:text-3xl font-semibold mb-4">
+  <section id="reserve" class="section section--green">
+    <div class="reserve-inner">
+      <h2 class="reserve-title">
         自律神経を整えて、不調の出にくいカラダへ
       </h2>
-      <p class="text-sm md:text-base mb-6">
-        「この不調は、自律神経のせいかもしれない…」<br class="hidden md:block" />
+      <p class="reserve-desc">
+        「この不調は、自律神経のせいかもしれない…」<br>
         そう感じたら、一度ご相談ください。<br />
         無料相談も承っております。
       </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-        <a href="tel:0781234567" class="inline-flex items-center justify-center px-8 py-3 rounded-full bg-white text-[#2d8a6e] text-sm font-medium shadow hover:bg-[#e6f4f0] transition">
+      <div class="reserve-actions">
+        <a href="tel:0781234567" class="reserve-btn-tel">
           電話で予約・相談する（078-123-4567）
         </a>
-        <a href="https://example.com/reserve" target="_blank" class="inline-flex items-center justify-center px-8 py-3 rounded-full border border-white text-white text-sm hover:bg-white/10 transition">
+        <a href="https://example.com/reserve" target="_blank" class="reserve-btn-web">
           Web予約フォームへ進む
         </a>
       </div>
-      <p class="mt-4 text-[11px] text-white/80">
+      <p class="reserve-note">
         ※施術中はお電話に出られない場合がございます。その際は折り返しご連絡いたします。
       </p>
     </div>
   </section>
 
-  <footer class="py-6 bg-[#f3faf7] text-center text-[11px] text-gray-500">
+  <footer class="site-footer">
     <p>© のぞみ整体 / 兵庫県神戸市</p>
   </footer>
 </body>
