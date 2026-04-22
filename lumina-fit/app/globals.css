@@ -1,0 +1,244 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gold: #c0a0b0;
+  --color-gold-light: #d8c0cc;
+  --color-gold-dark: #9a7888;
+  --color-lp-black: #0a0806;
+  --color-lp-black2: #111009;
+  --color-lp-black3: #1a1814;
+  --color-lp-white: #faf8f4;
+  --color-lp-white2: #f0ede6;
+  --color-lp-gray: #888070;
+  --font-jp-serif: 'Noto Serif JP', Georgia, serif;
+  --font-jp-sans: 'Noto Sans JP', sans-serif;
+  --font-garamond: 'Cormorant Garamond', serif;
+}
+
+:root {
+  --gold: #c0a0b0;
+  --gold-light: #d8c0cc;
+  --gold-dark: #9a7888;
+  --black: #0a0806;
+  --black-2: #111009;
+  --black-3: #1a1814;
+  --white: #faf8f4;
+  --white-2: #f0ede6;
+  --gray: #888070;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--font-noto-sans), 'Noto Sans JP', sans-serif;
+  font-weight: 300;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-noto-serif), 'Noto Serif JP', Georgia, serif;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.4; transform: scaleY(1); }
+  50% { opacity: 1; transform: scaleY(1.2); }
+}
+
+.scroll-pulse {
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+/* ── SECTION EYEBROW ── */
+.section-eyebrow {
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.section-eyebrow::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+.section-eyebrow-center {
+  justify-content: center;
+}
+.section-eyebrow-center::before {
+  display: none;
+}
+
+/* ── HERO ── */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom, rgba(10,8,6,0.3) 0%, rgba(10,8,6,0.1) 30%, rgba(10,8,6,0.65) 70%, rgba(10,8,6,0.92) 100%),
+    linear-gradient(135deg, #1a1610 0%, #2a2018 40%, #0a0806 100%);
+}
+
+.hero-photo-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(10,8,6,1) 0%, rgba(10,8,6,0.4) 25%, transparent 55%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-photo-corner::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 60px; height: 60px;
+  border-top: 1px solid rgba(192,160,176,0.4);
+  border-right: 1px solid rgba(192,160,176,0.4);
+}
+
+/* ── WHY CARD HOVER BORDER ── */
+.why-card {
+  position: relative;
+}
+.why-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 2px;
+  height: 0;
+  background: var(--gold);
+  transition: height 0.4s ease;
+}
+.why-card:hover::before {
+  height: 100%;
+}
+
+/* ── WHY SECTION WATERMARK ── */
+.why-watermark {
+  position: relative;
+  overflow: hidden;
+}
+.why-watermark::before {
+  content: 'LUMINA';
+  position: absolute;
+  bottom: -30px;
+  right: -20px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 160px;
+  color: rgba(192,160,176,0.03);
+  font-weight: 600;
+  pointer-events: none;
+  line-height: 1;
+  z-index: 0;
+}
+
+/* ── FORM BADGE CHECK ── */
+.form-badge::before {
+  content: '✓';
+  font-size: 10px;
+}
+
+/* ── PRICING FEATURE LIST ── */
+.pricing-feature::before {
+  content: '—';
+  color: var(--gold);
+  flex-shrink: 0;
+  font-size: 10px;
+  margin-top: 3px;
+}
+
+/* ── HOVER EFFECTS (used in Server Components) ── */
+.btn-gold {
+  display: block;
+  background: var(--gold);
+  color: var(--black);
+  font-family: var(--font-noto-serif), 'Noto Serif JP', Georgia, serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 2px;
+  padding: 16px 40px;
+  text-decoration: none;
+  text-align: center;
+  transition: background 0.3s, transform 0.2s;
+  cursor: pointer;
+  border: none;
+  width: 100%;
+}
+.btn-gold:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+.btn-outline {
+  display: block;
+  background: transparent;
+  color: var(--gold);
+  font-family: var(--font-noto-serif), 'Noto Serif JP', Georgia, serif;
+  font-size: 13px;
+  letter-spacing: 2px;
+  padding: 14px 36px;
+  text-decoration: none;
+  border: 1px solid var(--gold);
+  text-align: center;
+  transition: background 0.3s, color 0.3s;
+}
+.btn-outline:hover { background: var(--gold); color: var(--black); }
+
+.pain-item-hover { transition: background 0.3s; }
+.pain-item-hover:hover { background: var(--black-3) !important; }
+
+.why-card-hover { transition: background 0.3s; }
+.why-card-hover:hover { background: #161410 !important; }
+
+.pricing-card-hover { transition: background 0.3s; }
+.pricing-card-hover:hover { background: #161410 !important; }
+
+.footer-link { transition: color 0.3s; }
+.footer-link:hover { color: var(--gold) !important; }
+
+.nav-cta-link { transition: background 0.3s, color 0.3s; }
+.nav-cta-link:hover { background: var(--gold) !important; color: var(--black) !important; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .hero-photo-corner { display: none !important; }
+  .pain-grid-2col { grid-template-columns: 1fr !important; }
+  .why-grid-2col { grid-template-columns: 1fr !important; }
+  .pricing-grid-3col { grid-template-columns: 1fr !important; gap: 0 !important; }
+  .pricing-featured-mobile { margin: 0 !important; }
+  .trainers-grid-3col { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .testimonials-grid-3col { grid-template-columns: 1fr !important; }
+  .section-padding { padding: 64px 0 !important; }
+  .floating-cta-mobile { width: calc(100% - 32px) !important; text-align: center !important; }
+  .trust-grid { grid-template-columns: repeat(3, 1fr) !important; }
+  .trust-item-inner { padding: 20px 12px !important; }
+  .trust-num-sm { font-size: 28px !important; }
+}
+
+@media (max-width: 480px) {
+  .trust-grid { grid-template-columns: 1fr !important; }
+  .trust-border-bottom { border-right: none !important; border-bottom: 1px solid rgba(192,160,176,0.1) !important; }
+  .trust-border-last { border-bottom: none !important; }
+}
+
+/* ── TESTIMONIAL PHOTO LABEL ── */
+.ba-label {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-align: center;
+  padding: 4px;
+  background: rgba(0,0,0,0.5);
+  color: rgba(192,160,176,0.7);
+  text-transform: uppercase;
+}
