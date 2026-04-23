@@ -309,6 +309,24 @@ a {
     grid-column: 1 / 2;
   }
 }
+/* 3つの理由：テキスト */
+.reason-heading {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #8b7355;
+  margin-top: 16px;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.reason-text {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  color: #333;
+  line-height: 1.9;
+}
 
 /* =====================================================
    ⑨ ご利用の流れ
