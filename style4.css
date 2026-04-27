@@ -162,20 +162,29 @@ a {
 /* =====================================================
    ③ お悩みセクション
    ===================================================== */
-.onayami-section {
+/* ③〜⑤ 全体の流れ */
+.onayami-flow {
+  width: 100%;
   overflow: hidden;
 }
 
+/* ③ お悩み画像（黄色背景の長方形） */
+.onayami-block {
+  background: #f8f5e8; /* ← あなたの黄色と合わせる */
+  padding: 60px 0;
+  text-align: center;
+}
+
 .onayami-img {
+  max-width: 900px;
   width: 100%;
+  margin: 0 auto;
   display: block;
 }
 
-/* =====================================================
-   ④ グラデーション背景＋テキスト
-   ===================================================== */
-.gradient-text-section {
-  background: linear-gradient(to bottom, #f7edd4, #fff);
+/* ④ 黄色→白のグラデーション */
+.onayami-gradient {
+  background: linear-gradient(to bottom, #f8f5e8 0%, #ffffff 100%);
   padding: 80px 20px;
   text-align: center;
 }
@@ -189,25 +198,20 @@ a {
 }
 
 .gradient-accent {
-  color: #c86584;
+  color: #c86584 !important; /* ← Bloom の色を確実に戻す */
 }
 
-@media (max-width: 768px) {
-  .gradient-text {
-    font-size: 22px;
-    line-height: 2;
-  }
-}
-
-/* =====================================================
-   ⑤ 体験画像
-   ===================================================== */
-.experience-section {
-  overflow: hidden;
+/* ⑤ 体験画像（白背景） */
+.experience-block {
+  background: #ffffff;
+  padding: 60px 0;
+  text-align: center;
 }
 
 .experience-img {
+  max-width: 900px;
   width: 100%;
+  margin: 0 auto;
   display: block;
 }
 
@@ -998,5 +1002,36 @@ a {
 @media (max-width: 768px) {
   .fixed-footer-cta {
     display: flex;
+  }
+}
+
+/* PC版：ヒーロー画像の最大幅を制限 */
+/* PC版：全画像の最大幅を制限 */
+@media (min-width: 769px) {
+  img {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+/* PC版：CTA画像だけ小さくする */
+@media (min-width: 769px) {
+  .cta-img {
+    max-width: 1100px;   /* ← 好きな幅に調整できる（800〜1000が綺麗） */
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+.onayami-section .container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* スマホではサブロゴを非表示 */
+@media (max-width: 768px) {
+  .hero-logo-sub {
+    display: none;
   }
 }

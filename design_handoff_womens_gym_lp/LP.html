@@ -62,8 +62,8 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 700; line-height: 1.35; }
 
 /* ── LAYOUT ── */
 .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-.section { padding: 96px 0; }
-.section-sm { padding: 64px 0; }
+.section { padding: 120px 0; }
+.section-sm { padding: 80px 0; }
 
 /* ── BUTTONS ── */
 .btn-gold {
@@ -373,9 +373,26 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 700; line-height: 1.35; }
 
 /* ── WHY ── */
 #why {
-  background: var(--black-2);
+  min-height: 600px; /* 仮でOK。後で調整 */
+  background: transparent;
   position: relative;
   overflow: hidden;
+}
+#why .why-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom, rgba(10,8,6,0.88), rgba(10,8,6,0.95)),
+    url("uploads/blurred-gym.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: blur(6px) brightness(0.45);
+  opacity: 0.35;
+  z-index: 0;
+}
+#why .container {
+  position: relative;
+  z-index: 2;
 }
 #why::before {
   content: 'LUMINA';
@@ -398,7 +415,7 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 700; line-height: 1.35; }
   margin-top: 48px;
 }
 .why-item {
-  background: var(--black-2);
+  background: rgba(0,0,0,0.35); /* ← 35%の黒。高級感UP */
   padding: 36px 28px;
   position: relative;
   transition: background 0.3s;
@@ -526,7 +543,7 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 700; line-height: 1.35; }
 .pricing-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
+  gap: 32px;
   background: rgba(201,168,76,0.08);
   border: 1px solid rgba(201,168,76,0.08);
   margin-top: 48px;
@@ -617,43 +634,53 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 700; line-height: 1.35; }
   margin-top: 3px;
 }
 
-/* ── TRAINERS ── */
+/* ── TRAINERS (UPGRADED) ── */
 #trainers {
-  background: var(--black);
+  background: var(--black-2) !important; /* ← PRICING と同じ黒背景 */
+  padding-top: 60px;
+  padding-bottom: 120px;
 }
+
 .trainers-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 32px;
   margin-top: 48px;
+  align-items: stretch;
 }
+
 .trainer-card {
+  background: linear-gradient(160deg, #1a1814, #0e0c09);
+  border: 1px solid rgba(201,168,76,0.15);
+  border-radius: 0px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
+
+.trainer-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+}
+
+/* 正方形写真 */
 .trainer-photo {
-  aspect-ratio: 3/4;
-  background: linear-gradient(160deg, #1e1a14, #0f0c08);
-  position: relative;
+  aspect-ratio: 1 / 1;
+  background: #111;
+  border-radius: 8px;
   overflow: hidden;
-  margin-bottom: 16px;
-  border: 1px solid rgba(201,168,76,0.1);
+  margin-bottom: 20px;
+  border: 1px solid rgba(201,168,76,0.15);
 }
+
 .trainer-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
-  display: block;
 }
-.trainer-photo::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 30%;
-  background: linear-gradient(to top, var(--black), transparent);
-  pointer-events: none;
-}
+
+/* テキスト */
 .trainer-cert {
   font-size: 10px;
   letter-spacing: 2px;
@@ -661,17 +688,31 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 700; line-height: 1.35; }
   text-transform: uppercase;
   margin-bottom: 6px;
 }
+
 .trainer-name {
   font-family: var(--serif);
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   color: var(--white);
-  margin-bottom: 6px;
+  margin-bottom: 12px;
+  position: relative;
 }
+
+/* 名前下の仕切り線 */
+.trainer-name::after {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: rgba(201,168,76,0.4);
+  margin-top: 8px;
+}
+
 .trainer-spec {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--gray);
-  line-height: 1.6;
+  line-height: 1.7;
+  flex: 1;
 }
 
 /* ── TESTIMONIALS ── */
@@ -1033,12 +1074,24 @@ footer {
 /* ── RESPONSIVE ── */
 @media (max-width: 768px) {
   .section { padding: 64px 0; }
-  .hero-photo-inner { display: none; }
+  .hero-photo-inner {
+    display: block;
+    width: 100%;
+    height: 60vh; /* ← スマホでの高さ調整 */
+    margin: 0;
+  }
+}
+.hero-photo-inner img {
+  object-fit: cover;
+  object-position: center;
+}
   .pain-grid { grid-template-columns: 1fr; }
   .why-grid { grid-template-columns: 1fr; }
-  .pricing-grid { grid-template-columns: 1fr; gap: 0; }
   .pricing-card.featured { margin: 0; }
-  .trainers-grid { grid-template-columns: 1fr; gap: 32px; }
+  /* .trainers-grid { 
+  grid-template-columns: 1fr; 
+  gap: 32px; 
+} */
   .testimonials-grid { grid-template-columns: 1fr; }
   .trust-inner { grid-template-columns: repeat(3, 1fr); }
   .trust-item { padding: 20px 12px; }
@@ -1047,12 +1100,80 @@ footer {
   .floating-btn { width: 100%; text-align: center; }
   #tweaks-panel { width: calc(100% - 32px); right: 16px; bottom: 80px; }
   .hero-content { max-width: 100%; }
-}
 
 @media (max-width: 480px) {
   .trust-inner { grid-template-columns: 1fr; }
   .trust-item { border-right: none; border-bottom: 1px solid rgba(201,168,76,0.1); }
   .trust-item:last-child { border-bottom: none; }
+}
+
+html {
+  background: transparent !important;
+}
+
+body {
+  background: transparent !important;
+}
+
+#why.section {
+  background: transparent !important;
+}
+
+#why {
+  position: relative !important;
+  min-height: 600px !important;
+}
+
+#why .why-bg {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100% !important;
+  background:
+    linear-gradient(to bottom, rgba(10,8,6,0.88), rgba(10,8,6,0.95)),
+    url("uploads/blurred-gym.jpg") !important;
+  background-size: cover !important;
+  background-position: center !important;
+  z-index: 0 !important;
+}
+#why .why-bg {
+  filter: blur(2px) brightness(0.9) !important;
+  opacity: 1 !important;
+}
+/* TRAINERS のアップグレード版 */
+
+#trainers {
+  padding-bottom: 88px !important;
+}
+
+#trainers {
+  padding-bottom: 160px !important;
+}
+@media (max-width: 768px) {
+  .trainers-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px;
+  }
+}
+.trainer-card img {
+  border-radius: 0; /* 角丸を消すと“めり込み問題”が消える */
+}
+#trainers {
+  background: #0f0d0a !important;
+  padding-top: 60px;
+  padding-bottom: 120px;
+}
+section#trainers {
+  background: #0f0d0a !important;
+}
+body #trainers {
+  background: #0f0d0a !important;
 }
 </style>
 </head>
@@ -1146,6 +1267,7 @@ footer {
 
 <!-- WHY -->
 <section id="why" class="section">
+  <div class="why-bg"></div>  <!-- ← 追加！ -->
   <div class="container">
     <div class="section-eyebrow fade-up">Why Lumina Fit</div>
     <h2 class="section-title-lg fade-up fade-up-delay-1">選ばれる<span class="gold-text">4つ</span>の理由</h2>
@@ -1229,22 +1351,43 @@ footer {
   <div class="container">
     <div class="section-eyebrow fade-up">Plans & Pricing</div>
     <h2 class="section-title-lg fade-up fade-up-delay-1">料金プラン</h2>
+
     <div class="pricing-grid">
+
+      <!-- Light Plan -->
       <div class="pricing-card fade-up">
+        <div class="pricing-name">Light</div>
+        <div class="pricing-freq">週1回コース</div>
+        <div class="pricing-price">¥12,800<small>/月</small></div>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li>専任トレーナー指導 4回/月</li>
+          <li>完全個室トレーニング</li>
+          <li>フォームチェック</li>
+          <li>LINEでの簡易相談</li>
+        </ul>
+        <a class="btn-outline" href="#form">このプランを選ぶ</a>
+      </div>
+
+      <!-- Standard Plan (Featured) -->
+      <div class="pricing-card featured fade-up fade-up-delay-1">
+        <div class="pricing-badge">人気 No.1</div>
         <div class="pricing-name">Standard</div>
         <div class="pricing-freq">週2回コース</div>
-        <div class="pricing-price">¥29,800<small>/月</small></div>
+        <div class="pricing-price">¥24,800<small>/月</small></div>
         <div class="pricing-divider"></div>
         <ul class="pricing-features">
           <li>専任トレーナー指導 8回/月</li>
           <li>完全個室トレーニング</li>
-          <li>食事アドバイス</li>
-          <li>LINEサポート</li>
+          <li>姿勢・動作分析</li>
+          <li>食事アドバイス（週1回）</li>
+          <li>トレーナー指名OK</li>
         </ul>
-        <a class="btn-outline" href="#form">このプランを選ぶ</a>
+        <a class="btn-gold" href="#form">このプランを選ぶ</a>
       </div>
-      <div class="pricing-card featured fade-up fade-up-delay-1">
-        <div class="pricing-badge">人気 No.1</div>
+
+      <!-- Premium Plan -->
+      <div class="pricing-card fade-up fade-up-delay-2">
         <div class="pricing-name">Premium</div>
         <div class="pricing-freq">週3回コース</div>
         <div class="pricing-price">¥39,800<small>/月</small></div>
@@ -1252,62 +1395,57 @@ footer {
         <ul class="pricing-features">
           <li>専任トレーナー指導 12回/月</li>
           <li>完全個室トレーニング</li>
-          <li>食事プラン作成</li>
-          <li>24hLINEサポート</li>
-          <li>月1回体組成分析</li>
-        </ul>
-        <a class="btn-gold" href="#form">このプランを選ぶ</a>
-      </div>
-      <div class="pricing-card fade-up fade-up-delay-2">
-        <div class="pricing-name">Executive</div>
-        <div class="pricing-freq">週4回以上</div>
-        <div class="pricing-price">¥54,800<small>/月〜</small></div>
-        <div class="pricing-divider"></div>
-        <ul class="pricing-features">
-          <li>専任トレーナー指導 16回+/月</li>
-          <li>完全個室トレーニング</li>
-          <li>完全食事管理</li>
-          <li>24hLINEサポート</li>
-          <li>月2回体組成分析</li>
-          <li>栄養士によるカウンセリング</li>
+          <li>姿勢・動作分析（毎月）</li>
+          <li>食事サポート（毎日）</li>
+          <li>トレーナー優先予約</li>
+          <li>パーソナルストレッチ付き</li>
         </ul>
         <a class="btn-outline" href="#form">このプランを選ぶ</a>
       </div>
+
     </div>
+
     <p style="text-align:center; margin-top:24px; font-size:12px; color:var(--gray);">
       * 全プラン入会金無料（期間限定）· 2回無料体験トレーニング付き
     </p>
   </div>
 </section>
-
-<!-- TRAINERS -->
 <section id="trainers" class="section">
-  <div class="container">
-    <div class="section-eyebrow fade-up">Our Trainers</div>
-    <h2 class="section-title-lg fade-up fade-up-delay-1">あなたを支える<span class="gold-text">トレーナー</span></h2>
-    <div class="trainers-grid">
-      <div class="trainer-card fade-up">
-        <div class="trainer-photo"><img src="uploads/trainer1_lumina.jpg" alt="山田 さくら"></div>
-        <div class="trainer-cert">NSCA-CPT 認定</div>
-        <div class="trainer-name">山田 さくら</div>
-        <div class="trainer-spec">ダイエット・ボディメイク専門。「続けられる習慣づくり」を大切にするトレーナー。産後ケアの経験も豊富。</div>
-      </div>
-      <div class="trainer-card fade-up fade-up-delay-1">
-        <div class="trainer-photo"><img src="uploads/trainer2_lumina.jpg" alt="中村 あやか"></div>
-        <div class="trainer-cert">JATI-ATI 認定</div>
-        <div class="trainer-name">中村 あやか</div>
-        <div class="trainer-spec">産後ケア・姿勢改善が得意。育児と両立しながら理想の体型を目指す方を多数サポート。</div>
-      </div>
-      <div class="trainer-card fade-up fade-up-delay-2">
-        <div class="trainer-photo"><img src="uploads/trainer3_lumina.jpg" alt="田中 みほ"></div>
-        <div class="trainer-cert">NESTA-PFT 認定</div>
-        <div class="trainer-name">田中 みほ</div>
-        <div class="trainer-spec">競技経験者。スポーツパフォーマンス向上からダイエットまで幅広く対応。食事指導に定評あり。</div>
-      </div>
+<div class="trainers-grid">
+  <div class="trainer-card fade-up">
+    <div class="trainer-photo">
+      <img src="uploads/trainer1_lumina.jpg" alt="山田 さくら">
+    </div>
+    <div class="trainer-cert">NSCA-CPT 認定</div>
+    <div class="trainer-name">山田 さくら</div>
+    <div class="trainer-spec">
+      ダイエット・ボディメイク専門。「続けられる習慣づくり」を大切にするトレーナー。産後ケアの経験も豊富。
     </div>
   </div>
-</section>
 
+  <div class="trainer-card fade-up fade-up-delay-1">
+    <div class="trainer-photo">
+      <img src="uploads/trainer2_lumina.jpg" alt="中村 あやか">
+    </div>
+    <div class="trainer-cert">JATI-ATI 認定</div>
+    <div class="trainer-name">中村 あやか</div>
+    <div class="trainer-spec">
+      産後ケア・姿勢改善が得意。育児と両立しながら理想の体型を目指す方を多数サポート。
+    </div>
+  </div>
+
+  <div class="trainer-card fade-up fade-up-delay-2">
+    <div class="trainer-photo">
+      <img src="uploads/trainer3_lumina.jpg" alt="田中 みほ">
+    </div>
+    <div class="trainer-cert">NESTA-PFT 認定</div>
+    <div class="trainer-name">田中 みほ</div>
+    <div class="trainer-spec">
+      競技経験者。スポーツパフォーマンス向上からダイエットまで幅広く対応。食事指導に定評あり。
+    </div>
+  </div>
+</div>
+</section>
 <!-- TESTIMONIALS -->
 <section id="testimonials" class="section">
   <div class="container">
