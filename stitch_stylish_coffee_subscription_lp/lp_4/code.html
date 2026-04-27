@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ja"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700&amp;family=Work+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#474746",
+                        "on-surface-variant": "#444748",
+                        "inverse-on-surface": "#f3f0eb",
+                        "tertiary-container": "#29180a",
+                        "on-surface": "#1c1c19",
+                        "secondary-container": "#fed8c5",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-container": "#858383",
+                        "secondary-fixed": "#ffdbca",
+                        "surface-variant": "#e5e2dd",
+                        "tertiary-fixed": "#fedcc6",
+                        "on-tertiary-fixed-variant": "#594232",
+                        "outline": "#747878",
+                        "surface-tint": "#5f5e5e",
+                        "surface-container": "#f0ede9",
+                        "on-tertiary-container": "#9a7e6c",
+                        "surface-dim": "#dcdad5",
+                        "surface": "#fcf9f4",
+                        "on-primary": "#ffffff",
+                        "secondary": "#755849",
+                        "background": "#fcf9f4",
+                        "surface-container-low": "#f6f3ee",
+                        "on-secondary-fixed-variant": "#5b4133",
+                        "on-primary-fixed": "#1c1b1b",
+                        "tertiary": "#000000",
+                        "on-secondary-fixed": "#2b170b",
+                        "surface-bright": "#fcf9f4",
+                        "surface-container-highest": "#e5e2dd",
+                        "on-background": "#1c1c19",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "on-tertiary-fixed": "#29180a",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#e4bfad",
+                        "tertiary-fixed-dim": "#e1c0ab",
+                        "inverse-primary": "#c8c6c5",
+                        "error": "#ba1a1a",
+                        "inverse-surface": "#31302d",
+                        "on-secondary-container": "#795c4d",
+                        "outline-variant": "#c4c7c7",
+                        "error-container": "#ffdad6",
+                        "primary-container": "#1c1b1b",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#ebe8e3",
+                        "primary": "#000000",
+                        "primary-fixed": "#e5e2e1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-lg": "32px",
+                        "stack-sm": "8px",
+                        "margin-edge": "64px",
+                        "gutter": "24px",
+                        "section-gap": "120px",
+                        "container-max": "1280px",
+                        "unit": "8px",
+                        "stack-md": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Noto Serif JP", "serif"],
+                        "body-sm": ["Work Sans", "sans-serif"],
+                        "body-md": ["Work Sans", "sans-serif"],
+                        "headline-lg": ["Noto Serif JP", "serif"],
+                        "headline-sm": ["Noto Serif JP", "serif"],
+                        "display-xl": ["Noto Serif JP", "serif"],
+                        "label-caps": ["Work Sans", "sans-serif"],
+                        "body-lg": ["Work Sans", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["36px", {"lineHeight": "44px", "fontWeight": "700"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "headline-sm": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                        "display-xl": ["80px", {"lineHeight": "88px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fcf9f4;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full flex justify-between items-center px-8 py-6 max-w-screen-2xl mx-auto bg-white/90 dark:bg-stone-950/90 backdrop-blur-md text-stone-900 dark:text-stone-50 font-serif tracking-tight border-b border-stone-200/20 dark:border-stone-800/20 z-50">
+<div class="text-xl md:text-2xl font-serif uppercase tracking-widest text-stone-900 dark:text-stone-50">キュレーターズ・ライブラリ</div>
+<div class="hidden md:flex gap-8 text-sm">
+<a class="text-stone-900 dark:text-stone-50 border-b border-stone-900 dark:border-stone-50 pb-1" href="#">ライブラリ</a>
+<a class="text-stone-400 dark:text-stone-600 hover:text-stone-900 dark:hover:text-stone-50 transition-colors" href="#">サブスクリプション</a>
+<a class="text-stone-400 dark:text-stone-600 hover:text-stone-900 dark:hover:text-stone-50 transition-colors" href="#">ロースタリー</a>
+<a class="text-stone-400 dark:text-stone-600 hover:text-stone-900 dark:hover:text-stone-50 transition-colors" href="#">私たちの物語</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined hover:opacity-80 transition-opacity">shopping_bag</button>
+<button class="bg-primary text-on-primary px-6 py-2 text-label-caps uppercase tracking-widest hover:bg-secondary transition-colors duration-300">始める</button>
+</div>
+</nav>
+<main class="pt-[88px]">
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Hero Coffee" class="w-full h-full object-cover brightness-50 scale-110 object-[center_70%]" data-alt="Cinematic, high-quality photograph of a premium coffee bean jar on a dark, minimalist wooden table. Soft, dramatic natural lighting highlighting the texture of the beans and the glass." src="https://lh3.googleusercontent.com/aida/ADBb0uicC4CLnHF9U3poQ5Y7ZGYW-NLpmO4OYkvPhIjBEFPHbTAnOJgZ7xFPGBnoPJjlM9lWkhjElHpeiFskrsm3yjCrGgKw2A2YEjfoSm1YoCIf4gKlAokepNmSDU_LcyVCCLS4zYO_RoBvWj6Brebo3zMKedzlk4DPb_5N08zZ0zG-eDFqqNQScvvCZ-K1zSl-gxAVYkw4mH-vNd4J7Z2OzQenKNXvypJFyrLePoIa5Ucc24xXzm9naaNJ0Sw"/>
+</div>
+<div class="relative z-10 text-center px-4 max-w-5xl mx-auto">
+<span class="font-label-caps text-on-primary tracking-[0.3em] uppercase mb-6 block">希少な産地と、職人の焙煎。</span>
+<h1 class="font-display-xl text-on-primary mb-10 leading-tight">至高の一杯を、<br class="hidden md:block"/>日常の儀式に。</h1>
+<p class="font-body-lg text-white/90 mb-12 max-w-2xl mx-auto">世界中から厳選された最高級の豆を、ご注文に合わせて焙煎。<br/>ロースタリーからあなたのお手元へ直接お届けします。</p>
+<div class="flex flex-col sm:flex-row gap-6 justify-center">
+<button class="bg-white text-primary px-10 py-5 font-label-caps tracking-widest uppercase hover:bg-surface-container-highest transition-all duration-300 transform active:scale-95">コレクションを探索</button>
+<button class="border border-white/40 text-white px-10 py-5 font-label-caps tracking-widest uppercase backdrop-blur-sm hover:bg-white/10 transition-all duration-300 transform active:scale-95">私たちのこだわり</button>
+</div>
+</div>
+</section>
+<!-- Features Bento Grid -->
+<section class="py-section-gap px-8 max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-12 mb-16 text-center">
+<h2 class="font-headline-lg text-primary mb-4">キュレーションされた体験</h2>
+<div class="h-px w-24 bg-secondary mx-auto"></div>
+</div>
+<!-- Feature 1 -->
+<div class="md:col-span-7 bg-surface-container-low p-12 flex flex-col justify-between group overflow-hidden relative">
+<div class="relative z-10">
+<span class="material-symbols-outlined text-secondary text-4xl mb-8">auto_awesome</span>
+<h3 class="font-headline-sm text-primary mb-4">厳選されたセレクション</h3>
+<p class="font-body-md text-on-surface-variant max-w-md">サステナブルな小規模農家からのみ調達。ライブラリのすべての豆は、その独自のフレーバープロファイルと歴史的価値によって選ばれています。</p>
+</div>
+<div class="mt-12 relative z-10">
+<a class="font-label-caps text-primary border-b border-primary/20 pb-1 hover:border-primary transition-all" href="#">詳細を見る</a>
+</div>
+<div class="absolute right-[-10%] bottom-[-10%] opacity-10 group-hover:opacity-20 transition-opacity duration-700">
+<span class="material-symbols-outlined text-[200px]" style="font-variation-settings: 'FILL' 1;">spa</span>
+</div>
+</div>
+<!-- Feature 2 -->
+<div class="md:col-span-5 bg-tertiary-container text-on-tertiary p-12 flex flex-col justify-center text-center">
+<span class="material-symbols-outlined text-secondary-container text-4xl mb-6">verified</span>
+<h3 class="font-headline-sm mb-4">鮮度の追求</h3>
+<p class="font-body-md opacity-80">発送前24時間以内に焙煎。職人の手による気密性の高いパッケージが、各収穫の複雑なアロマを完璧に保ちます。</p>
+</div>
+<!-- Feature 3 (Flexible Delivery Plan) -->
+<div class="md:col-span-12 bg-surface-container-high p-12 flex flex-col md:flex-row items-center gap-12">
+<div class="flex-1">
+<span class="material-symbols-outlined text-secondary text-4xl mb-6">calendar_today</span>
+<h3 class="font-headline-sm text-primary mb-4">自由な配送プラン</h3>
+<p class="font-body-md text-on-surface-variant max-w-xl">消費量に合わせてサブスクリプションを調整。ワンクリックで停止、スキップ、頻度の変更が可能です。縛りのない、自由で卓越したコーヒー体験を。</p>
+<div class="mt-8">
+<button class="bg-primary text-on-primary px-8 py-4 font-label-caps tracking-widest uppercase hover:bg-secondary transition-colors">プランをカスタマイズ</button>
+</div>
+</div>
+<div class="flex-1 w-full h-64 md:h-96 bg-white overflow-hidden shadow-sm">
+<img alt="High-quality, cinematic close-up photo of various roasted coffee beans scattered artistically on a clean, light-colored surface. Natural soft lighting, shallow depth of field, premium artisanal feel." class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9frXh6Qd2MJ3K906D0Z5HEvO6xt-PJn5iMZRybQIrBUIhnuA0-oH5hcCul3KmXiAF6gZ46X_PnImeeXMONVO06pN3JkOAxO1W89vg1DWBShf9_yZosV6suuAlgd2FgS7355auJHowgSmGva2Gwa2V3IQb8KJto4e1jFwjYrsNv8ZlgDWtzSpPeSCMfry5UTYmt9p-ASph8-f0lkaCGH2jDVQ9lUGp6HDo4x8F264exY85QasNOpT3js3d260OWSif90Mn5fWlVNPc"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing Plans -->
+<section class="bg-surface-container py-section-gap">
+<div class="max-w-container-max mx-auto px-8">
+<div class="text-center mb-20">
+<h2 class="font-headline-lg text-primary mb-4">プランを選択する</h2>
+<p class="font-body-lg text-on-surface-variant">ライフスタイルに合わせたライブラリへのアクセス権をお選びください。</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Standard -->
+<div class="bg-white p-10 flex flex-col border border-outline-variant/10">
+<span class="font-label-caps text-secondary mb-4">エンシュージアスト</span>
+<h3 class="font-headline-md text-primary mb-6">スタンダード</h3>
+<div class="mb-8">
+<span class="text-4xl font-headline-md">¥3,500</span>
+<span class="text-on-surface-variant font-body-sm"> / 月</span>
+</div>
+<ul class="space-y-4 mb-12 flex-grow">
+<li class="flex items-center gap-3 font-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">check</span> シグネチャー・ブレンド 250g x 1
+                            </li>
+<li class="flex items-center gap-3 font-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">check</span> 月替わりの焙煎ノート
+                            </li>
+<li class="flex items-center gap-3 font-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">check</span> 通常配送
+                            </li>
+</ul>
+<button class="w-full border border-primary text-primary py-4 font-label-caps tracking-widest uppercase hover:bg-primary hover:text-on-primary transition-all duration-300">申し込む</button>
+</div>
+<!-- Premium -->
+<div class="bg-white p-10 flex flex-col border border-secondary relative transform scale-105 shadow-xl z-10">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-secondary text-white px-4 py-1 font-label-caps tracking-widest uppercase text-[10px]">おすすめ</div>
+<span class="font-label-caps text-secondary mb-4">コノシュア</span>
+<h3 class="font-headline-md text-primary mb-6">プレミアム</h3>
+<div class="mb-8">
+<span class="text-4xl font-headline-md">¥6,200</span>
+<span class="text-on-surface-variant font-body-sm"> / 月</span>
+</div>
+<ul class="space-y-4 mb-12 flex-grow">
+<li class="flex items-center gap-3 font-body-sm text-on-surface">
+<span class="material-symbols-outlined text-sm text-secondary">check</span> シングルオリジン 250g x 2
+                            </li>
+<li class="flex items-center gap-3 font-body-sm text-on-surface">
+<span class="material-symbols-outlined text-sm text-secondary">check</span> 詳細なカッピングガイド
+                            </li>
+<li class="flex items-center gap-3 font-body-sm text-on-surface">
+<span class="material-symbols-outlined text-sm text-secondary">check</span> 優先配送
+                            </li>
+<li class="flex items-center gap-3 font-body-sm text-on-surface">
+<span class="material-symbols-outlined text-sm text-secondary">check</span> マイクロロットへの早期アクセス
+                            </li>
+</ul>
+<button class="w-full bg-primary text-on-primary py-4 font-label-caps tracking-widest uppercase hover:bg-secondary transition-all duration-300">申し込む</button>
+</div>
+<!-- Collector -->
+<div class="bg-white p-10 flex flex-col border border-outline-variant/10">
+<span class="font-label-caps text-secondary mb-4">キュレーター</span>
+<h3 class="font-headline-md text-primary mb-6">コレクター</h3>
+<div class="mb-8">
+<span class="text-4xl font-headline-md">¥11,000</span>
+<span class="text-on-surface-variant font-body-sm"> / 月</span>
+</div>
+<ul class="space-y-4 mb-12 flex-grow">
+<li class="flex items-center gap-3 font-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">check</span> 希少な「アーティファクト」250g x 3
+                            </li>
+<li class="flex items-center gap-3 font-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">check</span> コレクターズ・プリントとストーリー
+                            </li>
+<li class="flex items-center gap-3 font-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">check</span> 招待制のテイスティングイベント
+                            </li>
+<li class="flex items-center gap-3 font-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">check</span> 専任のアカウントマネージャー
+                            </li>
+</ul>
+<button class="w-full border border-primary text-primary py-4 font-label-caps tracking-widest uppercase hover:bg-primary hover:text-on-primary transition-all duration-300">申し込む</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Q&A Section -->
+<section class="py-section-gap px-8 max-w-3xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-primary mb-4">よくあるご質問</h2>
+<div class="h-px w-24 bg-secondary mx-auto mb-8"></div>
+</div>
+<div class="space-y-6">
+<div class="border-b border-outline-variant pb-6 group cursor-pointer">
+<div class="flex justify-between items-center mb-4">
+<h4 class="font-headline-sm text-lg text-primary">焙煎度合いは選べますか？</h4>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:rotate-45 transition-transform">add</span>
+</div>
+<div class="hidden group-hover:block">
+<p class="font-body-md text-on-surface-variant">初回設定時に簡単なフレーバープロフィールのアンケートにご回答いただきます。その結果をもとに、キュレーターがあなたの好みに合わせたライト、ミディアム、ダークローストを厳選します。</p>
+</div>
+</div>
+<div class="border-b border-outline-variant pb-6 group cursor-pointer">
+<div class="flex justify-between items-center mb-4">
+<h4 class="font-headline-sm text-lg text-primary">配送をスキップすることは可能ですか？</h4>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:rotate-45 transition-transform">add</span>
+</div>
+<div class="hidden group-hover:block">
+<p class="font-body-md text-on-surface-variant">はい、可能です。ダッシュボードから配送カレンダーを管理いただけます。手数料なしで、いつでも1ヶ月スキップしたり、一時停止したりすることができます。</p>
+</div>
+</div>
+<div class="border-b border-outline-variant pb-6 group cursor-pointer">
+<div class="flex justify-between items-center mb-4">
+<h4 class="font-headline-sm text-lg text-primary">豆の産地はどこですか？</h4>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:rotate-45 transition-transform">add</span>
+</div>
+<div class="hidden group-hover:block">
+<p class="font-body-md text-on-surface-variant">エチオピア、コロンビア、インドネシアなどの高地農家を中心に、世界中から調達しています。すべての収穫物は倫理的に取引され、品質基準を満たしたものです。</p>
+</div>
+</div>
+<div class="border-b border-outline-variant pb-6 group cursor-pointer">
+<div class="flex justify-between items-center mb-4">
+<h4 class="font-headline-sm text-lg text-primary">パッケージはリサイクル可能ですか？</h4>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:rotate-45 transition-transform">add</span>
+</div>
+<div class="hidden group-hover:block">
+<p class="font-body-md text-on-surface-variant">はい。私たちのコーヒーバッグは堆肥化可能であり、配送ボックスは100%再生紙を使用し、植物性インクで印刷されています。</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter CTA -->
+<section class="bg-secondary p-20 text-center">
+<div class="max-w-2xl mx-auto">
+<h2 class="font-headline-md text-white mb-6">ライブラリに参加する</h2>
+<p class="font-body-md text-white/80 mb-10">最新の豆の発見、焙煎の秘密、抽出のテクニックなどの情報を毎週お届けします。</p>
+<form class="flex flex-col sm:flex-row gap-4">
+<input class="flex-grow bg-transparent border-0 border-b border-white/40 text-white placeholder:text-white/40 font-label-caps focus:ring-0 focus:border-white transition-all py-4" placeholder="メールアドレスを入力" type="email"/>
+<button class="bg-white text-primary px-10 py-4 font-label-caps tracking-widest uppercase hover:bg-primary hover:text-white transition-all duration-300" type="submit">登録する</button>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-20 px-8 flex flex-col items-center gap-8 bg-stone-50 dark:bg-stone-950 text-stone-900 dark:text-stone-50 font-sans text-xs tracking-widest uppercase border-t border-stone-200 dark:border-stone-800">
+<div class="text-lg font-serif mb-4 block">キュレーターズ・ライブラリ</div>
+<div class="flex flex-wrap justify-center gap-10 mb-8">
+<a class="text-stone-400 dark:text-stone-600 hover:text-stone-900 dark:hover:text-white transition-colors" href="#">プライバシーポリシー</a>
+<a class="text-stone-400 dark:text-stone-600 hover:text-stone-900 dark:hover:text-white transition-colors" href="#">利用規約</a>
+<a class="text-stone-400 dark:text-stone-600 hover:text-stone-900 dark:hover:text-white transition-colors" href="#">配送について</a>
+<a class="text-stone-400 dark:text-stone-600 hover:text-stone-900 dark:hover:text-white transition-colors" href="#">お問い合わせ</a>
+</div>
+<div class="flex gap-6 mb-8">
+<span class="material-symbols-outlined text-stone-400 hover:text-stone-900 cursor-pointer">public</span>
+<span class="material-symbols-outlined text-stone-400 hover:text-stone-900 cursor-pointer">alternate_email</span>
+<span class="material-symbols-outlined text-stone-400 hover:text-stone-900 cursor-pointer">chat</span>
+</div>
+<p class="text-stone-400 dark:text-stone-600">© 2024 THE CURATOR'S LIBRARY. ALL RIGHTS RESERVED.</p>
+</footer>
+</body></html>

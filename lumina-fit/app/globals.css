@@ -1,6 +1,59 @@
 @import "tailwindcss";
 
 @theme {
+  /* ── Coffee LP — Stitch Design Tokens ── */
+  --color-surface: #fcf9f4;
+  --color-surface-dim: #dcdad5;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f6f3ee;
+  --color-surface-container: #f0ede9;
+  --color-surface-container-high: #ebe8e3;
+  --color-surface-container-highest: #e5e2dd;
+  --color-on-surface: #1c1c19;
+  --color-on-surface-variant: #444748;
+  --color-outline: #747878;
+  --color-outline-variant: #c4c7c7;
+  --color-primary: #000000;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #1c1b1b;
+  --color-secondary: #755849;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #fed8c5;
+  --color-tertiary-container: #29180a;
+  --color-on-tertiary-container: #9a7e6c;
+
+  /* Coffee LP Typography — Font Families */
+  --font-work-sans: 'Work Sans', sans-serif;
+  --font-display-xl: var(--font-noto-serif), 'Noto Serif JP', serif;
+  --font-headline-lg: var(--font-noto-serif), 'Noto Serif JP', serif;
+  --font-headline-md: var(--font-noto-serif), 'Noto Serif JP', serif;
+  --font-headline-sm: var(--font-noto-serif), 'Noto Serif JP', serif;
+  --font-body-lg: 'Work Sans', sans-serif;
+  --font-body-md: 'Work Sans', sans-serif;
+  --font-body-sm: 'Work Sans', sans-serif;
+  --font-label-caps: 'Work Sans', sans-serif;
+
+  /* Coffee LP Typography — Font Sizes */
+  --text-display-xl: 80px;
+  --text-display-xl--line-height: 88px;
+  --text-display-xl--letter-spacing: -0.02em;
+  --text-headline-lg: 56px;
+  --text-headline-lg--line-height: 64px;
+  --text-headline-lg--letter-spacing: -0.01em;
+  --text-headline-md: 36px;
+  --text-headline-md--line-height: 44px;
+  --text-headline-sm: 28px;
+  --text-headline-sm--line-height: 36px;
+  --text-body-lg: 18px;
+  --text-body-lg--line-height: 28px;
+  --text-body-md: 16px;
+  --text-body-md--line-height: 24px;
+  --text-body-sm: 14px;
+  --text-body-sm--line-height: 20px;
+  --text-label-caps: 12px;
+  --text-label-caps--line-height: 16px;
+  --text-label-caps--letter-spacing: 0.1em;
+
   --color-gold: #c0a0b0;
   --color-gold-light: #d8c0cc;
   --color-gold-dark: #9a7888;
@@ -25,6 +78,16 @@
   --white: #faf8f4;
   --white-2: #f0ede6;
   --gray: #888070;
+}
+
+/* Material Symbols Outlined (Coffee LP) */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+  font-size: inherit;
+  line-height: 1;
+  display: inline-block;
+  vertical-align: middle;
+  user-select: none;
 }
 
 html {
