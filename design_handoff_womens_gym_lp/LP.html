@@ -324,6 +324,67 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 700; line-height: 1.35; }
   background: var(--black);
 }
 .pain-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 56px;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.pain-card {
+  background: var(--black-2);
+  border: 1px solid rgba(201,168,76,0.15);
+  padding: 24px 28px;
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 28px;
+  align-items: center;
+  transition: background 0.3s, border-color 0.3s, transform 0.3s;
+}
+.pain-card:hover { background: var(--black-3); border-color: rgba(201,168,76,0.4); transform: translateY(-2px); }
+.pain-card-img-wrap {
+  width: 140px;
+  height: 140px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pain-card-img-wrap img {
+  width: 150%;
+  height: 150%;
+  object-fit: contain;
+  filter: invert(1);
+  mix-blend-mode: screen;
+  display: block;
+}
+.pain-card-num {
+  font-family: var(--display);
+  font-size: 18px;
+  color: var(--gold);
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+}
+.pain-card-title {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--white);
+  margin-bottom: 10px;
+  letter-spacing: 0.05em;
+}
+.pain-card-desc {
+  font-size: 13.5px;
+  color: rgba(250,248,244,0.7);
+  line-height: 1.85;
+}
+@media (max-width: 640px) {
+  .pain-card { grid-template-columns: 1fr; gap: 8px; padding: 28px 20px; text-align: center; }
+  .pain-card-img-wrap { width: 120px; height: 120px; margin: 0 auto; }
+  .pain-card-desc { text-align: left; }
+}
+.pain-grid-OLD {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1px;
@@ -416,9 +477,11 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 700; line-height: 1.35; }
 }
 .why-item {
   background: rgba(0,0,0,0.35); /* ← 35%の黒。高級感UP */
-  padding: 36px 28px;
+  padding: 36px 28px 0;
   position: relative;
   transition: background 0.3s;
+  display: flex;
+  flex-direction: column;
 }
 .why-item:hover { background: #161410; }
 .why-item::before {
@@ -457,11 +520,89 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 700; line-height: 1.35; }
   font-weight: 600;
   line-height: 1;
 }
+.why-img {
+  margin-top: 28px;
+  margin-left: -28px;
+  margin-right: -28px;
+  width: calc(100% + 56px);
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  display: block;
+}
 
 /* ── FLOW ── */
 #flow {
   background: var(--black);
   position: relative;
+}
+.flow-steps-v2 {
+  margin-top: 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 880px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.flow-step-v2 {
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  gap: 48px;
+  align-items: center;
+  padding: 40px 0;
+  border-bottom: 1px solid rgba(201,168,76,0.12);
+}
+.flow-step-v2:last-child { border-bottom: none; }
+.flow-step-v2-text { display: flex; flex-direction: column; }
+.flow-step-v2-tag {
+  display: inline-block;
+  font-family: var(--display);
+  font-size: 14px;
+  letter-spacing: 3px;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.flow-step-v2-title {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--white);
+  margin-bottom: 14px;
+  letter-spacing: 0.04em;
+}
+.flow-step-v2-desc {
+  font-size: 14px;
+  color: rgba(250,248,244,0.72);
+  line-height: 1.9;
+}
+.flow-step-v2-img {
+  width: 220px;
+  height: 220px;
+  justify-self: end;
+}
+.flow-step-v2-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: invert(1);
+  mix-blend-mode: screen;
+  display: block;
+}
+@media (max-width: 720px) {
+  .flow-step-v2 {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 40px 0;
+  }
+  .flow-step-v2-img {
+    width: 160px;
+    height: 160px;
+    order: -1;
+    justify-self: center;
+  }
+  .flow-step-v2-text { text-align: center; align-items: center; }
+  .flow-step-v2-desc { text-align: left; }
 }
 .flow-steps {
   margin-top: 56px;
@@ -1231,34 +1372,39 @@ body #trainers {
 <section id="pain" class="section">
   <div class="container">
     <div class="section-eyebrow fade-up">Your Concerns</div>
-    <h2 class="section-title-lg fade-up fade-up-delay-1">こんなお悩み、<br><span class="gold-text">ありませんか？</span></h2>
+    <h2 class="section-title-lg fade-up fade-up-delay-1"><span class="pain-h-mobile">こんなお悩み、<br><span class="gold-text">ありませんか？</span></span><span class="pain-h-pc">こんなお悩み<span class="gold-text">ありませんか？</span></span></h2>
+    <style>.pain-h-pc{display:none}.pain-h-mobile{display:inline}@media(min-width:768px){.pain-h-pc{display:inline}.pain-h-mobile{display:none}}</style>
     <div class="pain-grid">
-      <div class="pain-item fade-up">
-        <div class="pain-num">01</div>
-        <div class="pain-text">
-          <strong>一人では続かない</strong>
-          何度も挫折してきた。モチベーションが続かず、気づけばやめてしまう。
+      <div class="pain-card fade-up">
+        <div class="pain-card-img-wrap"><img src="uploads/onayami_lumine1.png" alt="一人では続かない"></div>
+        <div class="pain-card-body">
+          <div class="pain-card-num">01</div>
+          <div class="pain-card-title">一人では続かない</div>
+          <div class="pain-card-desc">何度も挫折してきた。モチベーションが続かず、気づけばやめてしまう。</div>
         </div>
       </div>
-      <div class="pain-item fade-up fade-up-delay-1">
-        <div class="pain-num">02</div>
-        <div class="pain-text">
-          <strong>食事制限が辛すぎる</strong>
-          カロリー制限を頑張っても痩せない。むしろ反動で食べてしまう。
+      <div class="pain-card fade-up fade-up-delay-1">
+        <div class="pain-card-img-wrap"><img src="uploads/onayami_lumine2.png" alt="食事制限が辛い"></div>
+        <div class="pain-card-body">
+          <div class="pain-card-num">02</div>
+          <div class="pain-card-title">食事制限が辛すぎる</div>
+          <div class="pain-card-desc">カロリー制限を頑張っても痩せない。むしろ反動で食べてしまう。</div>
         </div>
       </div>
-      <div class="pain-item fade-up fade-up-delay-2">
-        <div class="pain-num">03</div>
-        <div class="pain-text">
-          <strong>何度もリバウンド</strong>
-          体重は落とせたのに、すぐ戻る。根本から体を変えたい。
+      <div class="pain-card fade-up fade-up-delay-2">
+        <div class="pain-card-img-wrap"><img src="uploads/onayami_lumine3.png" alt="リバウンド"></div>
+        <div class="pain-card-body">
+          <div class="pain-card-num">03</div>
+          <div class="pain-card-title">何度もリバウンド</div>
+          <div class="pain-card-desc">体重は落とせたのに、すぐ戻る。根本から体を変えたい。</div>
         </div>
       </div>
-      <div class="pain-item fade-up fade-up-delay-3">
-        <div class="pain-num">04</div>
-        <div class="pain-text">
-          <strong>何から始めたらいいかわからない</strong>
-          ジムに行っても何をすればいいのか。正しいやり方を教えてほしい。
+      <div class="pain-card fade-up fade-up-delay-3">
+        <div class="pain-card-img-wrap"><img src="uploads/onayami_lumine4.png" alt="何から始めればいいかわからない"></div>
+        <div class="pain-card-body">
+          <div class="pain-card-num">04</div>
+          <div class="pain-card-title">何から始めたらいいかわからない</div>
+          <div class="pain-card-desc">ジムに行っても何をすればいいのか。正しいやり方を教えてほしい。</div>
         </div>
       </div>
     </div>
@@ -1277,24 +1423,28 @@ body #trainers {
         <div class="why-icon">◆</div>
         <div class="why-title">専任トレーナー制</div>
         <div class="why-desc">入会から卒業まで、担当は一人。毎回同じトレーナーがあなたの変化を記録・分析し、最適なプログラムに改善し続けます。</div>
+        <img class="why-img" src="uploads/reason_l1.png" alt="専任トレーナー制">
       </div>
       <div class="why-item fade-up fade-up-delay-1">
         <div class="why-num">02</div>
         <div class="why-icon">◇</div>
         <div class="why-title">完全個室トレーニング</div>
         <div class="why-desc">他のお客様と顔を合わせることはありません。人目を気にせず、集中できる上質な空間でトレーニングに臨めます。</div>
+        <img class="why-img" src="uploads/reason_l2.png" alt="完全個室トレーニング">
       </div>
       <div class="why-item fade-up fade-up-delay-2">
         <div class="why-num">03</div>
         <div class="why-icon">◆</div>
         <div class="why-title">食事サポート付き</div>
         <div class="why-desc">厳しいカロリー制限は不要。ライフスタイルに合わせた食事アドバイスで、無理なく体の内側から変わっていきます。</div>
+        <img class="why-img" src="uploads/reason_l3.png" alt="食事サポート付き">
       </div>
       <div class="why-item fade-up fade-up-delay-3">
         <div class="why-num">04</div>
         <div class="why-icon">◇</div>
         <div class="why-title">24時間LINEサポート</div>
         <div class="why-desc">食事の写真を送るだけでアドバイスをもらえます。トレーニング外での習慣づくりもトレーナーが二人三脚でサポートします。</div>
+        <img class="why-img" src="uploads/reason_l4.png" alt="24時間LINEサポート">
       </div>
     </div>
   </div>
@@ -1305,39 +1455,30 @@ body #trainers {
   <div class="container">
     <div class="section-eyebrow fade-up">How It Works</div>
     <h2 class="section-title-lg fade-up fade-up-delay-1">はじめるまでの<span class="gold-text">3ステップ</span></h2>
-    <div class="flow-steps" style="margin-top:56px; max-width:560px">
-      <div class="flow-step fade-up">
-        <div class="flow-step-left">
-          <div class="flow-step-num">1</div>
-          <div class="flow-step-line"></div>
+    <div class="flow-steps-v2">
+      <div class="flow-step-v2 fade-up">
+        <div class="flow-step-v2-text">
+          <span class="flow-step-v2-tag">Step 01</span>
+          <h3 class="flow-step-v2-title">無料カウンセリング</h3>
+          <p class="flow-step-v2-desc">目標・現在の体型・生活習慣・食生活を丁寧にヒアリング。完全無料・所要時間60分。押しつけ販売は一切ありません。</p>
         </div>
-        <div class="flow-step-right">
-          <div class="flow-tag">Step 01</div>
-          <div class="flow-step-title">無料カウンセリング</div>
-          <div class="flow-step-desc">目標・現在の体型・生活習慣・食生活を丁寧にヒアリング。完全無料・所要時間60分。押しつけ販売は一切ありません。</div>
-        </div>
+        <div class="flow-step-v2-img"><img src="uploads/step_l1.png" alt="無料カウンセリング"></div>
       </div>
-      <div class="flow-step fade-up fade-up-delay-1">
-        <div class="flow-step-left">
-          <div class="flow-step-num">2</div>
-          <div class="flow-step-line"></div>
+      <div class="flow-step-v2 fade-up fade-up-delay-1">
+        <div class="flow-step-v2-text">
+          <span class="flow-step-v2-tag">Step 02</span>
+          <h3 class="flow-step-v2-title">オーダーメイドプラン作成</h3>
+          <p class="flow-step-v2-desc">あなただけのトレーニングプログラムと食事プランを作成。体型測定・体組成分析を行い、科学的なアプローチで目標を設計します。</p>
         </div>
-        <div class="flow-step-right">
-          <div class="flow-tag">Step 02</div>
-          <div class="flow-step-title">オーダーメイドプラン作成</div>
-          <div class="flow-step-desc">あなただけのトレーニングプログラムと食事プランを作成。体型測定・体組成分析を行い、科学的なアプローチで目標を設計します。</div>
-        </div>
+        <div class="flow-step-v2-img"><img src="uploads/step_l2.png" alt="オーダーメイドプラン作成"></div>
       </div>
-      <div class="flow-step fade-up fade-up-delay-2">
-        <div class="flow-step-left">
-          <div class="flow-step-num">3</div>
-          <div class="flow-step-line"></div>
+      <div class="flow-step-v2 fade-up fade-up-delay-2">
+        <div class="flow-step-v2-text">
+          <span class="flow-step-v2-tag">Step 03</span>
+          <h3 class="flow-step-v2-title">トレーニング開始</h3>
+          <p class="flow-step-v2-desc">専任トレーナーと二人三脚でスタート。毎回のセッションで進捗を確認しながら、確実に理想の体型へ近づいていきます。</p>
         </div>
-        <div class="flow-step-right">
-          <div class="flow-tag">Step 03</div>
-          <div class="flow-step-title">トレーニング開始</div>
-          <div class="flow-step-desc">専任トレーナーと二人三脚でスタート。毎回のセッションで進捗を確認しながら、確実に理想の体型へ近づいていきます。</div>
-        </div>
+        <div class="flow-step-v2-img"><img src="uploads/step_l3.png" alt="トレーニング開始"></div>
       </div>
     </div>
     <div class="flow-cta-wrap fade-up" style="margin-top: 8px;">
@@ -1345,6 +1486,7 @@ body #trainers {
     </div>
   </div>
 </section>
+
 
 <!-- PRICING -->
 <section id="pricing" class="section">
