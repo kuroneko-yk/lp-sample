@@ -51,11 +51,11 @@
   body { font-family: 'Noto Sans JP', sans-serif; color: #3f3528; background-color: #fbf8f5; }
   .font-serif-jp { font-family: 'Noto Serif JP', serif; }
 
-  /* Hero — image on right (model) desktop; image-on-top stack on mobile */
+  /* Hero — 背景画像（スマホはinline img使用） */
   .hero-bg {
     background-image: url('images/hero_nico.png');
     background-size: cover;
-    background-position: center right;
+    background-position: 65% center;
   }
   .hero-bg::before {
     content: '';
@@ -63,12 +63,8 @@
     background: linear-gradient(90deg, rgba(245,240,235,0.92) 0%, rgba(245,240,235,0.78) 30%, rgba(245,240,235,0.35) 55%, rgba(245,240,235,0) 75%);
     pointer-events: none;
   }
-  @media (max-width: 640px) {
-    /* On mobile, disable bg image — the inline <img> handles display */
-    .hero-bg { background-image: none; }
-    .hero-bg::before { display: none; }
-  }
-  /* Mobile hero image: soft gradient fading into the page bg at the bottom */
+
+  /* スマホ用インライン画像のグラデーション */
   .hero-mobile-img {
     position: relative;
   }
@@ -79,10 +75,53 @@
     background: linear-gradient(180deg, rgba(251,248,245,0) 55%, rgba(251,248,245,0.7) 80%, rgba(251,248,245,1) 100%);
   }
 
-  /* Vertical writing for hero accent */
+  /* 縦書きモード */
   .vertical-text {
     writing-mode: vertical-rl;
     text-orientation: mixed;
+  }
+
+  /* ヒーローキャッチコピーの共通スタイル（タブレット・PC） */
+  .hero-tagline {
+    position: absolute;
+    z-index: 2000;
+  }
+
+  /* PC（1024px以上）: 縦中央・右配置 */
+  @media (min-width: 1024px) {
+    .hero-bg { background-position: center right; }
+    .hero-tagline {
+      top: 50%;
+      right: 2.5rem;
+      transform: translateY(-50%);
+    }
+    .hero-vertical-text {
+      font-size: 2.4rem;
+      line-height: 2.2;
+    }
+  }
+
+  /* タブレット（640px〜1023px）: 右配置・bg調整 */
+  @media (min-width: 640px) and (max-width: 1023px) {
+    .hero-bg { background-position: 70% center; }
+    .hero-tagline {
+      top: 18%;
+      right: 1.5rem;
+    }
+    .hero-vertical-text {
+      font-size: 1.8rem;
+      line-height: 2;
+    }
+  }
+
+  /* スマホ（639px以下）: bg画像なし・フォントサイズ強制上書き */
+  @media (max-width: 639px) {
+    .hero-bg { background-image: none; }
+    .hero-bg::before { display: none; }
+    .hero-vertical-text {
+      font-size: 1.4rem !important;
+      line-height: 2;
+    }
   }
 
   /* Section heading underline */
@@ -110,14 +149,14 @@
   .cta-image-1 {
     background-image:
       linear-gradient(rgba(63,53,40,0.45), rgba(63,53,40,0.55)),
-      url('https://placehold.co/1920x800/c9b89a/6f5b42/jpg?text=Beautiful+Hair');
+      url('images/nico_cta.jpg');
     background-size: cover;
     background-position: center;
   }
   .cta-image-2 {
     background-image:
       linear-gradient(rgba(63,53,40,0.4), rgba(63,53,40,0.55)),
-      url('https://placehold.co/1920x800/adc178/3f3528/jpg?text=Natural+Care');
+      url('images/nico_cta2.jpg');
     background-size: cover;
     background-position: center;
   }
@@ -141,6 +180,10 @@
     background:
       repeating-linear-gradient(45deg, #f5f0eb, #f5f0eb 10px, #ede4d8 10px, #ede4d8 20px);
   }
+  .hero-line {
+  display: block;
+  line-height: 1.8; /* 好きなだけ広げられる */
+}
 </style>
 </head>
 <body class="antialiased">
@@ -167,14 +210,19 @@
 </header>
 
 <!-- ========== 1. HERO ========== -->
-<section id="hero" class="relative sm:min-h-[100svh] hero-bg flex flex-col justify-end sm:justify-center pt-14 md:pt-16 overflow-hidden">
-  <!-- Mobile-only inline image (PC uses background-image) -->
+<section id="hero" class="relative md:min-h-[70vh] lg:min-h-[85vh] hero-bg flex flex-col justify-end sm:justify-center pt-14 md:pt-16 overflow-hidden">
+  <!-- スマホ用インライン画像（タブレット・PCは背景画像を使用） -->
   <div class="sm:hidden w-full hero-mobile-img">
-    <img src="images/hero_nico.png" alt="Hair Salon Nico" class="w-full aspect-[4/3] object-cover object-center" />
+    <img src="images/hero_nico.png" alt="Hair Salon Nico" class="w-full h-[60vh] object-cover object-center" />
+    <!-- スマホ用：縦書き、画像左側に重なる -->
+    <p class="vertical-text absolute top-[15%] left-[10px] z-[2000] font-serif-jp text-brown-900 tracking-[0.3em] hero-vertical-text">
+      自分史上、最高の美髪へ
+    </p>
   </div>
 
-  <div class="absolute top-[18%] right-4 md:right-8 hidden sm:block z-10">
-    <p class="vertical-text font-serif-jp text-brown/85 text-base md:text-lg lg:text-xl tracking-[0.45em]">
+  <!-- タブレット・PC用：縦書き（位置はCSSで制御） -->
+  <div class="hero-tagline hidden sm:block">
+    <p class="vertical-text font-serif-jp text-brown/85 tracking-[0.45em] hero-vertical-text">
       自分史上、最高の美髪へ
     </p>
   </div>
@@ -182,9 +230,21 @@
   <div class="relative z-10 max-w-6xl mx-auto px-6 md:px-10 py-10 sm:py-28 w-full">
     <div class="max-w-full sm:max-w-[52%] md:max-w-[50%] text-center sm:text-left">
     <p class="font-serif-jp text-brown text-xs sm:text-sm md:text-base tracking-[0.3em] mt-2 sm:mt-5 mb-5">— Hair Salon Nico —</p>
-    <h1 class="font-serif-jp font-bold text-brown-900 text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.5] sm:leading-[2] tracking-wide mb-8 whitespace-nowrap sm:whitespace-normal">
-      大人女性の<br class="hidden sm:block"/>美髪を叶える
-    </h1>
+   <h1 class="hero-title font-serif-jp font-bold text-brown-900
+  text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-wide mb-8">
+
+  <!-- スマホ用（横書き1行） -->
+  <span class="hero-mobile inline md:hidden whitespace-nowrap">
+    大人女性の美髪を叶える
+  </span>
+
+  <!-- PC・タブレット用（縦書き2行） -->
+  <span class="hero-desktop hidden md:inline-block md:vertical-text">
+    <span class="hero-line">大人女性の</span>
+    <span class="hero-line">美髪を叶える</span>
+  </span>
+
+</h1>
     <p class="text-brown-900/90 text-sm md:text-base leading-loose mb-10">
       完全予約制のプライベートサロン<br/>
       髪質改善トリートメント専門で、<br class="sm:hidden"/>あなたの髪に寄り添います。
@@ -533,7 +593,7 @@
       <!-- Stylist 1 -->
       <article class="reveal text-center">
         <div class="relative inline-block mb-6">
-          <img src="https://placehold.co/480x600/d6c7b3/6f5b42/jpg?text=Stylist+A" alt="Stylist A" class="w-full max-w-xs aspect-[4/5] object-cover rounded-sm shadow-md" />
+          <img src="images/staff1.jpg" alt="Stylist A" class="w-full max-w-xs aspect-[4/5] object-cover rounded-sm shadow-md" />
         </div>
         <p class="text-xs tracking-[0.3em] text-brown mb-2">OWNER / STYLIST</p>
         <h3 class="font-serif-jp text-2xl text-brown-900 mb-2">中村 美香</h3>
@@ -545,7 +605,7 @@
 
       <!-- Stylist 2 -->
       <article class="reveal text-center">
-        <img src="https://placehold.co/480x600/c9b89a/3f3528/jpg?text=Stylist+B" alt="Stylist B" class="w-full max-w-xs mx-auto aspect-[4/5] object-cover rounded-sm shadow-md mb-6" />
+        <img src="images/staff2.jpg" alt="Stylist B" class="w-full max-w-xs mx-auto aspect-[4/5] object-cover rounded-sm shadow-md mb-6" />
         <p class="text-xs tracking-[0.3em] text-brown mb-2">SENIOR STYLIST</p>
         <h3 class="font-serif-jp text-2xl text-brown-900 mb-2">佐藤 結衣</h3>
         <p class="text-sm text-brown-700 mb-4">Yui Sato</p>
@@ -556,7 +616,7 @@
 
       <!-- Stylist 3 -->
       <article class="reveal text-center">
-        <img src="https://placehold.co/480x600/adc178/3f3528/jpg?text=Stylist+C" alt="Stylist C" class="w-full max-w-xs mx-auto aspect-[4/5] object-cover rounded-sm shadow-md mb-6" />
+        <img src="images/staff3.jpg" alt="Stylist C" class="w-full max-w-xs mx-auto aspect-[4/5] object-cover rounded-sm shadow-md mb-6" />
         <p class="text-xs tracking-[0.3em] text-brown mb-2">STYLIST</p>
         <h3 class="font-serif-jp text-2xl text-brown-900 mb-2">渡辺 花</h3>
         <p class="text-sm text-brown-700 mb-4">Hana Watanabe</p>
