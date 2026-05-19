@@ -47,8 +47,8 @@
   }
 </script>
 <style>
-  html { scroll-behavior: smooth; }
-  body { font-family: 'Noto Sans JP', sans-serif; color: #0d1f1a; -webkit-font-smoothing: antialiased; }
+  html { scroll-behavior: smooth; overflow-x: hidden; }
+  body { font-family: 'Noto Sans JP', sans-serif; color: #0d1f1a; -webkit-font-smoothing: antialiased; max-width: 100%; overflow-x: hidden; }
   .serif { font-family: 'Noto Serif JP', serif; }
   .en { font-family: 'Inter', sans-serif; letter-spacing: 0.04em; }
 
@@ -93,6 +93,9 @@
   .step-row::before {
     content:""; position:absolute; left:2.25rem; top:4.5rem; bottom:-1.5rem; width:2px;
     background: repeating-linear-gradient(to bottom, #bbdfca 0 6px, transparent 6px 12px);
+  }
+  @media (max-width: 639px) {
+    .step-row::before { left: 1.5rem; top: 3.5rem; }
   }
   .step-row:last-child::before { display:none; }
 
@@ -150,8 +153,8 @@
 <!-- ============ HERO ============ -->
 <section id="top" class="relative pt-16 lg:pt-20 bg-paper overflow-hidden">
   <!-- decorative blobs -->
-  <div aria-hidden="true" class="absolute -top-24 -right-24 w-[480px] h-[480px] rounded-full bg-brand-100/60 blur-3xl"></div>
-  <div aria-hidden="true" class="absolute -bottom-32 -left-24 w-[420px] h-[420px] rounded-full bg-brand-50 blur-3xl"></div>
+  <div aria-hidden="true" class="hidden sm:block absolute -top-24 -right-24 w-[480px] h-[480px] rounded-full bg-brand-100/60 blur-3xl"></div>
+  <div aria-hidden="true" class="hidden sm:block absolute -bottom-32 -left-24 w-[420px] h-[420px] rounded-full bg-brand-50 blur-3xl"></div>
 
   <div class="relative max-w-7xl mx-auto px-5 lg:px-8 pt-10 lg:pt-16 pb-16 lg:pb-24 grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
     <!-- copy -->
@@ -165,7 +168,7 @@
       </div>
 
       <h1 class="serif font-black text-3xl sm:text-4xl lg:text-[3.1rem] xl:text-[3.4rem] leading-[1.25] sm:leading-[1.5] lg:leading-[1.55] tracking-tight">
-        <span class="block whitespace-nowrap">交通事故の<span class="relative inline-block"><span class="relative z-10 text-brand-600">つらい痛み、</span><span aria-hidden="true" class="absolute left-0 right-0 bottom-1 h-3 bg-brand-100 -z-0"></span></span></span>
+        <span class="block">交通事故の<span class="relative inline-block"><span class="relative z-10 text-brand-600">つらい痛み、</span><span aria-hidden="true" class="absolute left-0 right-0 bottom-1 h-3 bg-brand-100 -z-0"></span></span></span>
         <span class="block">我慢していませんか？</span>
       </h1>
       <p class="mt-8 lg:mt-10 text-base lg:text-lg text-ink-700 leading-relaxed max-w-xl">
@@ -281,8 +284,8 @@
           </li>
         </ul>
 
-        <div class="mt-8 rounded-2xl bg-brand-700 text-white p-6 lg:p-8 flex flex-col sm:flex-row items-start sm:items-center gap-5">
-          <div class="shrink-0 w-14 h-14 rounded-2xl bg-white/15 grid place-items-center">
+        <div class="mt-8 rounded-2xl bg-brand-700 text-white p-4 sm:p-6 lg:p-8 flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-5">
+          <div class="shrink-0 w-10 h-10 sm:w-14 sm:h-14 rounded-2xl bg-white/15 grid place-items-center">
             <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
           </div>
           <div class="flex-1">
@@ -298,7 +301,7 @@
           <div class="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-xl">
             <img src="images/onayami_sasai.jpg" alt="事故後の不調に悩む患者様" class="w-full h-full object-cover" />
           </div>
-          <div class="absolute -top-4 -right-4 bg-alert text-white rounded-full w-24 h-24 grid place-items-center text-center shadow-lg rotate-[8deg]">
+          <div class="absolute -top-4 right-0 sm:-right-4 bg-alert text-white rounded-full w-20 h-20 sm:w-24 sm:h-24 grid place-items-center text-center shadow-lg rotate-[8deg]">
             <div>
               <div class="text-[10px] tracking-wider">RISK</div>
               <div class="serif font-bold text-sm leading-tight mt-1">放置で<br/>慢性化</div>
@@ -322,10 +325,10 @@
     <div class="space-y-16 lg:space-y-24">
       <!-- Reason 1 -->
       <div>
-        <div class="bg-brand-500 text-white rounded-xl px-5 py-3 flex items-center gap-4 mb-6">
+        <div class="bg-brand-500 text-white rounded-xl px-3 py-2 sm:px-5 sm:py-3 flex flex-wrap items-center gap-2 sm:gap-4 mb-6">
           <span class="en font-bold text-xs tracking-[0.3em] opacity-80">REASON</span>
-          <span class="en font-black text-3xl">01</span>
-          <span class="font-bold text-base lg:text-lg">交通事故・むちうち専門の高い専門性</span>
+          <span class="en font-black text-2xl sm:text-3xl">01</span>
+          <span class="font-bold text-sm sm:text-base lg:text-lg">交通事故・むちうち専門の高い専門性</span>
         </div>
         <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           <div class="lg:col-span-5">
@@ -346,10 +349,10 @@
 
       <!-- Reason 2 (reverse) -->
       <div>
-        <div class="bg-brand-500 text-white rounded-xl px-5 py-3 flex items-center gap-4 mb-6">
+        <div class="bg-brand-500 text-white rounded-xl px-3 py-2 sm:px-5 sm:py-3 flex flex-wrap items-center gap-2 sm:gap-4 mb-6">
           <span class="en font-bold text-xs tracking-[0.3em] opacity-80">REASON</span>
-          <span class="en font-black text-3xl">02</span>
-          <span class="font-bold text-base lg:text-lg">自賠責保険対応で自己負担0円</span>
+          <span class="en font-black text-2xl sm:text-3xl">02</span>
+          <span class="font-bold text-sm sm:text-base lg:text-lg">自賠責保険対応で自己負担0円</span>
         </div>
         <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           <div class="lg:col-span-7 lg:order-2">
@@ -374,10 +377,10 @@
 
       <!-- Reason 3 -->
       <div>
-        <div class="bg-brand-500 text-white rounded-xl px-5 py-3 flex items-center gap-4 mb-6">
+        <div class="bg-brand-500 text-white rounded-xl px-3 py-2 sm:px-5 sm:py-3 flex flex-wrap items-center gap-2 sm:gap-4 mb-6">
           <span class="en font-bold text-xs tracking-[0.3em] opacity-80">REASON</span>
-          <span class="en font-black text-3xl">03</span>
-          <span class="font-bold text-base lg:text-lg">国家資格者によるオーダーメイド施術</span>
+          <span class="en font-black text-2xl sm:text-3xl">03</span>
+          <span class="font-bold text-sm sm:text-base lg:text-lg">国家資格者によるオーダーメイド施術</span>
         </div>
         <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           <div class="lg:col-span-5">
@@ -398,10 +401,10 @@
 
       <!-- Reason 4 (reverse) -->
       <div>
-        <div class="bg-brand-500 text-white rounded-xl px-5 py-3 flex items-center gap-4 mb-6">
+        <div class="bg-brand-500 text-white rounded-xl px-3 py-2 sm:px-5 sm:py-3 flex flex-wrap items-center gap-2 sm:gap-4 mb-6">
           <span class="en font-bold text-xs tracking-[0.3em] opacity-80">REASON</span>
-          <span class="en font-black text-3xl">04</span>
-          <span class="font-bold text-base lg:text-lg">夜20時まで・土日祝も対応</span>
+          <span class="en font-black text-2xl sm:text-3xl">04</span>
+          <span class="font-bold text-sm sm:text-base lg:text-lg">夜20時まで・土日祝も対応</span>
         </div>
         <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           <div class="lg:col-span-7 lg:order-2">
@@ -421,10 +424,10 @@
 
       <!-- Reason 5 -->
       <div>
-        <div class="bg-brand-500 text-white rounded-xl px-5 py-3 flex items-center gap-4 mb-6">
+        <div class="bg-brand-500 text-white rounded-xl px-3 py-2 sm:px-5 sm:py-3 flex flex-wrap items-center gap-2 sm:gap-4 mb-6">
           <span class="en font-bold text-xs tracking-[0.3em] opacity-80">REASON</span>
-          <span class="en font-black text-3xl">05</span>
-          <span class="font-bold text-base lg:text-lg">保険会社・弁護士との連携サポート</span>
+          <span class="en font-black text-2xl sm:text-3xl">05</span>
+          <span class="font-bold text-sm sm:text-base lg:text-lg">保険会社・弁護士との連携サポート</span>
         </div>
         <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           <div class="lg:col-span-5">
@@ -485,76 +488,76 @@
 
     <div class="max-w-4xl mx-auto space-y-6">
       <!-- step 1 -->
-      <div class="step-row flex gap-6">
+      <div class="step-row flex gap-3 sm:gap-6">
         <div class="shrink-0">
-          <div class="w-[4.5rem] h-[4.5rem] rounded-2xl bg-brand-500 text-white grid place-items-center shadow-lg shadow-brand-500/20">
+          <div class="w-12 h-12 sm:w-[4.5rem] sm:h-[4.5rem] rounded-2xl bg-brand-500 text-white grid place-items-center shadow-lg shadow-brand-500/20">
             <div class="text-center">
               <div class="en text-[10px] font-bold opacity-80 tracking-widest">STEP</div>
               <div class="en font-black text-2xl leading-none">01</div>
             </div>
           </div>
         </div>
-        <div class="flex-1 bg-white rounded-2xl border border-brand-100 p-6 shadow-sm">
+        <div class="flex-1 min-w-0 bg-white rounded-2xl border border-brand-100 p-4 sm:p-6 shadow-sm">
           <h3 class="serif font-bold text-xl">受付・お電話でご予約</h3>
           <p class="mt-2 text-ink-700 text-sm leading-relaxed">お電話・WEB・LINEからご予約ください。事故の状況を簡単にお伺いし、保険会社への連絡が必要な場合はその場で説明いたします。</p>
         </div>
       </div>
       <!-- step 2 -->
-      <div class="step-row flex gap-6">
+      <div class="step-row flex gap-3 sm:gap-6">
         <div class="shrink-0">
-          <div class="w-[4.5rem] h-[4.5rem] rounded-2xl bg-brand-500 text-white grid place-items-center shadow-lg shadow-brand-500/20">
+          <div class="w-12 h-12 sm:w-[4.5rem] sm:h-[4.5rem] rounded-2xl bg-brand-500 text-white grid place-items-center shadow-lg shadow-brand-500/20">
             <div class="text-center">
               <div class="en text-[10px] font-bold opacity-80 tracking-widest">STEP</div>
               <div class="en font-black text-2xl leading-none">02</div>
             </div>
           </div>
         </div>
-        <div class="flex-1 bg-white rounded-2xl border border-brand-100 p-6 shadow-sm">
+        <div class="flex-1 min-w-0 bg-white rounded-2xl border border-brand-100 p-4 sm:p-6 shadow-sm">
           <h3 class="serif font-bold text-xl">問診・カウンセリング</h3>
           <p class="mt-2 text-ink-700 text-sm leading-relaxed">事故の状況、現在の症状、お仕事や日常生活への影響まで、20分ほどかけて丁寧に伺います。保険手続きの不安もここでお気軽にご相談ください。</p>
         </div>
       </div>
       <!-- step 3 -->
-      <div class="step-row flex gap-6">
+      <div class="step-row flex gap-3 sm:gap-6">
         <div class="shrink-0">
-          <div class="w-[4.5rem] h-[4.5rem] rounded-2xl bg-brand-500 text-white grid place-items-center shadow-lg shadow-brand-500/20">
+          <div class="w-12 h-12 sm:w-[4.5rem] sm:h-[4.5rem] rounded-2xl bg-brand-500 text-white grid place-items-center shadow-lg shadow-brand-500/20">
             <div class="text-center">
               <div class="en text-[10px] font-bold opacity-80 tracking-widest">STEP</div>
               <div class="en font-black text-2xl leading-none">03</div>
             </div>
           </div>
         </div>
-        <div class="flex-1 bg-white rounded-2xl border border-brand-100 p-6 shadow-sm">
+        <div class="flex-1 min-w-0 bg-white rounded-2xl border border-brand-100 p-4 sm:p-6 shadow-sm">
           <h3 class="serif font-bold text-xl">姿勢・可動域の検査</h3>
           <p class="mt-2 text-ink-700 text-sm leading-relaxed">国家資格者が姿勢分析・関節可動域・筋緊張をチェック。レントゲンでは見えない筋肉・靭帯のダメージまで確認します。</p>
         </div>
       </div>
       <!-- step 4 -->
-      <div class="step-row flex gap-6">
+      <div class="step-row flex gap-3 sm:gap-6">
         <div class="shrink-0">
-          <div class="w-[4.5rem] h-[4.5rem] rounded-2xl bg-brand-500 text-white grid place-items-center shadow-lg shadow-brand-500/20">
+          <div class="w-12 h-12 sm:w-[4.5rem] sm:h-[4.5rem] rounded-2xl bg-brand-500 text-white grid place-items-center shadow-lg shadow-brand-500/20">
             <div class="text-center">
               <div class="en text-[10px] font-bold opacity-80 tracking-widest">STEP</div>
               <div class="en font-black text-2xl leading-none">04</div>
             </div>
           </div>
         </div>
-        <div class="flex-1 bg-white rounded-2xl border border-brand-100 p-6 shadow-sm">
+        <div class="flex-1 min-w-0 bg-white rounded-2xl border border-brand-100 p-4 sm:p-6 shadow-sm">
           <h3 class="serif font-bold text-xl">施術プランのご説明と施術</h3>
           <p class="mt-2 text-ink-700 text-sm leading-relaxed">検査結果をもとに、お一人おひとりに最適な施術プランをご提案。納得いただいた上で、手技・電気療法・温熱療法を組み合わせた施術を行います。</p>
         </div>
       </div>
       <!-- step 5 -->
-      <div class="step-row flex gap-6">
+      <div class="step-row flex gap-3 sm:gap-6">
         <div class="shrink-0">
-          <div class="w-[4.5rem] h-[4.5rem] rounded-2xl bg-brand-600 text-white grid place-items-center shadow-lg shadow-brand-500/30 ring-4 ring-brand-100">
+          <div class="w-12 h-12 sm:w-[4.5rem] sm:h-[4.5rem] rounded-2xl bg-brand-600 text-white grid place-items-center shadow-lg shadow-brand-500/30 ring-4 ring-brand-100">
             <div class="text-center">
               <div class="en text-[10px] font-bold opacity-80 tracking-widest">STEP</div>
               <div class="en font-black text-2xl leading-none">05</div>
             </div>
           </div>
         </div>
-        <div class="flex-1 bg-white rounded-2xl border border-brand-100 p-6 shadow-sm">
+        <div class="flex-1 min-w-0 bg-white rounded-2xl border border-brand-100 p-4 sm:p-6 shadow-sm">
           <h3 class="serif font-bold text-xl">アフターケア・次回予約</h3>
           <p class="mt-2 text-ink-700 text-sm leading-relaxed">ご自宅でのセルフケア指導・通院ペースのアドバイスをお伝えします。継続通院で根本改善を目指しましょう。</p>
         </div>
@@ -638,7 +641,7 @@
     </div>
 
     <!-- highlight card -->
-    <div class="relative rounded-3xl bg-gradient-to-br from-brand-600 to-brand-800 text-white p-8 lg:p-12 overflow-hidden shadow-xl">
+    <div class="relative rounded-3xl bg-gradient-to-br from-brand-600 to-brand-800 text-white p-5 sm:p-8 lg:p-12 overflow-hidden shadow-xl">
       <div aria-hidden="true" class="absolute -top-12 -right-12 w-64 h-64 rounded-full bg-white/10"></div>
       <div aria-hidden="true" class="absolute -bottom-16 -left-10 w-72 h-72 rounded-full bg-white/5"></div>
       <div class="relative grid lg:grid-cols-2 gap-8 items-center">
@@ -950,7 +953,7 @@
 
     <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
       <!-- voice 1 -->
-      <article class="bg-paper rounded-2xl p-7 lg:p-8 border border-brand-100 relative">
+      <article class="bg-paper rounded-2xl p-5 sm:p-7 lg:p-8 border border-brand-100 relative">
         <div class="absolute -top-4 left-6 serif font-black text-7xl text-brand-200 leading-none select-none">"</div>
         <div class="flex items-center gap-1 text-brand-500 mb-3">
           <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
@@ -970,7 +973,7 @@
         </div>
       </article>
       <!-- voice 2 -->
-      <article class="bg-paper rounded-2xl p-7 lg:p-8 border border-brand-100 relative">
+      <article class="bg-paper rounded-2xl p-5 sm:p-7 lg:p-8 border border-brand-100 relative">
         <div class="absolute -top-4 left-6 serif font-black text-7xl text-brand-200 leading-none select-none">"</div>
         <div class="flex items-center gap-1 text-brand-500 mb-3">
           <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
@@ -990,7 +993,7 @@
         </div>
       </article>
       <!-- voice 3 -->
-      <article class="bg-paper rounded-2xl p-7 lg:p-8 border border-brand-100 relative">
+      <article class="bg-paper rounded-2xl p-5 sm:p-7 lg:p-8 border border-brand-100 relative">
         <div class="absolute -top-4 left-6 serif font-black text-7xl text-brand-200 leading-none select-none">"</div>
         <div class="flex items-center gap-1 text-brand-500 mb-3">
           <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
@@ -1025,7 +1028,7 @@
           <div class="relative rounded-[2rem] overflow-hidden shadow-xl aspect-[4/5]">
             <img src="images/sasainozomu.jpg" alt="院長 笹井望" class="w-full h-full object-cover" />
           </div>
-          <div class="absolute -bottom-5 -right-3 lg:-right-6 bg-white shadow-xl rounded-2xl px-5 py-4 border border-brand-100">
+          <div class="absolute -bottom-5 right-0 sm:-right-3 lg:-right-6 bg-white shadow-xl rounded-2xl px-4 py-3 sm:px-5 sm:py-4 border border-brand-100">
             <div class="text-[10px] text-ink-500 font-bold tracking-widest">DIRECTOR</div>
             <div class="serif font-black text-xl mt-0.5">笹井 望 <span class="text-sm text-ink-500 font-normal en">SASAI Nozomu</span></div>
           </div>
@@ -1084,72 +1087,72 @@
 
     <div class="space-y-3">
       <details class="group bg-white rounded-2xl border border-brand-100 overflow-hidden shadow-sm" open>
-        <summary class="flex items-start gap-4 p-6">
-          <span class="shrink-0 w-9 h-9 rounded-xl bg-brand-100 text-brand-700 grid place-items-center serif font-black text-lg">Q</span>
-          <span class="flex-1 font-bold text-base lg:text-lg pt-1">本当に自己負担0円で通院できますか？</span>
-          <span class="faq-icon shrink-0 w-7 h-7 rounded-full bg-brand-500 text-white grid place-items-center">
+        <summary class="flex items-start gap-2 sm:gap-4 p-4 sm:p-6">
+          <span class="shrink-0 w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-brand-100 text-brand-700 grid place-items-center serif font-black text-base sm:text-lg">Q</span>
+          <span class="flex-1 min-w-0 font-bold text-sm sm:text-base lg:text-lg pt-1">本当に自己負担0円で通院できますか？</span>
+          <span class="faq-icon shrink-0 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-brand-500 text-white grid place-items-center">
             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </span>
         </summary>
-        <div class="px-6 pb-6 flex items-start gap-4">
-          <span class="shrink-0 w-9 h-9 rounded-xl bg-paper text-brand-700 grid place-items-center serif font-black text-lg">A</span>
-          <p class="flex-1 text-ink-700 leading-relaxed text-sm lg:text-base">はい、交通事故によるおケガの場合、施術費は加害者側の自賠責保険から支払われます。患者様の窓口負担は原則として0円です。保険手続きの方法も、当院スタッフが丁寧にご説明します。</p>
+        <div class="px-4 pb-4 sm:px-6 sm:pb-6 flex items-start gap-2 sm:gap-4">
+          <span class="shrink-0 w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-paper text-brand-700 grid place-items-center serif font-black text-base sm:text-lg">A</span>
+          <p class="flex-1 min-w-0 text-ink-700 leading-relaxed text-sm lg:text-base">はい、交通事故によるおケガの場合、施術費は加害者側の自賠責保険から支払われます。患者様の窓口負担は原則として0円です。保険手続きの方法も、当院スタッフが丁寧にご説明します。</p>
         </div>
       </details>
 
       <details class="group bg-white rounded-2xl border border-brand-100 overflow-hidden shadow-sm">
-        <summary class="flex items-start gap-4 p-6">
-          <span class="shrink-0 w-9 h-9 rounded-xl bg-brand-100 text-brand-700 grid place-items-center serif font-black text-lg">Q</span>
-          <span class="flex-1 font-bold text-base lg:text-lg pt-1">病院に通院中ですが、整骨院にも通えますか？</span>
-          <span class="faq-icon shrink-0 w-7 h-7 rounded-full bg-brand-500 text-white grid place-items-center">
+        <summary class="flex items-start gap-2 sm:gap-4 p-4 sm:p-6">
+          <span class="shrink-0 w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-brand-100 text-brand-700 grid place-items-center serif font-black text-base sm:text-lg">Q</span>
+          <span class="flex-1 min-w-0 font-bold text-sm sm:text-base lg:text-lg pt-1">病院に通院中ですが、整骨院にも通えますか？</span>
+          <span class="faq-icon shrink-0 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-brand-500 text-white grid place-items-center">
             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </span>
         </summary>
-        <div class="px-6 pb-6 flex items-start gap-4">
-          <span class="shrink-0 w-9 h-9 rounded-xl bg-paper text-brand-700 grid place-items-center serif font-black text-lg">A</span>
-          <p class="flex-1 text-ink-700 leading-relaxed text-sm lg:text-base">可能です。整形外科で月1〜2回の経過観察を続けながら、当院で施術を受けるという併院パターンが多くの患者様に選ばれています。当院での施術内容も、ご希望があれば病院の主治医にお伝えします。</p>
+        <div class="px-4 pb-4 sm:px-6 sm:pb-6 flex items-start gap-2 sm:gap-4">
+          <span class="shrink-0 w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-paper text-brand-700 grid place-items-center serif font-black text-base sm:text-lg">A</span>
+          <p class="flex-1 min-w-0 text-ink-700 leading-relaxed text-sm lg:text-base">可能です。整形外科で月1〜2回の経過観察を続けながら、当院で施術を受けるという併院パターンが多くの患者様に選ばれています。当院での施術内容も、ご希望があれば病院の主治医にお伝えします。</p>
         </div>
       </details>
 
       <details class="group bg-white rounded-2xl border border-brand-100 overflow-hidden shadow-sm">
-        <summary class="flex items-start gap-4 p-6">
-          <span class="shrink-0 w-9 h-9 rounded-xl bg-brand-100 text-brand-700 grid place-items-center serif font-black text-lg">Q</span>
-          <span class="flex-1 font-bold text-base lg:text-lg pt-1">他の整骨院から転院することはできますか？</span>
-          <span class="faq-icon shrink-0 w-7 h-7 rounded-full bg-brand-500 text-white grid place-items-center">
+        <summary class="flex items-start gap-2 sm:gap-4 p-4 sm:p-6">
+          <span class="shrink-0 w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-brand-100 text-brand-700 grid place-items-center serif font-black text-base sm:text-lg">Q</span>
+          <span class="flex-1 min-w-0 font-bold text-sm sm:text-base lg:text-lg pt-1">他の整骨院から転院することはできますか？</span>
+          <span class="faq-icon shrink-0 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-brand-500 text-white grid place-items-center">
             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </span>
         </summary>
-        <div class="px-6 pb-6 flex items-start gap-4">
-          <span class="shrink-0 w-9 h-9 rounded-xl bg-paper text-brand-700 grid place-items-center serif font-black text-lg">A</span>
-          <p class="flex-1 text-ink-700 leading-relaxed text-sm lg:text-base">転院は患者様の権利として認められています。保険会社への連絡が必要ですが、当院がすべて代行いたしますのでご安心ください。これまで多くの方の転院対応をしてまいりました。</p>
+        <div class="px-4 pb-4 sm:px-6 sm:pb-6 flex items-start gap-2 sm:gap-4">
+          <span class="shrink-0 w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-paper text-brand-700 grid place-items-center serif font-black text-base sm:text-lg">A</span>
+          <p class="flex-1 min-w-0 text-ink-700 leading-relaxed text-sm lg:text-base">転院は患者様の権利として認められています。保険会社への連絡が必要ですが、当院がすべて代行いたしますのでご安心ください。これまで多くの方の転院対応をしてまいりました。</p>
         </div>
       </details>
 
       <details class="group bg-white rounded-2xl border border-brand-100 overflow-hidden shadow-sm">
-        <summary class="flex items-start gap-4 p-6">
-          <span class="shrink-0 w-9 h-9 rounded-xl bg-brand-100 text-brand-700 grid place-items-center serif font-black text-lg">Q</span>
-          <span class="flex-1 font-bold text-base lg:text-lg pt-1">どのくらいの頻度で通えばいいですか？</span>
-          <span class="faq-icon shrink-0 w-7 h-7 rounded-full bg-brand-500 text-white grid place-items-center">
+        <summary class="flex items-start gap-2 sm:gap-4 p-4 sm:p-6">
+          <span class="shrink-0 w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-brand-100 text-brand-700 grid place-items-center serif font-black text-base sm:text-lg">Q</span>
+          <span class="flex-1 min-w-0 font-bold text-sm sm:text-base lg:text-lg pt-1">どのくらいの頻度で通えばいいですか？</span>
+          <span class="faq-icon shrink-0 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-brand-500 text-white grid place-items-center">
             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </span>
         </summary>
-        <div class="px-6 pb-6 flex items-start gap-4">
-          <span class="shrink-0 w-9 h-9 rounded-xl bg-paper text-brand-700 grid place-items-center serif font-black text-lg">A</span>
-          <p class="flex-1 text-ink-700 leading-relaxed text-sm lg:text-base">症状の程度によりますが、事故直後は週3〜4回、症状が落ち着いてきたら週1〜2回が目安です。患者様の症状とライフスタイルに合わせて、無理のないプランをご提案します。</p>
+        <div class="px-4 pb-4 sm:px-6 sm:pb-6 flex items-start gap-2 sm:gap-4">
+          <span class="shrink-0 w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-paper text-brand-700 grid place-items-center serif font-black text-base sm:text-lg">A</span>
+          <p class="flex-1 min-w-0 text-ink-700 leading-relaxed text-sm lg:text-base">症状の程度によりますが、事故直後は週3〜4回、症状が落ち着いてきたら週1〜2回が目安です。患者様の症状とライフスタイルに合わせて、無理のないプランをご提案します。</p>
         </div>
       </details>
 
       <details class="group bg-white rounded-2xl border border-brand-100 overflow-hidden shadow-sm">
-        <summary class="flex items-start gap-4 p-6">
-          <span class="shrink-0 w-9 h-9 rounded-xl bg-brand-100 text-brand-700 grid place-items-center serif font-black text-lg">Q</span>
-          <span class="flex-1 font-bold text-base lg:text-lg pt-1">事故後、時間が経っていますが今からでも通えますか？</span>
-          <span class="faq-icon shrink-0 w-7 h-7 rounded-full bg-brand-500 text-white grid place-items-center">
+        <summary class="flex items-start gap-2 sm:gap-4 p-4 sm:p-6">
+          <span class="shrink-0 w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-brand-100 text-brand-700 grid place-items-center serif font-black text-base sm:text-lg">Q</span>
+          <span class="flex-1 min-w-0 font-bold text-sm sm:text-base lg:text-lg pt-1">事故後、時間が経っていますが今からでも通えますか？</span>
+          <span class="faq-icon shrink-0 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-brand-500 text-white grid place-items-center">
             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </span>
         </summary>
-        <div class="px-6 pb-6 flex items-start gap-4">
-          <span class="shrink-0 w-9 h-9 rounded-xl bg-paper text-brand-700 grid place-items-center serif font-black text-lg">A</span>
-          <p class="flex-1 text-ink-700 leading-relaxed text-sm lg:text-base">事故から2週間以内のご来院が望ましいですが、それ以降でも対応可能なケースがあります。まずは無料相談にてご状況をお伺いさせてください。早めにご連絡ください。</p>
+        <div class="px-4 pb-4 sm:px-6 sm:pb-6 flex items-start gap-2 sm:gap-4">
+          <span class="shrink-0 w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-paper text-brand-700 grid place-items-center serif font-black text-base sm:text-lg">A</span>
+          <p class="flex-1 min-w-0 text-ink-700 leading-relaxed text-sm lg:text-base">事故から2週間以内のご来院が望ましいですが、それ以降でも対応可能なケースがあります。まずは無料相談にてご状況をお伺いさせてください。早めにご連絡ください。</p>
         </div>
       </details>
     </div>
@@ -1165,69 +1168,101 @@
     </div>
 
     <div class="grid lg:grid-cols-12 gap-8 lg:gap-10">
+      
       <!-- info -->
       <div class="lg:col-span-5 space-y-6">
+
+        <!-- 院情報 -->
         <div class="bg-paper rounded-2xl p-6 lg:p-7 border border-brand-100">
           <h3 class="serif font-bold text-xl mb-4 hgroup">院情報</h3>
           <dl class="space-y-3 text-sm">
-            <div class="flex gap-3"><dt class="w-20 shrink-0 text-ink-500 font-semibold">院名</dt><dd class="font-medium">笹井整骨院</dd></div>
-            <div class="flex gap-3"><dt class="w-20 shrink-0 text-ink-500 font-semibold">住所</dt><dd class="font-medium">〒651-0086<br/>兵庫県神戸市中央区磯上通 3-1-X<br/>三宮ハーバービル 2F</dd></div>
-            <div class="flex gap-3"><dt class="w-20 shrink-0 text-ink-500 font-semibold">電話</dt><dd class="font-medium en text-base">078-000-0000</dd></div>
-            <div class="flex gap-3"><dt class="w-20 shrink-0 text-ink-500 font-semibold">最寄駅</dt><dd class="font-medium">JR三宮駅 徒歩5分<br/>地下鉄三宮駅 徒歩3分</dd></div>
-            <div class="flex gap-3"><dt class="w-20 shrink-0 text-ink-500 font-semibold">駐車場</dt><dd class="font-medium">提携駐車場あり（受付にて30分無料券配布）</dd></div>
+            <div class="flex gap-3">
+              <dt class="w-20 shrink-0 text-ink-500 font-semibold">院名</dt>
+              <dd class="font-medium break-words">笹井整骨院</dd>
+            </div>
+            <div class="flex gap-3">
+              <dt class="w-20 shrink-0 text-ink-500 font-semibold">住所</dt>
+              <dd class="font-medium break-words">
+                〒651-0086<br/>兵庫県神戸市中央区磯上通 3-1-X<br/>三宮ハーバービル 2F
+              </dd>
+            </div>
+            <div class="flex gap-3">
+              <dt class="w-20 shrink-0 text-ink-500 font-semibold">電話</dt>
+              <dd class="font-medium en text-base break-words">078-000-0000</dd>
+            </div>
+            <div class="flex gap-3">
+              <dt class="w-20 shrink-0 text-ink-500 font-semibold">最寄駅</dt>
+              <dd class="font-medium break-words">
+                JR三宮駅 徒歩5分<br/>地下鉄三宮駅 徒歩3分
+              </dd>
+            </div>
+            <div class="flex gap-3">
+              <dt class="w-20 shrink-0 text-ink-500 font-semibold">駐車場</dt>
+              <dd class="font-medium break-words">提携駐車場あり（受付にて30分無料券配布）</dd>
+            </div>
           </dl>
         </div>
 
+        <!-- 診療時間 -->
         <div class="bg-paper rounded-2xl p-6 lg:p-7 border border-brand-100">
           <h3 class="serif font-bold text-xl mb-4 hgroup">診療時間</h3>
-          <div class="overflow-hidden rounded-xl border border-brand-100">
-            <table class="w-full text-center text-xs sm:text-sm">
+
+          <!-- ★ ここに overflow-x-auto を追加 -->
+          <div class="overflow-x-auto rounded-xl border border-brand-100">
+
+            <!-- ★ table に min-w-full table-fixed を追加 -->
+            <table class="w-full min-w-full table-fixed text-center text-xs sm:text-sm">
               <thead class="bg-brand-700 text-white">
                 <tr>
-                  <th class="font-semibold py-2 sm:py-2.5 text-left pl-2 sm:pl-4">時間</th>
-                  <th class="font-semibold py-2 sm:py-2.5">月</th>
-                  <th class="font-semibold py-2 sm:py-2.5">火</th>
-                  <th class="font-semibold py-2 sm:py-2.5">水</th>
-                  <th class="font-semibold py-2 sm:py-2.5">木</th>
-                  <th class="font-semibold py-2 sm:py-2.5">金</th>
-                  <th class="font-semibold py-2 sm:py-2.5">土</th>
-                  <th class="font-semibold py-2 sm:py-2.5">日祝</th>
+                  <th class="font-semibold py-2 sm:py-2.5 text-left pl-2 sm:pl-4 break-words">時間</th>
+                  <th class="font-semibold py-2 sm:py-2.5 break-words">月</th>
+                  <th class="font-semibold py-2 sm:py-2.5 break-words">火</th>
+                  <th class="font-semibold py-2 sm:py-2.5 break-words">水</th>
+                  <th class="font-semibold py-2 sm:py-2.5 break-words">木</th>
+                  <th class="font-semibold py-2 sm:py-2.5 break-words">金</th>
+                  <th class="font-semibold py-2 sm:py-2.5 break-words">土</th>
+                  <th class="font-semibold py-2 sm:py-2.5 break-words">日祝</th>
                 </tr>
               </thead>
               <tbody class="bg-white">
                 <tr class="border-b border-brand-100">
-                  <td class="py-2 sm:py-3 text-left pl-2 sm:pl-4 font-semibold">9:00–13:00</td>
-                  <td class="text-brand-600 font-bold">●</td>
-                  <td class="text-brand-600 font-bold">●</td>
-                  <td class="text-brand-600 font-bold">●</td>
-                  <td class="text-ink-400">／</td>
-                  <td class="text-brand-600 font-bold">●</td>
-                  <td class="text-brand-600 font-bold">●</td>
-                  <td class="text-brand-600 font-bold">●</td>
+                  <td class="py-2 sm:py-3 text-left pl-2 sm:pl-4 font-semibold break-words">9:00–13:00</td>
+                  <td class="text-brand-600 font-bold break-words">●</td>
+                  <td class="text-brand-600 font-bold break-words">●</td>
+                  <td class="text-brand-600 font-bold break-words">●</td>
+                  <td class="text-ink-400 break-words">／</td>
+                  <td class="text-brand-600 font-bold break-words">●</td>
+                  <td class="text-brand-600 font-bold break-words">●</td>
+                  <td class="text-brand-600 font-bold break-words">●</td>
                 </tr>
                 <tr>
-                  <td class="py-2 sm:py-3 text-left pl-2 sm:pl-4 font-semibold">15:00–20:00</td>
-                  <td class="text-brand-600 font-bold">●</td>
-                  <td class="text-brand-600 font-bold">●</td>
-                  <td class="text-brand-600 font-bold">●</td>
-                  <td class="text-ink-400">／</td>
-                  <td class="text-brand-600 font-bold">●</td>
-                  <td class="text-ink-500 text-xs">〜18時</td>
-                  <td class="text-ink-500 text-xs">〜17時</td>
+                  <td class="py-2 sm:py-3 text-left pl-2 sm:pl-4 font-semibold break-words">15:00–20:00</td>
+                  <td class="text-brand-600 font-bold break-words">●</td>
+                  <td class="text-brand-600 font-bold break-words">●</td>
+                  <td class="text-brand-600 font-bold break-words">●</td>
+                  <td class="text-ink-400 break-words">／</td>
+                  <td class="text-brand-600 font-bold break-words">●</td>
+                  <td class="text-ink-500 text-xs break-words">〜18時</td>
+                  <td class="text-ink-500 text-xs break-words">〜17時</td>
                 </tr>
               </tbody>
             </table>
           </div>
+
           <p class="text-xs text-ink-500 mt-3">休診日：木曜日／祝日は日曜と同じ診療時間です。</p>
         </div>
       </div>
 
       <!-- map -->
       <div class="lg:col-span-7">
-        <div class="relative rounded-2xl overflow-hidden border border-brand-100 shadow-sm aspect-[4/3] lg:aspect-auto lg:h-full min-h-[420px] bg-brand-50">
+
+        <!-- ★ overflow-hidden + aspect-auto を追加 -->
+        <div class="relative rounded-2xl overflow-hidden border border-brand-100 shadow-sm aspect-auto sm:aspect-[4/3] lg:aspect-auto lg:h-full min-h-[420px] bg-brand-50">
+
+          <!-- ★ iframe に w-full h-full max-w-full を追加 -->
           <iframe
             src="https://www.openstreetmap.org/export/embed.html?bbox=135.1900%2C34.6900%2C135.2050%2C34.7000&amp;layer=mapnik&amp;marker=34.6950%2C135.1975"
-            class="absolute inset-0 w-full h-full"
+            class="absolute inset-0 w-full h-full max-w-full"
             style="border:0"
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
@@ -1236,9 +1271,9 @@
             <div class="w-10 h-10 rounded-full bg-brand-500 text-white grid place-items-center shrink-0">
               <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             </div>
-            <div class="text-sm leading-snug">
+            <div class="text-sm leading-snug break-words">
               <div class="font-bold">笹井整骨院</div>
-              <div class="text-ink-500 text-xs">兵庫県神戸市中央区磯上通 3-1-X / 三宮駅 徒歩5分</div>
+              <div class="text-ink-500 text-xs break-words">兵庫県神戸市中央区磯上通 3-1-X / 三宮駅 徒歩5分</div>
             </div>
           </div>
         </div>
@@ -1247,19 +1282,20 @@
   </div>
 </section>
 
+
 <!-- ============ 13 RESERVE CTA ============ -->
 <section id="reserve" class="relative py-20 lg:py-28 stripe-bg text-white overflow-hidden">
-  <div aria-hidden="true" class="absolute -top-20 -right-20 w-[420px] h-[420px] rounded-full bg-white/5 blur-2xl"></div>
-  <div aria-hidden="true" class="absolute -bottom-32 -left-20 w-[480px] h-[480px] rounded-full bg-brand-400/10 blur-2xl"></div>
+  <div aria-hidden="true" class="hidden sm:block absolute -top-20 -right-20 w-[420px] h-[420px] rounded-full bg-white/5 blur-2xl"></div>
+  <div aria-hidden="true" class="hidden sm:block absolute -bottom-32 -left-20 w-[480px] h-[480px] rounded-full bg-brand-400/10 blur-2xl"></div>
   <div class="relative max-w-5xl mx-auto px-5 lg:px-8 text-center">
     <span class="eyebrow en !text-brand-200">RESERVATION</span>
     <h2 class="serif font-black text-3xl lg:text-5xl mt-3 leading-tight">事故後の不調、<br class="sm:hidden"/>一人で悩まないでください。</h2>
-    <p class="mt-5 text-brand-100 max-w-xl mx-auto">電話・WEB どちらからでも、24時間ご相談を受け付けています。当日のご予約も可能です。</p>
+    <p class="mt-5 text-brand-100 max-w-xl mx-auto">電話・WEB どちらからでも、24時間ご相談を受け付けています。<br>当日のご予約も可能です。</p>
 
     <div class="mt-10 grid sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
-      <a href="tel:0780000000" class="btn-focus group bg-white text-brand-700 rounded-2xl p-6 hover:bg-brand-50 transition shadow-xl">
-        <div class="flex items-center gap-3 mb-2">
-          <span class="w-10 h-10 rounded-full bg-brand-100 grid place-items-center">
+      <a href="tel:0780000000" class="btn-focus group bg-white text-brand-700 rounded-2xl p-4 sm:p-6 hover:bg-brand-50 transition shadow-xl">
+        <div class="flex items-center gap-2 sm:gap-3 mb-2">
+          <span class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-brand-100 grid place-items-center">
             <svg class="w-5 h-5 text-brand-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.95.36 1.88.7 2.78a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.11-.45c.9.34 1.83.57 2.78.7A2 2 0 0 1 22 16.92z"/></svg>
           </span>
           <span class="text-xs font-bold text-ink-500 tracking-widest">お電話で予約</span>
@@ -1267,9 +1303,9 @@
         <div class="serif font-black text-3xl lg:text-4xl en">078-000-0000</div>
         <div class="text-xs text-ink-500 mt-1">受付 9:00–20:00（木曜定休）</div>
       </a>
-      <a href="#" class="btn-focus group bg-brand-500 hover:bg-brand-400 text-white rounded-2xl p-6 transition shadow-xl ring-1 ring-white/20">
-        <div class="flex items-center gap-3 mb-2">
-          <span class="w-10 h-10 rounded-full bg-white/20 grid place-items-center">
+      <a href="#" class="btn-focus group bg-brand-500 hover:bg-brand-400 text-white rounded-2xl p-4 sm:p-6 transition shadow-xl ring-1 ring-white/20">
+        <div class="flex items-center gap-2 sm:gap-3 mb-2">
+          <span class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/20 grid place-items-center">
             <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
           </span>
           <span class="text-xs font-bold opacity-80 tracking-widest">WEB で予約</span>
@@ -1336,16 +1372,16 @@
         <div class="text-[10px] font-bold text-alert tracking-widest">事故後の方へ</div>
         <div class="serif font-bold text-sm text-ink-900 leading-snug">自賠責保険適用で自己負担<span class="text-brand-600 en text-base mx-0.5">¥0</span></div>
       </div>
-      <a href="tel:0780000000" class="flex-1 flex items-center justify-center gap-2 py-3 px-2 hover:bg-brand-50 transition">
-        <svg class="w-5 h-5 text-brand-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.95.36 1.88.7 2.78a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.11-.45c.9.34 1.83.57 2.78.7A2 2 0 0 1 22 16.92z"/></svg>
-        <div class="text-left leading-tight">
+      <a href="tel:0780000000" class="flex-1 min-w-0 flex items-center justify-center gap-1 sm:gap-2 py-3 px-2 hover:bg-brand-50 transition">
+        <svg class="w-4 h-4 sm:w-5 sm:h-5 shrink-0 text-brand-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.95.36 1.88.7 2.78a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.11-.45c.9.34 1.83.57 2.78.7A2 2 0 0 1 22 16.92z"/></svg>
+        <div class="text-left leading-tight min-w-0">
           <div class="text-[10px] font-bold text-ink-500">お電話</div>
-          <div class="en font-black text-sm sm:text-base text-ink-900">078-000-0000</div>
+          <div class="en font-black text-xs sm:text-sm text-ink-900 break-all">078-000-0000</div>
         </div>
       </a>
-      <a href="#reserve" class="flex-1 flex items-center justify-center gap-2 py-3 px-2 bg-brand-500 hover:bg-brand-600 text-white transition">
-        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        <div class="text-left leading-tight">
+      <a href="#reserve" class="flex-1 min-w-0 flex items-center justify-center gap-1 sm:gap-2 py-3 px-2 bg-brand-500 hover:bg-brand-600 text-white transition">
+        <svg class="w-4 h-4 sm:w-5 sm:h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <div class="text-left leading-tight min-w-0">
           <div class="text-[10px] font-bold opacity-80">24時間受付</div>
           <div class="font-bold text-sm sm:text-base">WEB予約</div>
         </div>
