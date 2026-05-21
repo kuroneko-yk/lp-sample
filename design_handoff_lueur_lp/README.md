@@ -101,6 +101,7 @@ JP 用に `letter-spacing` をやや広めに（0.08em / 0.18em の2レベル）
 
 - ロゴ：`Lueur`（Serif 26px）＋ サブ `Candle Studio`（uppercase 10px tracking 0.18em）
 - ナビ：ABOUT / REASONS / LESSONS / PRICE / TEACHER / ACCESS（13px tracking 0.18em）— hover で下線アニメーション
+  - ナビリンク群は **半透明ミルキーホワイトのピル型背景** で囲む（`rgba(250,247,245,0.6)` + `backdrop-filter: blur(6px)`、`rounded-full`）— ヒーロー画像の暗部でも視認性を確保
 - 右端：「ご予約 / RESERVE →」（ローズ色、下線）
 
 ### 2. Hero
@@ -192,9 +193,11 @@ JP 用に `letter-spacing` をやや広めに（0.08em / 0.18em の2レベル）
 
 - セクション5と同じ構造、画像は `cta2_Lueur.jpg`、コピーのみ変更
 - タイトル：「気になる日程があれば、お気軽にお問い合わせください。」
+- **上マージン**：`mt-16 lg:mt-24`（モバイル 64px / PC 96px）で Price セクションと区切り
 
 ### 9. Teacher — 講師紹介
 
+- **上マージン**：`mt-16 lg:mt-24`（モバイル 64px / PC 96px）で CTA2 と区切り
 - 背景：`teacher_Lueur.jpg`（講師の制作風景）+ 左ダーク → 右クリアのグラデ
 - 左側に紹介テキスト（白）：
   - 「Aya Mizuhara / 水原 綾 ／ 主宰」
