@@ -55,6 +55,12 @@
   .font-hero { font-family: 'Noto Serif JP', serif; }
 
   /* ---------- Photo placeholder (when image file is missing) ---------- */
+  /* ---------- Background image section (actual photos) ---------- */
+.bg-photo {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
   .photo {
     position: relative;
     overflow: hidden;
@@ -89,25 +95,13 @@
     mix-blend-mode: multiply;
     pointer-events: none;
   }
-.photo > img {
-  position: static;
-  width: 100%;
-  height: auto;
-  object-fit: cover; /* 必要なら残す */
-}
-@media (min-width: 640px) {
-  .hero-bg {
-    aspect-ratio: 16/10; /* タブレット */
-  }
+.hero-bg {
+  background-image: url('images/hero_Lueur.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-@media (min-width: 1024px) {
-  .hero-bg {
-    position: absolute;
-    inset: 0;
-    aspect-ratio: auto; /* PCは高さをテキスト側で決める */
-  }
-}
   .photo > .ph-label {
     position: absolute; left: 0; right: 0; bottom: 0;
     padding: 8px 12px;
@@ -289,50 +283,48 @@
 </header>
 
 <!-- ============================== 1. HERO ============================== -->
-<section id="top" class="relative bg-milk">
-  <!-- Hero photo: block on mobile (aspect 4:5), full-bleed absolute on desktop -->
-  <!-- Hero photo: 背景画像として扱う -->
-<div class="images/hero-bg">
-  <!-- スマホ用の下フェード -->
+<section class="relative h-[70vh] sm:h-[85vh] min-h-[540px] flex items-center justify-start overflow-hidden hero-bg">
+
+  <!-- スマホ用フェード -->
   <div class="mobile-fade lg:hidden"></div>
-  <!-- PC用の左フェード -->
+
+  <!-- PC用フェード -->
   <div class="hero-overlay hidden lg:block"></div>
-</div>
-  <!-- Desktop left fade -->
-  <div class="hidden lg:block absolute inset-0 hero-overlay z-[1]"></div>
 
-  <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 lg:min-h-[100svh] flex flex-col justify-center pt-10 pb-16 lg:pt-28 lg:pb-20">
-    <div class="max-w-xl text-center lg:text-left mx-auto lg:mx-0">
-      <p class="rule lg-left mb-6 lg:mb-8 justify-center lg:justify-start">Lueur Candle Studio</p>
-      <h1 class="font-hero text-[30px] leading-[1.55] sm:text-[40px] sm:leading-[1.45] lg:text-[58px] lg:leading-[1.4] text-ink font-medium tracking-jp">
-        世界にひとつだけの<br />
-        <span class="text-rose-deep">灯り</span>をつくる時間。
-      </h1>
-      <p class="mt-6 lg:mt-8 text-[14px] sm:text-[15px] leading-[2] text-ink tracking-jp lg:max-w-md mx-auto lg:mx-0">
-        東京・大泉の小さなアトリエで、<br />
-        ナチュラル素材のキャンドルを手づくり。<br class="hidden sm:block" />
-        初心者歓迎 ・ 手ぶらOK ・ 当日予約OK。
-      </p>
-      <div class="mt-8 lg:mt-10 flex flex-wrap gap-4 justify-center lg:justify-start">
-        <a href="#booking" class="btn-primary">
-          体験レッスンを予約する
-          <span aria-hidden="true">→</span>
-        </a>
-        <a href="#lessons" class="inline-flex items-center gap-2 px-2 py-4 text-[13px] tracking-jp+ text-ink border-b border-ink/60 hover:text-rose-deep hover:border-rose-deep transition">
-          レッスンを見る
-        </a>
-      </div>
+  <!-- テキストブロック -->
+  <div class="relative z-10 max-w-xl px-6 lg:px-10 mx-auto lg:mx-0">
+    <p class="rule lg-left mb-6 lg:mb-8 text-center lg:text-left">Lueur Candle Studio</p>
 
-      <div class="mt-10 lg:mt-16 flex items-center justify-center lg:justify-start gap-4 sm:gap-6 text-[11px] tracking-jp+ text-ink-soft">
-        <span>NATURAL</span><span class="w-px h-3 bg-ink-soft/40"></span>
-        <span>SMALL CLASS</span><span class="w-px h-3 bg-ink-soft/40"></span>
-        <span>FOR BEGINNERS</span>
-      </div>
+    <h1 class="font-hero text-[30px] leading-[1.55] sm:text-[40px] sm:leading-[1.45] lg:text-[54px] lg:leading-[1.35] text-ink font-medium tracking-jp text-center lg:text-left">
+      世界にひとつだけの<br />
+      <span class="text-rose-deep">灯り</span>をつくる時間。
+    </h1>
+
+    <p class="mt-6 lg:mt-8 text-[14px] sm:text-[15px] leading-[2] text-ink tracking-jp text-center lg:text-left">
+      東京・大泉の小さなアトリエで、<br />
+      ナチュラル素材のキャンドルを手づくり。<br class="hidden sm:block" />
+      初心者歓迎 ・ 手ぶらOK ・ 当日予約OK。
+    </p>
+
+    <div class="mt-8 lg:mt-10 flex flex-wrap gap-4 justify-center lg:justify-start">
+      <a href="#booking" class="btn-primary">
+        体験レッスンを予約する
+        <span aria-hidden="true">→</span>
+      </a>
+      <a href="#lessons" class="inline-flex items-center gap-2 px-2 py-4 text-[13px] tracking-jp+ text-ink border-b border-ink/60 hover:text-rose-deep hover:border-rose-deep transition">
+        レッスンを見る
+      </a>
+    </div>
+
+    <div class="mt-10 flex items-center justify-center lg:justify-start gap-4 sm:gap-6 text-[11px] tracking-jp+ text-ink-soft">
+      <span>NATURAL</span><span class="w-px h-3 bg-ink-soft/40"></span>
+      <span>SMALL CLASS</span><span class="w-px h-3 bg-ink-soft/40"></span>
+      <span>FOR BEGINNERS</span>
     </div>
   </div>
 
   <!-- bottom marquee strip -->
-  <div class="relative z-10 border-t border-beige/60 bg-milk/80 backdrop-blur">
+  <div class="absolute bottom-0 left-0 right-0 z-10 border-t border-beige/60 bg-milk/80 backdrop-blur">
     <div class="max-w-7xl mx-auto px-6 lg:px-10 py-4 flex flex-wrap items-center gap-x-10 gap-y-2 text-[11px] tracking-jp+ text-ink-soft">
       <span>OPEN&nbsp;&nbsp;火 — 日 / 10:00 – 18:00</span>
       <span class="hidden md:inline">·</span>
@@ -342,7 +334,9 @@
       <span class="ml-auto hidden lg:inline text-rose">scroll ↓</span>
     </div>
   </div>
+
 </section>
+
 
 <!-- ============================== 2. ABOUT ============================== -->
 <section id="about" class="py-24 lg:py-36 bg-milk">
@@ -367,7 +361,7 @@
     <div class="reveal grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 max-w-2xl lg:max-w-5xl mx-auto">
       <figure class="group">
         <div class="photo aspect-video rounded-sm shadow-soft">
-          <img src="about1_Lueur.jpg?v=1" alt="生徒さんの制作風景" onerror="this.style.display='none'" />
+          <img src="images/about1_Lueur.jpg?v=1" alt="生徒さんの制作風景" onerror="this.style.display='none'" />
           <span class="ph-label">about1_Lueur.jpg</span>
         </div>
         <figcaption class="mt-4">
@@ -377,7 +371,7 @@
       </figure>
       <figure class="group">
         <div class="photo aspect-video rounded-sm shadow-soft">
-          <img src="about2_Lueur.jpg?v=1" alt="材料が並ぶテーブル" onerror="this.style.display='none'" />
+          <img src="images/about2_Lueur.jpg?v=1" alt="材料が並ぶテーブル" onerror="this.style.display='none'" />
           <span class="ph-label">about2_Lueur.jpg</span>
         </div>
         <figcaption class="mt-4">
@@ -387,7 +381,7 @@
       </figure>
       <figure class="group">
         <div class="photo aspect-video rounded-sm shadow-soft">
-          <img src="about3_Lueur.jpg?v=1" alt="ワックスを溶かす手元" onerror="this.style.display='none'" />
+          <img src="images/about3_Lueur.jpg?v=1" alt="ワックスを溶かす手元" onerror="this.style.display='none'" />
           <span class="ph-label">about3_Lueur.jpg</span>
         </div>
         <figcaption class="mt-4">
@@ -397,7 +391,7 @@
       </figure>
       <figure class="group">
         <div class="photo aspect-video rounded-sm shadow-soft">
-          <img src="about4_Lueur.jpg?v=1" alt="制作途中のキャンドル" onerror="this.style.display='none'" />
+          <img src="images/about4_Lueur.jpg?v=1" alt="制作途中のキャンドル" onerror="this.style.display='none'" />
           <span class="ph-label">about4_Lueur.jpg</span>
         </div>
         <figcaption class="mt-4">
@@ -424,7 +418,7 @@
       <div class="reveal grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
         <div class="lg:col-span-7 order-2 lg:order-1">
           <div class="photo aspect-video rounded-sm shadow-soft">
-            <img src="reason1_Lueur.jpg?v=1" alt="初心者でも安心" onerror="this.style.display='none'" />
+            <img src="images/reason1_Lueur.jpg?v=1" alt="初心者でも安心" onerror="this.style.display='none'" />
             <span class="ph-label">reason1_Lueur.jpg</span>
           </div>
         </div>
@@ -454,7 +448,7 @@
         </div>
         <div class="lg:col-span-7">
           <div class="photo aspect-video rounded-sm shadow-soft">
-            <img src="reason2_Lueur.jpg?v=1" alt="1/fゆらぎ × アロマ" onerror="this.style.display='none'" />
+            <img src="images/reason2_Lueur.jpg?v=1" alt="1/fゆらぎ × アロマ" onerror="this.style.display='none'" />
             <span class="ph-label">reason2_Lueur.jpg</span>
           </div>
         </div>
@@ -464,7 +458,7 @@
       <div class="reveal grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
         <div class="lg:col-span-7 order-2 lg:order-1">
           <div class="photo aspect-video rounded-sm shadow-soft">
-            <img src="reason3_Lueur.jpg?v=1" alt="ギフトにも喜ばれる" onerror="this.style.display='none'" />
+            <img src="images/reason3_Lueur.jpg?v=1" alt="ギフトにも喜ばれる" onerror="this.style.display='none'" />
             <span class="ph-label">reason3_Lueur.jpg</span>
           </div>
         </div>
@@ -494,7 +488,7 @@
         </div>
         <div class="lg:col-span-7">
           <div class="photo aspect-video rounded-sm shadow-soft">
-            <img src="reason4_Lueur.jpg?v=1" alt="少人数制でゆったり" onerror="this.style.display='none'" />
+            <img src="images/reason4_Lueur.jpg?v=1" alt="少人数制でゆったり" onerror="this.style.display='none'" />
             <span class="ph-label">reason4_Lueur.jpg</span>
           </div>
         </div>
@@ -503,39 +497,27 @@
   </div>
 </section>
 
-<!-- ============================== 4. CTA 1 ============================== -->
-<section class="relative">
-  <div class="photo cta-photo absolute inset-0">
-    <img src="cta_Lueur.jpg?v=1" alt="" onerror="this.style.display='none'" />
-    <span class="ph-label" style="color:rgba(255,255,255,0.35);">cta_Lueur.jpg</span>
-  </div>
-  <div class="absolute inset-0 z-[1]" style="background:linear-gradient(180deg,rgba(20,12,12,0.55) 0%,rgba(20,12,12,0.25) 50%,rgba(20,12,12,0.55) 100%);"></div>
+<!-- ============================== CTA1 ============================== -->
+<section id="cta1" class="relative py-24 bg-photo bg-center bg-cover"
+  style="background-image: url('images/cta_Lueur.jpg');">
 
-  <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-10 py-28 lg:py-40 text-center text-white">
-    <p class="rule center mb-8" style="color:#f6d6c6;">
-      <span style="display:none"></span>
-    </p>
-    <p class="text-[11px] tracking-jp+ text-beige mb-6">— Reserve your seat —</p>
-    <h2 class="font-hero text-[28px] sm:text-[34px] lg:text-[44px] leading-[1.5] font-light">
-      静かな炎の前で、<br />
-      自分のための90分を。
+  <!-- フェード（下に向かって柔らかく） -->
+  <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/0"></div>
+
+  <div class="relative z-10 max-w-2xl mx-auto px-6 text-center">
+    <h2 class="text-3xl md:text-4xl font-hero text-milk tracking-jp+">
+      手作りの灯りで、<br >心を満たすひとときを
     </h2>
-    <p class="mt-8 text-[13px] sm:text-[14px] leading-[2.1] tracking-jp text-white/80 max-w-xl mx-auto">
-      ご予約はメール・LINE・お電話のいずれかで承っております。<br />
-      お気軽にお問い合わせください。
+
+    <p class="mt-4 text-[14px] text-milk/80 tracking-jp leading-relaxed">
+      初めての方でも安心して楽しめるキャンドル制作体験。  <br>
+      忙しい日常から少し離れて、ゆったりとした時間を過ごしませんか。
     </p>
 
-    <div class="mt-12 flex flex-wrap justify-center gap-3 sm:gap-4">
-      <a href="mailto:hello@lueur-candle.jp" class="btn-primary" style="background:#fff;color:#4a3f3f;">
-        <span aria-hidden="true">✉</span> MAIL
-      </a>
-      <a href="#" class="btn-ghost">
-        <span aria-hidden="true">◉</span> LINE
-      </a>
-      <a href="tel:03-0000-0000" class="btn-ghost">
-        <span aria-hidden="true">☎</span> 03-0000-0000
-      </a>
-    </div>
+    <a href="#booking"
+      class="inline-block mt-8 px-8 py-3 bg-rose-soft text-ink text-[13px] tracking-jp rounded-full hover:bg-rose transition">
+      ご予約はこちら
+    </a>
   </div>
 </section>
 
@@ -621,99 +603,79 @@
   </div>
 </section>
 
-<!-- ============================== 6. PRICE ============================== -->
-<section id="price" class="relative py-28 lg:py-40">
-  <div class="photo absolute inset-0" style="background-color:#d6a597;">
-    <img src="price_Lueur.jpg?v=1" alt="" onerror="this.style.display='none'" />
-    <span class="ph-label">price_Lueur.jpg</span>
-  </div>
-  <div class="absolute inset-0 z-[1]" style="background:linear-gradient(180deg,rgba(250,247,245,0.92) 0%,rgba(250,247,245,0.65) 100%);"></div>
+<!-- ============================== PRICE ============================== -->
+<section id="price" class="relative py-20 bg-photo bg-center bg-cover"
+  style="background-image: url('images/price_Lueur.jpg');">
 
-  <div class="relative z-10 max-w-5xl mx-auto px-6 lg:px-10">
-    <div class="reveal text-center mb-14">
-      <p class="rule center mb-6">Price — 料金</p>
-      <h2 class="section-title text-[28px] sm:text-[34px] lg:text-[40px] leading-[1.5]">
-        わかりやすい、税込価格で。
-      </h2>
-      <p class="mt-6 text-[12px] tracking-jp+ text-ink-soft">All prices include tax / 材料費・お茶代込み</p>
-    </div>
+  <!-- フェード（上から軽く暗くする） -->
+  <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/0"></div>
 
-    <div class="reveal grid sm:grid-cols-2 gap-4 lg:gap-6">
-      <div class="price-card p-8 lg:p-10 rounded-sm">
-        <div class="flex items-baseline justify-between">
-          <h3 class="section-title text-[20px]">体験レッスン</h3>
-          <span class="text-[10px] tracking-jp+ text-rose">FIRST VISIT</span>
-        </div>
-        <div class="mt-6 flex items-baseline gap-2">
-          <span class="font-hero text-[44px] lg:text-[52px] text-rose-deep leading-none">¥3,500</span>
-          <span class="text-[11px] tracking-jp text-ink-soft">／ 90分</span>
-        </div>
-        <p class="mt-5 text-[13px] leading-[1.9] tracking-jp text-ink-soft">はじめての方限定。お一人につき1回まで。</p>
-      </div>
+  <div class="relative z-10 max-w-3xl mx-auto px-6 text-center">
+    <h2 class="text-3xl md:text-4xl font-hero text-ink tracking-jp+">
+      料金のご案内
+    </h2>
 
-      <div class="price-card p-8 lg:p-10 rounded-sm">
-        <div class="flex items-baseline justify-between">
-          <h3 class="section-title text-[20px]">アロマキャンドルコース</h3>
-          <span class="text-[10px] tracking-jp+ text-rose">AROMA</span>
-        </div>
-        <div class="mt-6 flex items-baseline gap-2">
-          <span class="font-hero text-[44px] lg:text-[52px] text-rose-deep leading-none">¥8,000</span>
-          <span class="text-[11px] tracking-jp text-ink-soft">／ 120分</span>
-        </div>
-        <p class="mt-5 text-[13px] leading-[1.9] tracking-jp text-ink-soft">10種類以上の天然精油から、お好きな香りで。</p>
-      </div>
+    <p class="mt-4 text-[14px] text-ink/70 tracking-jp leading-relaxed">
+      初めての方でも安心してご利用いただけるよう、<br />
+      シンプルで分かりやすい料金体系をご用意しています。
+    </p>
 
-      <div class="price-card p-8 lg:p-10 rounded-sm">
-        <div class="flex items-baseline justify-between">
-          <h3 class="section-title text-[20px]">ボタニカルキャンドルコース</h3>
-          <span class="text-[10px] tracking-jp+ text-rose">BOTANICAL</span>
-        </div>
-        <div class="mt-6 flex items-baseline gap-2">
-          <span class="font-hero text-[44px] lg:text-[52px] text-rose-deep leading-none">¥8,000</span>
-          <span class="text-[11px] tracking-jp text-ink-soft">／ 120分</span>
-        </div>
-        <p class="mt-5 text-[13px] leading-[1.9] tracking-jp text-ink-soft">ドライフラワーを閉じ込める人気コース。</p>
-      </div>
+    <!-- Price Box -->
+    <div class="mt-10 bg-milk/90 backdrop-blur-sm rounded-2xl shadow-lg p-8 md:p-10">
+      <h3 class="text-xl font-bold text-ink tracking-jp">
+        キャンドル制作体験（90分）
+      </h3>
+      <p class="mt-2 text-rose font-semibold text-lg tracking-jp">
+        4,800円（税込）
+      </p>
+      <p class="mt-4 text-[13px] text-ink/70 tracking-jp leading-relaxed">
+        材料費込み・お持ち帰りいただけます。
+      </p>
 
-      <div class="price-card p-8 lg:p-10 rounded-sm">
-        <div class="flex items-baseline justify-between">
-          <h3 class="section-title text-[20px]">親子レッスン</h3>
-          <span class="text-[10px] tracking-jp+ text-rose">PARENT &amp; CHILD</span>
-        </div>
-        <div class="mt-6 flex items-baseline gap-2">
-          <span class="font-hero text-[44px] lg:text-[52px] text-rose-deep leading-none">¥6,000</span>
-          <span class="text-[11px] tracking-jp text-ink-soft">／ ペア</span>
-        </div>
-        <p class="mt-5 text-[13px] leading-[1.9] tracking-jp text-ink-soft">小学生以上のお子さまから。夏休みの自由研究にも。</p>
-      </div>
+      <a href="#booking"
+        class="inline-block mt-8 px-8 py-3 bg-rose-soft text-ink text-[13px] tracking-jp rounded-full hover:bg-rose transition">
+        ご予約はこちら
+      </a>
     </div>
   </div>
 </section>
 
-<!-- ============================== 7. CTA 2 ============================== -->
-<section class="relative">
-  <div class="photo cta-photo absolute inset-0">
-    <img src="cta2_Lueur.jpg?v=1" alt="" onerror="this.style.display='none'" />
-    <span class="ph-label" style="color:rgba(255,255,255,0.35);">cta2_Lueur.jpg</span>
-  </div>
-  <div class="absolute inset-0 z-[1]" style="background:linear-gradient(180deg,rgba(20,12,12,0.55) 0%,rgba(20,12,12,0.25) 50%,rgba(20,12,12,0.55) 100%);"></div>
 
-  <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-10 py-24 lg:py-32 text-center text-white">
-    <p class="text-[11px] tracking-jp+ text-beige mb-6">— Make a reservation —</p>
-    <h2 class="font-hero text-[26px] sm:text-[32px] lg:text-[40px] leading-[1.5] font-light">
-      気になる日程があれば、<br />
-      お気軽にお問い合わせください。
+<!-- ============================== CTA2 ============================== -->
+<section id="cta2" class="relative py-24 bg-photo bg-center bg-cover"
+  style="background-image: url('images/cta2_Lueur.jpg');">
+
+  <!-- フェード（上から軽く暗く） -->
+  <div class="absolute inset-0 bg-gradient-to-b from-black/25 via-black/15 to-black/0"></div>
+
+  <div class="relative z-10 max-w-2xl mx-auto px-6 text-center">
+    <p class="text-[12px] tracking-jp+ text-milk/70 mb-4">
+      — Reserve your seat —
+    </p>
+
+    <h2 class="text-3xl md:text-4xl font-hero text-milk tracking-jp+ leading-relaxed">
+      静かな炎の前で、<br class="md:hidden" />
+      自分のための90分を。
     </h2>
 
+    <p class="mt-6 text-[14px] text-milk/80 tracking-jp leading-relaxed">
+      ご予約はメール・LINE・お電話のいずれかで承っております。<br />
+      お気軽にお問い合わせください。
+    </p>
+
     <div class="mt-10 flex flex-wrap justify-center gap-3 sm:gap-4">
-      <a href="mailto:hello@lueur-candle.jp" class="btn-primary" style="background:#fff;color:#4a3f3f;">
-        <span aria-hidden="true">✉</span> MAIL
+      <a href="mailto:hello@lueur-candle.jp"
+        class="btn-primary"
+        style="background:#fff;color:#4a3f3f;">
+        ✉ MAIL
       </a>
+
       <a href="#" class="btn-ghost">
-        <span aria-hidden="true">◉</span> LINE
+        ◉ LINE
       </a>
+
       <a href="tel:03-0000-0000" class="btn-ghost">
-        <span aria-hidden="true">☎</span> 03-0000-0000
+        ☎ 03-0000-0000
       </a>
     </div>
   </div>
@@ -722,7 +684,7 @@
 <!-- ============================== 8. TEACHER ============================== -->
 <section id="teacher" class="relative">
   <div class="photo absolute inset-0" style="background-color:#3a2828;">
-    <img src="teacher_Lueur.jpg?v=1" alt="" onerror="this.style.display='none'" />
+    <img src="images/teacher_Lueur.jpg?v=1" alt="" onerror="this.style.display='none'" />
     <span class="ph-label" style="color:rgba(255,255,255,0.35);">teacher_Lueur.jpg</span>
   </div>
   <div class="absolute inset-0 z-[1]" style="background:linear-gradient(100deg, rgba(20,12,12,0.78) 0%, rgba(20,12,12,0.55) 45%, rgba(20,12,12,0.15) 75%, rgba(20,12,12,0) 100%);"></div>
@@ -761,7 +723,7 @@
 
     <div class="reveal grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
       <div class="photo aspect-video rounded-sm shadow-soft">
-        <img src="access_Lueur.jpg?v=1" alt="アトリエ外観" onerror="this.style.display='none'" />
+        <img src="images/access_Lueur.jpg?v=1" alt="アトリエ外観" onerror="this.style.display='none'" />
         <span class="ph-label">access_Lueur.jpg</span>
       </div>
 
