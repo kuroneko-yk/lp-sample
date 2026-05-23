@@ -11,7 +11,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Lueur Candle Studio｜大泉の手作りキャンドル教室" />
 <meta property="og:description" content="世界にひとつだけの灯りをつくる時間。初心者歓迎・手ぶらOK・当日予約OKの小さなアトリエ。" />
-<meta property="og:image" content="hero_Lueur.jpg" />
+<meta property="og:image" content="images/hero_Lueur.jpg" />
 <meta property="og:site_name" content="Lueur Candle Studio" />
 <meta property="og:locale" content="ja_JP" />
 <meta name="twitter:card" content="summary_large_image" />
@@ -242,6 +242,75 @@
   }
   .course:last-child { border-bottom: 1px solid rgba(216,191,174,0.55); }
 
+
+  /* ---------- Mobile Drawer ---------- */
+  .drawer-overlay {
+    position: fixed; inset: 0; z-index: 40;
+    background: rgba(74, 63, 63, 0.45);
+    backdrop-filter: blur(2px);
+    opacity: 0; pointer-events: none;
+    transition: opacity .3s ease;
+  }
+  .drawer-overlay.open { opacity: 1; pointer-events: auto; }
+
+  .drawer {
+    position: fixed; top: 0; right: 0; bottom: 0; z-index: 41;
+    width: min(80vw, 300px);
+    background: #faf7f5;
+    transform: translateX(100%);
+    transition: transform .35s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex; flex-direction: column;
+    box-shadow: -8px 0 40px rgba(74,63,63,0.18);
+  }
+  .drawer.open { transform: translateX(0); }
+
+  .drawer-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 24px 24px 20px;
+    border-bottom: 1px solid rgba(216,191,174,0.5);
+  }
+
+  .drawer-nav {
+    flex: 1; overflow-y: auto;
+    padding: 12px 0;
+  }
+  .drawer-nav a {
+    display: flex; align-items: center; gap: 12px;
+    padding: 14px 24px;
+    font-size: 13px; letter-spacing: 0.2em;
+    color: #4a3f3f;
+    transition: background .2s ease, color .2s ease;
+    text-decoration: none;
+  }
+  .drawer-nav a:hover { background: rgba(216,191,174,0.25); color: #c86584; }
+  .drawer-nav a .drawer-num {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 10px; color: #c86584; opacity: 0.7;
+    min-width: 18px;
+  }
+  .drawer-footer {
+    padding: 20px 24px;
+    border-top: 1px solid rgba(216,191,174,0.5);
+  }
+
+  /* Hamburger button */
+  .hamburger {
+    display: flex; flex-direction: column; justify-content: center; gap: 5px;
+    width: 36px; height: 36px; padding: 6px;
+    cursor: pointer; background: none; border: none;
+    border-radius: 4px;
+    transition: background .2s ease;
+  }
+  .hamburger:hover { background: rgba(216,191,174,0.3); }
+  .hamburger span {
+    display: block; width: 20px; height: 1.5px;
+    background: #4a3f3f;
+    transition: transform .3s ease, opacity .3s ease;
+    transform-origin: center;
+  }
+  .hamburger.active span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  .hamburger.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+  .hamburger.active span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
   /* Subtle decorative dotted line */
   .dot-rule {
     background-image: radial-gradient(circle, #c86584 1px, transparent 1px);
@@ -272,8 +341,40 @@
     <a href="#booking" class="hidden sm:inline-flex items-center gap-2 text-[12px] tracking-jp+ text-rose border-b border-rose pb-1 hover:text-rose-deep">
       ご予約 / RESERVE →
     </a>
+    <!-- Hamburger: mobile only -->
+    <button class="hamburger md:hidden" id="drawerToggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobileDrawer">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
+
+<!-- ============================== MOBILE DRAWER ============================== -->
+<div class="drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
+<nav class="drawer" id="mobileDrawer" aria-label="モバイルメニュー" aria-hidden="true">
+  <div class="drawer-header">
+    <div>
+      <p class="font-hero text-xl text-ink tracking-jp">Lueur</p>
+      <p class="text-[9px] tracking-jp+ text-ink-soft uppercase">Candle Studio</p>
+    </div>
+    <button class="hamburger active" id="drawerClose" aria-label="メニューを閉じる">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="drawer-nav">
+    <a href="#about"   class="drawer-link"><span class="drawer-num">01</span>ABOUT</a>
+    <a href="#reasons" class="drawer-link"><span class="drawer-num">02</span>REASONS</a>
+    <a href="#lessons" class="drawer-link"><span class="drawer-num">03</span>LESSONS</a>
+    <a href="#price"   class="drawer-link"><span class="drawer-num">04</span>PRICE</a>
+    <a href="#teacher" class="drawer-link"><span class="drawer-num">05</span>TEACHER</a>
+    <a href="#access"  class="drawer-link"><span class="drawer-num">06</span>ACCESS</a>
+  </div>
+  <div class="drawer-footer">
+    <a href="#booking" class="btn-primary w-full justify-center text-[12px]" id="drawerBooking">
+      体験レッスンを予約する <span aria-hidden="true">→</span>
+    </a>
+    <p class="mt-4 text-[10px] tracking-jp+ text-ink-soft text-center">10:00 – 18:00 ／ 定休 月曜</p>
+  </div>
+</nav>
 
 <!-- ============================== 1. HERO ============================== -->
 <section id="top" class="relative bg-milk">
@@ -868,6 +969,45 @@
   <span class="dot" aria-hidden="true"></span>
   <span class="text-[12px]">ご予約</span>
 </a>
+
+<script>
+  // Mobile Drawer
+  const toggle   = document.getElementById('drawerToggle');
+  const closeBtn = document.getElementById('drawerClose');
+  const overlay  = document.getElementById('drawerOverlay');
+  const drawer   = document.getElementById('mobileDrawer');
+  const drawerLinks = document.querySelectorAll('.drawer-link, #drawerBooking');
+
+  function openDrawer() {
+    drawer.classList.add('open');
+    overlay.classList.add('open');
+    toggle.classList.add('active');
+    toggle.setAttribute('aria-expanded', 'true');
+    drawer.setAttribute('aria-hidden', 'false');
+    overlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeDrawer() {
+    drawer.classList.remove('open');
+    overlay.classList.remove('open');
+    toggle.classList.remove('active');
+    toggle.setAttribute('aria-expanded', 'false');
+    drawer.setAttribute('aria-hidden', 'true');
+    overlay.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  toggle.addEventListener('click', () => {
+    drawer.classList.contains('open') ? closeDrawer() : openDrawer();
+  });
+  closeBtn.addEventListener('click', closeDrawer);
+  overlay.addEventListener('click', closeDrawer);
+  drawerLinks.forEach(link => link.addEventListener('click', closeDrawer));
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && drawer.classList.contains('open')) closeDrawer();
+  });
+</script>
 
 <script>
   // Reveal-on-scroll
