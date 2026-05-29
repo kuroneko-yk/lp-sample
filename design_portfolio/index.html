@@ -544,11 +544,90 @@
     footer a:hover { color: rgba(247,245,240,0.7); }
 
     /* ── Responsive ── */
+    /* ── ハンバーガーボタン ── */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      z-index: 200;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 1.5px;
+      background: var(--ink);
+      transition: transform 0.3s, opacity 0.3s;
+    }
+    .hamburger.active span:nth-child(1) {
+      transform: translateY(6.5px) rotate(45deg);
+    }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) {
+      transform: translateY(-6.5px) rotate(-45deg);
+    }
+
+    /* ── モバイルメニュー ── */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 150;
+    }
+    .mobile-menu.open { display: block; }
+    .mobile-menu-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(15,14,13,0.5);
+    }
+    .mobile-nav {
+      position: absolute;
+      top: 0; right: 0;
+      width: min(80vw, 18rem);
+      height: 100%;
+      background: var(--paper);
+      display: flex;
+      flex-direction: column;
+      padding: 5rem 2.5rem 3rem;
+    }
+    .mobile-nav-close {
+      position: absolute;
+      top: 1.25rem; right: 1.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.1rem;
+      color: var(--muted);
+      line-height: 1;
+    }
+    .mobile-nav ul { list-style: none; }
+    .mobile-nav-link {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      color: var(--ink);
+      text-decoration: none;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+      transition: color 0.2s;
+    }
+    .mobile-nav-link:hover { color: var(--accent); }
+
+    /* SP用CTAラッパー（デスクトップでは非表示） */
+    .hero-cta-wrap-sp { display: none; }
+
+    /* ── Responsive ── */
     @media (max-width: 1024px) {
       section { padding: 5rem 3rem; }
       #hero { grid-template-columns: 1fr; }
-      .hero-right { display: none; }
-      .hero-left { padding: 5rem 3rem; }
+      .hero-left { padding: 5rem 3rem 2rem; }
+      .hero-right { display: flex; padding: 0 3rem 4rem; }
+      .hero-badge { bottom: 4.5rem; right: 3.5rem; }
       .services-grid { grid-template-columns: repeat(2, 1fr); }
       .works-grid { grid-template-columns: repeat(2, 1fr); }
       .pricing-grid { grid-template-columns: 1fr; max-width: 28rem; margin: 0 auto; }
@@ -562,8 +641,16 @@
     @media (max-width: 640px) {
       nav { padding: 1rem 1.5rem; }
       .nav-links { display: none; }
+      .hamburger { display: flex; }
       section { padding: 4rem 1.5rem; }
-      .hero-left { padding: 5rem 1.5rem 3rem; }
+      .hero-left { padding: 5rem 1.5rem 2rem; }
+      .hero-cta-pc { display: none; }
+      .hero-right { display: flex; padding: 0 1.5rem 2rem; }
+      .hero-badge { bottom: 2.5rem; right: 2.5rem; }
+      .hero-cta-wrap-sp {
+        display: block;
+        padding: 0 1.5rem 3.5rem;
+      }
       .services-grid { grid-template-columns: 1fr; }
       .works-grid { grid-template-columns: 1fr; }
     }
@@ -594,7 +681,27 @@
     <li><a href="#process">制作の流れ</a></li>
     <li><a href="#contact">お問い合わせ</a></li>
   </ul>
+  <button class="hamburger" id="hamburger" aria-label="メニューを開く">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 </nav>
+
+<!-- ── モバイルメニュー ── -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-overlay" id="menuOverlay"></div>
+  <div class="mobile-nav">
+    <button class="mobile-nav-close" id="menuClose" aria-label="メニューを閉じる">✕</button>
+    <ul>
+      <li><a href="#services" class="mobile-nav-link">できること</a></li>
+      <li><a href="#works" class="mobile-nav-link">実績</a></li>
+      <li><a href="#pricing" class="mobile-nav-link">料金</a></li>
+      <li><a href="#process" class="mobile-nav-link">制作の流れ</a></li>
+      <li><a href="#contact" class="mobile-nav-link">お問い合わせ</a></li>
+    </ul>
+  </div>
+</div>
 
 <!-- ── Hero ── -->
 <section id="hero">
@@ -609,18 +716,24 @@
     <p class="hero-sub">
       静的なランディングページだけでなく、予約システムや料金シミュレーターなど、ビジネスの課題を解決するWebを一貫して制作します。
     </p>
-    <a href="#contact" class="hero-cta">
+    <a href="#contact" class="hero-cta hero-cta-pc">
       まずは相談する
       <span class="hero-cta-arrow"></span>
     </a>
   </div>
   <div class="hero-right">
     <div class="hero-visual">
-      <img src="hero_hana.jpg" alt="LP制作実績 整体・教室・ジムなど" />
+      <img src="img/hero_hana.jpg" alt="LP制作実績 整体・教室・ジムなど" />
     </div>
     <div class="hero-badge">
       <span>FREE<br />CONSULT</span>
     </div>
+  </div>
+  <div class="hero-cta-wrap-sp">
+    <a href="#contact" class="hero-cta">
+      まずは相談する
+      <span class="hero-cta-arrow"></span>
+    </a>
   </div>
 </section>
 
@@ -720,7 +833,7 @@
     <!-- 制作実績 3 -->
     <a href="#" class="work-card fade-in">
       <div class="work-thumb" style="background: linear-gradient(135deg, #1a3d2b 0%, #276749 100%);">
-        <span class="work-thumb-num"><img src="works-03.jpg" alt="制作実績 3"></span>
+        <span class="work-thumb-num"><img src="img/works-03.jpg" alt="制作実績 3"></span>
         <span class="work-thumb-label">LP / Form</span>
       </div>
       <div class="work-body">
@@ -943,6 +1056,30 @@
   }, { threshold: 0.1 });
 
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // ハンバーガーメニュー
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const menuOverlay = document.getElementById('menuOverlay');
+  const menuClose = document.getElementById('menuClose');
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+  function openMenu() {
+    mobileMenu.classList.add('open');
+    hamburger.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    mobileMenu.classList.remove('open');
+    hamburger.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  hamburger.addEventListener('click', openMenu);
+  menuClose.addEventListener('click', closeMenu);
+  menuOverlay.addEventListener('click', closeMenu);
+  mobileNavLinks.forEach(link => link.addEventListener('click', closeMenu));
 </script>
 </body>
 </html>
