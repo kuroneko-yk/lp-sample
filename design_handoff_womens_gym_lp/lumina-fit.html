@@ -1215,24 +1215,46 @@ footer {
 /* ── RESPONSIVE ── */
 @media (max-width: 768px) {
   .section { padding: 64px 0; }
+
+  /* ヒーロー：スマホ縦積みレイアウト（画像 → h1 → p → CTAの順） */
+  #hero {
+    height: auto;
+    min-height: auto;
+    justify-content: flex-start;
+  }
+  .hero-bg { display: none; }
+  .hero-photo {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: block;
+    background: none;
+  }
   .hero-photo-inner {
     display: block;
     width: 100%;
-    height: 60vh; /* ← スマホでの高さ調整 */
+    height: 70svh;
+    min-height: 320px;
     margin: 0;
+    padding-top: 56px;
+    box-sizing: border-box;
   }
-}
-.hero-photo-inner img {
-  object-fit: cover;
-  object-position: center;
-}
+  .hero-photo-inner::before {
+    background: linear-gradient(to bottom, rgba(10,8,6,0.15) 0%, transparent 40%, rgba(10,8,6,0.85) 100%);
+  }
+  .hero-content {
+    position: static;
+    max-width: 100%;
+    padding: 32px 20px 48px;
+    background: var(--black);
+  }
+  .hero-title { text-align: center; }
+  .hero-scroll { display: none; }
+
+  .hero-photo-inner img { object-fit: cover; object-position: center top; }
   .pain-grid { grid-template-columns: 1fr; }
   .why-grid { grid-template-columns: 1fr; }
   .pricing-card.featured { margin: 0; }
-  /* .trainers-grid { 
-  grid-template-columns: 1fr; 
-  gap: 32px; 
-} */
   .testimonials-grid { grid-template-columns: 1fr; }
   .trust-inner { grid-template-columns: repeat(3, 1fr); }
   .trust-item { padding: 20px 12px; }
@@ -1240,12 +1262,6 @@ footer {
   #floating-cta { width: calc(100% - 32px); }
   .floating-btn { width: 100%; text-align: center; }
   #tweaks-panel { width: calc(100% - 32px); right: 16px; bottom: 80px; }
-  .hero-content { max-width: 100%; }
-
-@media (max-width: 480px) {
-  .trust-inner { grid-template-columns: 1fr; }
-  .trust-item { border-right: none; border-bottom: 1px solid rgba(201,168,76,0.1); }
-  .trust-item:last-child { border-bottom: none; }
 }
 
 html {
